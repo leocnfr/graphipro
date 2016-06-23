@@ -89,8 +89,7 @@ Route::get('/admin/users/societe','BackpageController@SocieteClient');
 
 
 //前台页面
-Route::get('/','HomeController@index');
-Route::get('/show',function(){
+Route::get('/',function(){
     return view('graphipro.index');
 });
 
