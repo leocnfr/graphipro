@@ -89,11 +89,14 @@ Route::get('/admin/users/societe','BackpageController@SocieteClient');
 
 
 //前台页面
-Route::get('/',function(){
-    return view('graphipro.index');
-});
+Route::get('/','FrontPageController@index');
 
 Route::get('/product/{id}',function($id){
     $product=Products::find($id);
     return view('graphipro.produit_template',compact('product'));
 });
+
+//登录
+Route::get('/login','FrontPageController@login');
+//注册
+Route::get('/register','FrontPageController@register');
