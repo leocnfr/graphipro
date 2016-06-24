@@ -100,3 +100,7 @@ Route::get('/product/{id}',function($id){
 Route::get('/login','FrontPageController@login');
 //注册
 Route::get('/register','FrontPageController@register');
+
+Route::get('/phpinfo',function (){
+    return view('home');
+});
