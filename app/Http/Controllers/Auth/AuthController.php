@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -68,5 +70,29 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+    public function register(Request $request){
+        $this->validate($request,[
+            'nom'=>'required',
+            'prenom'=>'required',
+            'email'=>'required|email|max:255|unique:users',
+            'tel'=>'required|min:6',
+            'address'=>'required',
+            'post'=>'required|min:5',
+            'ville'=>'required',
+            'password'=>'required|min:6|confirmed'
+        ]);
+        User::create([
+            'nom'=>$request->get('nom'),
+            'prenom'=>$request->get('prenom'),
+            'email'=>$request->get('email'),
+            'tel'=>$request->get('tel'),
+            'address'=>$request->get('address'),
+            'post'=>$request->get('post'),
+            'ville'=>$request->get('ville'),
+            'password'=>bcrypt($request->get('passeword')),
+            'type'=>$request->get('type')
+        ]);
+        return redirect('/');
     }
 }

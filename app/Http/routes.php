@@ -30,6 +30,8 @@ Route::get('/admin','ProductController@index');
 */
 
 Route::group(['middleware' => ['web']], function () {
+    Route::auth();
+
     /**
      * Type
      */
@@ -55,6 +57,13 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/admin/products/{proid}/price/{ptlid}','PriceController@index');
     //存数量和价格
     Route::post('/admin/price','PriceController@store');
+
+    //登录
+    Route::get('/login','FrontPageController@login');
+    Route::post('/login','Auth\AuthController@login');
+    //注册
+    Route::get('/register','FrontPageController@register');
+
 });
 
 
@@ -96,11 +105,12 @@ Route::get('/product/{id}',function($id){
     return view('graphipro.produit_template',compact('product'));
 });
 
-//登录
-Route::get('/login','FrontPageController@login');
-//注册
-Route::get('/register','FrontPageController@register');
+
+
 
 Route::get('/phpinfo',function (){
     return view('home');
 });
+
+Route::get('/home', 'HomeController@index');
+

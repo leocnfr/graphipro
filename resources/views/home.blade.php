@@ -14,5 +14,4 @@
         </div>
     </div>
 </div>
-    {{phpinfo()}}
 @endsection

@@ -1,5 +1,13 @@
 @extends('graphipro.template')
 @section('content')
+    <style>
+        .error{
+            color: red;
+        }
+        .error-input{
+            border: 1px solid red;
+        }
+    </style>
     <div style=" width:1000px; margin:20px auto; min-height:350px;  ">
 
 
@@ -13,21 +21,28 @@
                         <option value="2">Société</option>
                     </select>
                     <br/>
-                    <form id="particulier" action="createaccount.php" method="post">
-
+                    <form id="particulier" action="{{url('/register')}}" method="post">
+                    {{csrf_field()}}
                     <div id="particulier">
                         <input id="nom" name="nom" type="text" size="30" placeholder="Nom" style="font-size:16px; padding:5px" required/>
                         <br/><br/>
                         <input id="prenom" name="prenom" type="text" size="30" placeholder="Prénom"
                                style="font-size:16px; padding:5px" /><br/><br/>
                     </div>
-                        <input name="email" type="email" size="30" placeholder="Votre adresse mail"
+                        @if ($errors->has('email'))
+                            <span class="error">
+                         <strong>*{{ $errors->first('email') }}</strong>
+                            </span>
+                        @endif
+                        <input class="{{$errors->has('email')?'error-input':''}}" name="email" type="email" size="30" placeholder="Votre adresse mail"
                            style="font-size:16px; padding:5px" required/><br/><br/>
+
+
                         <input name="tel" type="text" size="30" placeholder="N° de téléphone"
                                style="font-size:16px; padding:5px" required/><br/><br/>
                         <input name="address" type="text" size="30" placeholder="Adresse de facture: N° Rue"
                                style="font-size:16px; padding:5px" /><br/><br/>
-                        <input name="pos" type="text" size="8" placeholder="Code postal" style="font-size:16px; padding:5px" />
+                        <input name="post" type="text" size="8" placeholder="Code postal" style="font-size:16px; padding:5px" />
                         <input name="ville" type="text" size="15" placeholder="Ville" style="font-size:16px; padding:5px" /><br/><br/><br/>
                         <input id="passe" name="passe" type="password" size="30" placeholder="Votre mot de passe"
                                style="font-size:16px; padding:5px" minlength="6" required/><br/><br/>
@@ -39,7 +54,8 @@
                     <br/><br/>
                     </form>
 
-                    <form id="societe" action="createaccount.php" method="post" style="display: none">
+                    <form id="societe" action="{{url('/register')}}" method="post" style="display: none">
+                        {!! csrf_field() !!}
 
                             <input id="nom" name="nom" type="text" size="30" placeholder="Nom" style="font-size:16px; padding:5px" required/>
                             <br/><br/>
@@ -62,7 +78,7 @@
                                    style="font-size:16px; padding:5px" minlength="6" equalTo="#passe" required/><br/><br/>
 
                             <input style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; display:inline; font-size:18px;outline-style: none " value="Valider" type="submit" />
-                        <input type="hidden" name="type" value="2">
+                            <input type="hidden" name="type" value="2">
 
                         <br/><br/>
                     </form>
