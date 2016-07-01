@@ -69,6 +69,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/admin/login','Admin\AuthController@login');
     Route::get('/admin/register','Admin\AuthController@showRegistrationForm');
     Route::post('/admin/register','Admin\AuthController@postRegister');
+    Route::get('/admin/logout','Admin\AuthController@logout');
 //登录
     Route::get('/login','FrontPageController@login');
     Route::post('/login','Auth\AuthController@login');

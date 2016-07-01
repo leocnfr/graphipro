@@ -33,13 +33,9 @@
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        @if($errors->any())
-            <ul class="alert alert-danger">
-                @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        @endif
+        @foreach($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
         <form action="{{url('/admin/login')}}" method="post">
             {!! csrf_field() !!}
             <div class="form-group has-feedback">

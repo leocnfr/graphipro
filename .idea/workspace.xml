@@ -2,27 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06bec871-8c22-4ab5-8c14-27a7df6a96b7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bower_components/sweetalert/dist/demo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/sweetalert.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/sweetalert.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/auth/login.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/auth/register.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontPageController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontPageController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PriceController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PriceController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Kernel.php" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Admin.php" afterPath="$PROJECT_DIR$/app/Admin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AuthController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AuthController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/auth.php" afterPath="$PROJECT_DIR$/config/auth.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.php" afterPath="$PROJECT_DIR$/config/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/graphipro/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/graphipro/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/graphipro/inscription.blade.php" afterPath="$PROJECT_DIR$/resources/views/graphipro/inscription.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/graphipro/template.blade.php" afterPath="$PROJECT_DIR$/resources/views/graphipro/template.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/auth/login.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/auth/login.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/template/header.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/template/header.blade.php" />
     </list>
     <ignored path="new_graphipro.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,8 +32,8 @@
       <file leaf-file-name="AuthController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AuthController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="145">
+              <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
               <folding>
                 <element signature="e#6#84#0#PHP" expanded="true" />
                 <element signature="e#123#137#0#PHP" expanded="true" />
@@ -57,21 +42,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="template.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/graphipro/template.blade.php">
+      <file leaf-file-name="header.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/template/header.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="8" column="38" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="-47">
+              <caret line="105" column="51" selection-start-line="105" selection-start-column="51" selection-end-line="105" selection-end-column="51" />
+              <folding>
+                <element signature="e#3166#4705#0#HTML" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin_template.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/template/admin_template.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-864">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/graphipro/index.blade.php">
+      <file leaf-file-name="Admin.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="31" column="6" selection-start-line="27" selection-start-column="0" selection-end-line="31" selection-end-column="6" />
+            <state relative-caret-position="288">
+              <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -80,8 +77,8 @@
       <file leaf-file-name="AuthController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="120" column="28" selection-start-line="120" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+            <state relative-caret-position="1754">
+              <caret line="120" column="28" selection-start-line="120" selection-start-column="28" selection-end-line="120" selection-end-column="28" />
               <folding>
                 <element signature="e#45#58#0#PHP" expanded="true" />
               </folding>
@@ -89,21 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/app.php">
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3520">
-              <caret line="110" column="22" selection-start-line="110" selection-start-column="22" selection-end-line="110" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.env">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="1" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="1" />
+            <state relative-caret-position="192">
+              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -122,8 +109,8 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="70" column="32" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="32" />
+            <state relative-caret-position="-175">
+              <caret line="71" column="62" selection-start-line="71" selection-start-column="62" selection-end-line="71" selection-end-column="62" />
               <folding>
                 <element signature="e#7#385#0#PHP" expanded="true" />
               </folding>
@@ -131,10 +118,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="register.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/auth/register.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
+            <state relative-caret-position="17">
               <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
               <folding />
             </state>
@@ -144,8 +131,8 @@
       <file leaf-file-name="login.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/auth/login.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="160">
+              <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -199,12 +186,13 @@
         <option value="$PROJECT_DIR$/resources/views/admin/auth/login.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
-        <option value="$PROJECT_DIR$/app/Admin.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/AuthController.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/auth/register.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/auth/login.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/template/header.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/AuthController.php" />
+        <option value="$PROJECT_DIR$/app/Admin.php" />
       </list>
     </option>
   </component>
@@ -386,7 +374,7 @@
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="FullScreen" value="true" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="SearchEverywhereHistoryKey" value="lo&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/admin/auth/login.blade.php&#10;au&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/Admin/AuthController.php&#10;login&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/admin/auth/login.blade.php&#10;inde&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/graphipro/index.blade.php&#10;Auth&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/Auth/AuthController.php&#10;UserC&#9;null&#9;null&#10;A&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/Admin/AuthController.php&#10;route&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/routes.php&#10;Aut&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/Admin/AuthController.php&#10;config/a&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/config/app.php&#10;Admin&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Admin.php&#10;ins&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/graphipro/inscription.blade.php&#10;Authcontroller&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/Admin/AuthController.php&#10;prod&#9;null&#9;null&#10;config/au&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/config/auth.php&#10;routes&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/routes.php&#10;RedirectI&#9;null&#9;null&#10;in&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/graphipro/inscription.blade.php&#10;F&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/FrontPageController.php&#10;Fr&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/FrontPageController.php&#10;index&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/graphipro/index.blade.php&#10;app&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/layouts/app.blade.php&#10;Fro&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/FrontPageController.php&#10;config\a&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/config/app.php&#10;compo&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/composer.json&#10;Au&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/Auth/AuthController.php&#10;Fron&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/FrontPageController.php&#10;sideba&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/admin/template/sidebar.blade.php&#10;edi&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/admin/products/edit.blade.php&#10;Price&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/PriceController.php&#10;databas&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/config/database.php&#10;User&#9;null&#9;null&#10;fRO&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/FrontPageController.php&#10;confi&#9;null&#9;null&#10;price&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/admin/products/price.blade.php&#10;PricetableCon&#9;null&#9;null&#10;Pricet&#9;null&#9;null&#10;rout&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/routes.php&#10;Fin&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/FinishtimeController.php&#10;Pric&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/PriceController.php&#10;PRIC&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/admin/products/price.blade.php&#10;EDI&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/admin/products/edit.blade.php&#10;Time&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/FinishTime.php&#10;Pri&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/PriceController.php&#10;edit&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/admin/products/edit.blade.php&#10;Produc&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/ProductController.php&#10;Produ&#9;null&#9;null&#10;ROUTE&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/routes.php&#10;foot&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/graphipro/foot.blade.php&#10;footer&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/admin/template/footer.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="Admin&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Admin.php&#10;reg&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/admin/auth/register.blade.php&#10;aU&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/Admin/AuthController.php&#10;Aut&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/Admin/AuthController.php&#10;route&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/routes.php&#10;template&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/admin/template/admin_template.blade.php&#10;header&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/admin/template/header.blade.php&#10;header.b&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/admin/template/header.blade.php&#10;login.bl&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/admin/auth/login.blade.php&#10;lo&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/admin/auth/login.blade.php&#10;Au&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/Admin/AuthController.php&#10;A&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/Auth/AuthController.php&#10;User&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/UserController.php&#10;Auth&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/Admin/AuthController.php&#10;au&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/Admin/AuthController.php&#10;login&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/admin/auth/login.blade.php&#10;inde&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/graphipro/index.blade.php&#10;UserC&#9;null&#9;null&#10;config/a&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/config/app.php&#10;ins&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/graphipro/inscription.blade.php&#10;Authcontroller&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/Admin/AuthController.php&#10;prod&#9;null&#9;null&#10;config/au&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/config/auth.php&#10;routes&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/routes.php&#10;RedirectI&#9;null&#9;null&#10;in&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/graphipro/inscription.blade.php&#10;F&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/FrontPageController.php&#10;Fr&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/FrontPageController.php&#10;index&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/graphipro/index.blade.php&#10;app&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/layouts/app.blade.php&#10;Fro&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/FrontPageController.php&#10;config\a&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/config/app.php&#10;compo&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/composer.json&#10;Fron&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/FrontPageController.php&#10;sideba&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/admin/template/sidebar.blade.php&#10;edi&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/admin/products/edit.blade.php&#10;Price&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/PriceController.php&#10;databas&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/config/database.php&#10;fRO&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/FrontPageController.php&#10;confi&#9;null&#9;null&#10;price&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/admin/products/price.blade.php&#10;PricetableCon&#9;null&#9;null&#10;Pricet&#9;null&#9;null&#10;rout&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/routes.php&#10;Fin&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/FinishtimeController.php&#10;Pric&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/PriceController.php&#10;PRIC&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/admin/products/price.blade.php&#10;EDI&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/resources/views/admin/products/edit.blade.php&#10;Time&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/FinishTime.php&#10;Pri&#9;FILE&#9;file:///Users/YANTAO/laravel_project/new_graphipro/app/Http/Controllers/PriceController.php" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -452,12 +440,12 @@
       <workItem from="1466677353527" duration="7059000" />
       <workItem from="1466687240729" duration="16182000" />
       <workItem from="1467188132504" duration="8857000" />
-      <workItem from="1467215223952" duration="25196000" />
+      <workItem from="1467215223952" duration="28520000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57294000" />
+    <option name="totallyTimeSpent" value="60618000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -530,22 +518,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Format.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Papier.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Pelliculage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -838,14 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
@@ -870,24 +834,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="70" column="32" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="32" />
-          <folding>
-            <element signature="e#7#385#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/graphipro/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
@@ -896,39 +842,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="120" column="28" selection-start-line="120" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
-          <folding>
-            <element signature="e#45#58#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AuthController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#84#0#PHP" expanded="true" />
-            <element signature="e#123#137#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/graphipro/template.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
           <caret line="8" column="38" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -941,10 +858,83 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/template/admin_template.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-864">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/template/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-47">
+          <caret line="105" column="51" selection-start-line="105" selection-start-column="51" selection-end-line="105" selection-end-column="51" />
+          <folding>
+            <element signature="e#3166#4705#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1754">
+          <caret line="120" column="28" selection-start-line="120" selection-start-column="28" selection-end-line="120" selection-end-column="28" />
+          <folding>
+            <element signature="e#45#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-175">
+          <caret line="71" column="62" selection-start-line="71" selection-start-column="62" selection-end-line="71" selection-end-column="62" />
+          <folding>
+            <element signature="e#7#385#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/auth/register.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
+        <state relative-caret-position="17">
           <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+          <folding>
+            <element signature="e#6#84#0#PHP" expanded="true" />
+            <element signature="e#123#137#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
           <folding />
         </state>
       </provider>

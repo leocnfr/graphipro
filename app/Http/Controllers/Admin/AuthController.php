@@ -37,7 +37,7 @@ class AuthController extends Controller
         Admin::create([
             'name'=>$request->get('name'),
             'email'=>$request->get('email'),
-            'password'=>bcrypt($request->get('passeword')),
+            'password'=>bcrypt($request->get('password')),
         ]);
         alert()->success('You have been  inscription.', 'Success!');
         return view('admin.auth.login');
@@ -58,11 +58,22 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        if (Auth::guard('admin')->attempt(['email' => $request->get('email'), 'password' => $request->get('password')])) {
-            // Authentication passed...
-            return redirect('/admin');
-        }else{
-            return redirect('/admin/login')->withInput();
+        if (Admin::where('email',$request->get('email'))
+            ->where('password',bcrypt($request->get('password')))
+            ->where('state','1')
+        ) {
+            if (Auth::guard('admin')->attempt(['email' => $request->get('email'), 'password' => $request->get('password')])) {
+                // Authentication passed...
+                return redirect('/admin');
+            }else{
+                alert()->error('用户名或密码不对', 'Error!');
+                return redirect('/admin/login')->withInput();
+            }
+        }  else
+        {
+            alert()->error('没有注册或没有权限', 'Error!');
+            return view('admin.auth.login');
         }
+
     }
 }
