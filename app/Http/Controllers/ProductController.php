@@ -12,6 +12,9 @@ use App\Http\Controllers\Controller;
 class ProductController extends Controller
 {
     //
+    public function __construct(){
+        $this->middleware('admin');
+    }
 
     public function index()
     {

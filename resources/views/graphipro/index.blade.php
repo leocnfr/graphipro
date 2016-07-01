@@ -24,4 +24,17 @@
         <div id="show-product" style="float:right; margin-right:15px; border:thin ridge #FFF; padding:5px; color:#FFF; cursor:pointer; font-size:15px; border-radius:3px;">Tous</div>
     </div>
 </div>
+
+@if (Session::has('sweet_alert.alert'))
+    <script>
+        swal({!! Session::get('sweet_alert.alert') !!});
+    </script>
+@endif
+<script>
+    sweetAlert({
+        title: "Oops!",
+        text: "Something went wrong on the page!",
+        type: "error"
+    });
+</script>
 @endsection

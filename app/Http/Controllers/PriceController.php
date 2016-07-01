@@ -13,7 +13,7 @@ class PriceController extends Controller
     public function index($proid,$ptlid)
         
     {
-        $prices=Price::all()->orderBy('count')->get();
+        $prices=Price::where('price_table_list_id',$ptlid)->orderBy('count')->get();
         return view('admin.products.price',compact('proid','ptlid','prices'));
     }
 

@@ -13,6 +13,7 @@
 
 use App\Products;
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -29,8 +30,8 @@ Route::get('/admin','ProductController@index');
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    Route::auth();
+Route::group(['middleware' => ['admin']], function () {
+//    Route::auth();
 
     /**
      * Type
@@ -58,12 +59,22 @@ Route::group(['middleware' => ['web']], function () {
     //存数量和价格
     Route::post('/admin/price','PriceController@store');
 
-    //登录
+
+
+});
+
+Route::group(['middleware' => ['web']], function () {
+    Route::auth();
+    Route::get('/admin/login','Admin\AuthController@showLoginForm');
+    Route::post('/admin/login','Admin\AuthController@login');
+    Route::get('/admin/register','Admin\AuthController@showRegistrationForm');
+    Route::post('/admin/register','Admin\AuthController@postRegister');
+//登录
     Route::get('/login','FrontPageController@login');
     Route::post('/login','Auth\AuthController@login');
-    //注册
-    Route::get('/register','FrontPageController@register');
-
+//注册
+    Route::get('/inscription','FrontPageController@register');
+    Route::post('/register/{type}','Auth\AuthController@register');
 });
 
 
@@ -111,6 +122,4 @@ Route::get('/product/{id}',function($id){
 Route::get('/phpinfo',function (){
     return view('home');
 });
-
 Route::get('/home', 'HomeController@index');
-
