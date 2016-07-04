@@ -42,16 +42,14 @@ class Pricetablelist extends Model
     public function showPelliculage($id)
     {
         $pelliculages=Pricetablelist::findOrFail($id)->pelliculages;
-        $count=count($pelliculages);
+        $count=count(json_decode($pelliculages));
             if ($count==0)
             {
                 return 'non pelliculage';
-            }else
-            {
+            }else{
                 $pelliculages= json_decode($pelliculages);
-
                 foreach ($pelliculages as $pelliculage) {
-                    echo  $this->pelliculage($pelliculage).",";
+                    return  $this->pelliculage($pelliculage)." , ";
                 }
             }
 
