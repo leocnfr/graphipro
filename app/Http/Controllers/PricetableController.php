@@ -19,10 +19,19 @@ class PricetableController extends Controller
 //            'pelliculage'=>'required',
 //            'product_id'=>'required'
 //        ]);
+        $pelliculages=$request->get('pelliculages');
+        if ($pelliculages==null)
+        {
+            $pelliculages=array();
+        }else
+        {
+            $pelliculages=$request->get('pelliculages');
+
+        }
         Pricetablelist::create([
             'formats'=>json_encode($request->get('formats')),
             'papiers'=>json_encode($request->get('papiers')),
-            'pelliculages'=>json_encode($request->get('pelliculages')),
+            'pelliculages'=>json_encode($pelliculages),
             'imprimers'=>$request->get('imprimer'),
             'product_id'=>$request->get('product_id')
         ]);
