@@ -11,6 +11,8 @@
 
     	</thead>
     	<tbody>
+        <form action="{{url('/admin/price-table/edit')}}" method="post">
+            {!! csrf_field() !!}
     		<tr>
     			<td>
                     @inject('pricetable','App\Pricetablelist')
@@ -50,13 +52,17 @@
                     @foreach($pelliculages as $pelliculage)
                         <div class="checkbox">
                         	<label>
-                        		<input type="checkbox" value="" id="">{{$pelliculage->pelliculage}}
+                        		<input type="checkbox" value="" id="" {{in_array($pelliculage->id,$pricetable->pelliculages($ptlid))?'checked':''}}>{{$pelliculage->pelliculage}}
 
                         	</label>
                         </div>
                     @endforeach
                 </td>
     		</tr>
+            <tr>
+                <td><button class="btn btn-default" onclick="return confirm('确认修改?')">提交修改</button></td>
+            </tr>
+        </form>
     	</tbody>
     </table>
                 <h4 class="modal-title" id="exampleModalLabel">添加价格</h4>
