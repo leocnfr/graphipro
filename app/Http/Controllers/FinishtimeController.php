@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Finishtime;
+use App\FinishTime;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
