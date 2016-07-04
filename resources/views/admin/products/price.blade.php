@@ -13,13 +13,14 @@
     	<tbody>
         <form action="{{url('/admin/price-table/edit')}}" method="post">
             {!! csrf_field() !!}
+            <input type="hidden" value="{{$ptlid}}" name="id">
     		<tr>
     			<td>
                     @inject('pricetable','App\Pricetablelist')
                     @foreach($formats as $format)
                         <div class="checkbox">
                         	<label>
-                        		<input type="checkbox" value="{{$format->id}}" id="" name="formats" {{in_array($format->id,$pricetable->formats($ptlid))?'checked':''}}>{{$format->format}}
+                        		<input type="checkbox" value="{{$format->id}}" id="" name="formats[]" {{in_array($format->id,$pricetable->formats($ptlid))?'checked':''}}>{{$format->format}}
                             </label>
                         </div>
                     @endforeach
@@ -28,7 +29,7 @@
                     @foreach($papiers as $papier)
                         <div class="checkbox">
                         	<label>
-                        		<input type="checkbox" value="" id="" {{in_array($papier->id,$pricetable->papiers($ptlid))?'checked':''}}>{{$papier->papier}}
+                        		<input type="checkbox" value="{{$papier->id}}" name="papiers[]" id="" {{in_array($papier->id,$pricetable->papiers($ptlid))?'checked':''}}>{{$papier->papier}}
 
                         	</label>
                         </div>
@@ -37,13 +38,13 @@
                 <td>
                     <div class="radio">
                     	<label>
-                    		<input type="radio" name="imprimers" id="inputID" value="1" {{$pricetable->imprimers($ptlid)==1?'checked':''}}>
+                    		<input type="radio" name="imprimer" id="inputID" value="1" {{$pricetable->imprimers($ptlid)==1?'checked':''}}>
                     		Recto
                     	</label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="imprimers" id="inputID" value="2" {{$pricetable->imprimers($ptlid)==2?'checked':''}}>
+                            <input type="radio" name="imprimer" id="inputID" value="2" {{$pricetable->imprimers($ptlid)==2?'checked':''}}>
                             Recto er verso
                         </label>
                     </div>
@@ -52,7 +53,7 @@
                     @foreach($pelliculages as $pelliculage)
                         <div class="checkbox">
                         	<label>
-                        		<input type="checkbox" value="" id="" {{in_array($pelliculage->id,$pricetable->pelliculages($ptlid))?'checked':''}}>{{$pelliculage->pelliculage}}
+                        		<input type="checkbox" name="pelliculages[]" value="{{$pelliculage->id}}" id="" {{in_array($pelliculage->id,$pricetable->pelliculages($ptlid))?'checked':''}}>{{$pelliculage->pelliculage}}
 
                         	</label>
                         </div>
