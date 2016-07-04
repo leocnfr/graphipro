@@ -43,7 +43,7 @@ class Pricetablelist extends Model
     {
         $pelliculages=Pricetablelist::findOrFail($id)->pelliculages;
         $count=count($pelliculages);
-            if ($count==1)
+            if ($count==0)
             {
                 return 'non pelliculage';
             }else
