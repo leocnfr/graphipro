@@ -14,4 +14,6 @@ class Format extends Model
     {
         return Format::all();
     }
+
+    
 }

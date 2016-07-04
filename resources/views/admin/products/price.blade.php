@@ -1,5 +1,64 @@
 @extends('admin.template.admin_template')
 @section('content')
+    <table class="table table-hover">
+    	<thead>
+    		<tr>
+    			<th>Format</th>
+                <th>Papier</th>
+                <th>Imprimer</th>
+                <th>Pelliculage</th>
+    		</tr>
+
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<td>
+                    @inject('pricetable','App\Pricetablelist')
+                    @foreach($formats as $format)
+                        <div class="checkbox">
+                        	<label>
+                        		<input type="checkbox" value="{{$format->id}}" id="" name="formats" {{in_array($format->id,$pricetable->formats($ptlid))?'checked':''}}>{{$format->format}}
+                            </label>
+                        </div>
+                    @endforeach
+                </td>
+                <td>
+                    @foreach($papiers as $papier)
+                        <div class="checkbox">
+                        	<label>
+                        		<input type="checkbox" value="" id="" {{in_array($papier->id,$pricetable->papiers($ptlid))?'checked':''}}>{{$papier->papier}}
+
+                        	</label>
+                        </div>
+                    @endforeach
+                </td>
+                <td>
+                    <div class="radio">
+                    	<label>
+                    		<input type="radio" name="imprimers" id="inputID" value="1" {{$pricetable->imprimers($ptlid)==1?'checked':''}}>
+                    		Recto
+                    	</label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="imprimers" id="inputID" value="2" {{$pricetable->imprimers($ptlid)==2?'checked':''}}>
+                            Recto er verso
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    @foreach($pelliculages as $pelliculage)
+                        <div class="checkbox">
+                        	<label>
+                        		<input type="checkbox" value="" id="">{{$pelliculage->pelliculage}}
+
+                        	</label>
+                        </div>
+                    @endforeach
+                </td>
+    		</tr>
+    	</tbody>
+    </table>
                 <h4 class="modal-title" id="exampleModalLabel">添加价格</h4>
                    <table class="table">
                    	<thead>
@@ -74,7 +133,23 @@
                         </tr>
                         @foreach($prices as $price)
                             <tr>
-                                <td><input type="number" value="{{$price->count}}"></td>
+                                <form action="{{url('/admin/price/')}}" method="post">
+                                    {!! csrf_field() !!}
+                                    {!! method_field('PUT') !!}
+                                    <input type="hidden" value="{{$price->id}}" name="id">
+                                <td><input type="number" value="{{$price->count}}" class="form-control" name="count"></td>
+                                <td><input type="number" value="{{$price->price1}}" class="form-control" name="price1"></td>
+                                <td><input type="number" value="{{$price->price2}}" class="form-control" name="price2"></td>
+                                <td><input type="number" value="{{$price->price3}}" class="form-control" name="price3"></td>
+                                <td>
+                                    <button class="btn btn-default" onclick="return confirm('确认修改?')">修改</button>
+                                </form>
+                                <form action="{{url('/admin/price/'.$price->id)}}" method="post" style="display:inline-block;">
+                                    {!! csrf_field() !!}
+                                    {!! method_field('DELETE') !!}
+                                    <button class="btn btn-danger" onclick="return confirm('确认删除?')">删除</button>
+                                </form>
+                                </td>
                             </tr>
                         @endforeach
                    	</tbody>

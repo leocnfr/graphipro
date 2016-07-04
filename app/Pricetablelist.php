@@ -57,4 +57,23 @@ class Pricetablelist extends Model
         $imprimers= Pricetablelist::findOrFail($id)->imprimers;
         return $imprimers==1?'recto':'recto et verso';
     }
+    
+    //在价格页面显示
+    public function formats($id)
+    {
+        $formats=Pricetablelist::where('id',$id)->first()->formats;
+
+        return json_decode($formats);
+    }
+
+    public function papiers($id)
+    {
+        $papiers=Pricetablelist::where('id',$id)->first()->papiers;
+        return json_decode($papiers);
+    }
+
+    public function imprimers($id)
+    {
+        return Pricetablelist::where('id',$id)->first()->imprimers;
+    }
 }

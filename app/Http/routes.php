@@ -58,7 +58,9 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/admin/products/{proid}/price/{ptlid}','PriceController@index');
     //存数量和价格
     Route::post('/admin/price','PriceController@store');
-
+    //删除
+    Route::delete('/admin/price/{id}','PriceController@destroy');
+    Route::put('/admin/price','PriceController@edit');
 
 
 });
