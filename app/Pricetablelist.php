@@ -51,7 +51,7 @@ class Pricetablelist extends Model
                 $pelliculages= json_decode($pelliculages);
 
                 foreach ($pelliculages as $pelliculage) {
-                    echo  $this->pelliculage($pelliculage);
+                    echo  $this->pelliculage($pelliculage).",";
                 }
             }
 
