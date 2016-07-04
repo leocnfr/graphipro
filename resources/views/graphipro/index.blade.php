@@ -30,11 +30,5 @@
         swal({!! Session::get('sweet_alert.alert') !!});
     </script>
 @endif
-<script>
-    sweetAlert({
-        title: "Oops!",
-        text: "Something went wrong on the page!",
-        type: "error"
-    });
-</script>
+ss
 @endsection
