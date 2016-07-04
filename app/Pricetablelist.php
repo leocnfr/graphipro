@@ -76,4 +76,10 @@ class Pricetablelist extends Model
     {
         return Pricetablelist::where('id',$id)->first()->imprimers;
     }
+
+    public function pelliculages($id)
+    {
+        $pelliculages=Pricetablelist::where('id',$id)->first()->pelliculages;
+        return json_decode($pelliculages);
+    }
 }
