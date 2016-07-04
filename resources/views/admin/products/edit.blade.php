@@ -91,7 +91,7 @@
                     <td>{{$pricetablelist->showFormat($pricetablelist->id)}}</td>
                     <td>{{$pricetablelist->showPapier($pricetablelist->id)}}</td>
                     <td>{{$pricetablelist->showImprimer($pricetablelist->id)}}</td>
-                    {{--<td>{{$pricetablelist->showPelliculage($pricetablelist->id)}}</td>--}}
+                    <td>{{$pricetablelist->showPelliculage($pricetablelist->id)}}</td>
                     <td>
                         <a   class="btn btn-default" href="{{url('/admin/products/'.$product->id.'/price/'.$pricetablelist->id)}}">编辑</a>
                         <button class="btn btn-danger">删除</button>

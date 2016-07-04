@@ -159,7 +159,10 @@
                                 </td>
                             </tr>
                         @endforeach
+                    <tr>
+                        <td>    <a href="{{url('/admin/products/'.$proid)}}" class="btn btn-default">返回</a>
+                        </td>
+                    </tr>
                    	</tbody>
                    </table>
-
 @endsection
