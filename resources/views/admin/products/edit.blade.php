@@ -86,7 +86,7 @@
     	<tbody>
         <form action="{{url('/admin/promotion')}}" method="post">
             {!! csrf_field() !!}
-            <input type="hidden" value="{{$product->id}}">
+            <input type="hidden" value="{{$product->id}}" name="product_id">
     		<tr>
     			<td><input type="number" name="count" ></td>
                 <td><input type="number" name="price"></td>
