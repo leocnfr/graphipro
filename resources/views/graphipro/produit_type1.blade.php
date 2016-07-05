@@ -14,7 +14,7 @@
     }
 </style>
 <table width="1000" border="0">
-
+    @include('graphipro.loading')
     <tr>
         <td valign="top" width="450">
             <div style="font-size:20px; color:#29ABE2; margin-top:20px;">1. Choisir les options d'impression</div>
