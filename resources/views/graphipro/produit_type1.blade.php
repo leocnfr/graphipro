@@ -47,8 +47,8 @@
                     <br/>
                     <select id="pelliculage" style="width:220px;" name="pelliculage">
                     </select>
-                    <br/>
                 </div>
+                <br/>
                 <span>Création:</span> <br>
                 <select name="jumpMenu" id="jumpMenu" style="width:220px;">
                     <option value="0">Fournir par client</option>
