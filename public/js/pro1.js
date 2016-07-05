@@ -13,6 +13,7 @@ function getPapier(proid) {
         },
         success: function (res) {
             $('#papier').html(res);
+            getPrice(proid);
         }
     });
 
@@ -88,6 +89,8 @@ function getPrice(proid) {
 $('#formate').change(function () {
     getPapier(proid);
 });
-
+$('#papier').change(function () {
+    getPell(proid);
+});
 getPapier(proid);
 getPell(proid);
