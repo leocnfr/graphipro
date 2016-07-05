@@ -79,14 +79,13 @@
             <br/>
             <div style="padding:10px; width:400px; border-radius:3px; background-color:#F2F2F2;">
                 Choix le moyen de livraison:
-                <select name="jumpMenu" id="jumpMenu" style="width:220px;">
-                    <option>Récupérer au bureau Graphipro</option>
-                    <option>Livraison chez vous J+3</option>
-                    <option>Livraison chez vous par UPS J+2</option>
-                </select>
-
+                <select name="jumpMenu" id="type-livraison" style="width:220px;">
+                    <option value="0">Récupérer au bureau Graphipro</option>
+                    <option value="1">Livraison chez vous 2 a 5 jours</option>
+                </select> <br>
+               Post: <input type="text" placeholder="enter your post code">
             </div>
-
+            
 
         </td>
         <td valign="top" style="padding-left:30px">
