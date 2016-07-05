@@ -8,6 +8,10 @@
     {
         cursor: not-allowed;
     }
+    .choosed
+    {
+     background-color: #29ABE2;
+    }
 </style>
 <table width="1000" border="0">
 
