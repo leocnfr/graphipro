@@ -15,5 +15,9 @@ class Format extends Model
         return Format::all();
     }
 
+    public function showOne($id)
+    {
+        return Format::find($id);
+    }
     
 }

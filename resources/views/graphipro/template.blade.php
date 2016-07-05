@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <link rel="stylesheet" href="/css/sweetalert.css">
     <script type="text/javascript" src="/js/power-slider.js"></script>
+    <script src="http://www.greensock.com/js/src/TweenMax.min.js" type="text/javascript"></script>
 
 </head>
 <body>

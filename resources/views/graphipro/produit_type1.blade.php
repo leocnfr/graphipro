@@ -8,7 +8,10 @@
                 Format: <br>
                 <input id="name" value="" type="hidden"/>
                 <select id="formate" style="width:220px;" name="formate">
-
+                    @inject('formate','App\Format')
+                    @foreach($formats as $format)
+                        <option value="">{{}}</option>
+                    @endforeach
                 </select>
                 <br/>
                 <span>Papier:</span>
@@ -21,23 +24,19 @@
                 <span>Imprimer:</span><br>
 
                 <select id="imprimer" style="width:220px;" name="imprimer">
-                    <option value="">test</option>
                 </select>
                 <div id="pel" style="display: none">
                     <span>Pelliculage:</span>
                     <br/>
                     <select id="pelliculage" style="width:220px;" name="pelliculage">
-                        <option value="">test</option>
                     </select>
                     <br/>
                 </div>
                 <br>
                 <span>Création:</span> <br>
                 <select name="jumpMenu" id="jumpMenu" style="width:220px;">
-                    <option>Fournir par client</option>
-                    <option>Recto seule +30€</option>
-                    <option>Recto verso +50€</option>
-
+                    <option value="0">Fournir par client</option>
+                    <option value="{{$product->design_price}}">Recto seule +{{$product->design_price}}€</option>
                 </select>
                 <br/>
                 <span>Autre option:</span>
