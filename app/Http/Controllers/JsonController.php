@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\FinishTime;
 use App\Format;
 use App\Papier;
+use App\Pelliculage;
+use App\Price;
 use App\Pricetablelist;
 use Illuminate\Http\Request;
 
@@ -38,5 +41,41 @@ class JsonController extends Controller
         foreach ($papiers as $papier) {
             echo  '<option value="'.$papier.'">'.Papier::find($papier)->papier.'</option>';
         }
+    }
+
+
+
+    public function getPelle(Request $request)
+    {
+        $tables=Pricetablelist::where('formats','like','%'.$request->get('formate').'%')
+            ->where('product_id',$request->get('proid'))
+            ->where('papiers','like','%'.$request->get('papier').'%')
+            ->where('imprimers',$request->get('imprimer'))
+            ->first();
+        $count=count(json_decode($tables->pelliculages));
+        if ($count==0)
+        {
+            echo  'notshow';
+        }else
+        {
+            $pelliculages=json_decode($tables->pelliculages);
+            foreach ($pelliculages as $pelliculage) {
+                echo  '<option value="'.$pelliculage.'">'.Pelliculage::find($pelliculage)->pelliculage.'</option>';
+            }
+        }
+    }
+
+    public function getPrice(Request $request)
+    {
+        $tables=Pricetablelist::where('formats','like','%'.$request->get('formate').'%')
+            ->where('product_id',$request->get('proid'))
+            ->where('papiers','like','%'.$request->get('papier').'%')
+            ->where('imprimers',$request->get('imprimer'))
+            ->where('pelliculages','like','%'.$request->get('pelliculage').'%')
+            ->first();
+        $prices=Price::where('price_table_list_id',$tables->id)->get();
+        $times=FinishTime::where('price_table_list_id',$tables->id)->first();
+        $array=array('prices'=>$prices,'times'=>$times);
+        return json_encode($array);
     }
 }

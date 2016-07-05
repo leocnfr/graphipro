@@ -1,3 +1,10 @@
+<style>
+    .price
+    {
+        background: #F2F2F2;
+        cursor: pointer;
+    }
+</style>
 <table width="1000" border="0">
 
     <tr>
@@ -24,6 +31,8 @@
                 <span>Imprimer:</span><br>
 
                 <select id="imprimer" style="width:220px;" name="imprimer">
+                    <option value="1">Rect</option>
+                    <option value="2">Rect et verso</option>
                 </select>
                 <div id="pel" style="display: none">
                     <span>Pelliculage:</span>
@@ -32,7 +41,6 @@
                     </select>
                     <br/>
                 </div>
-                <br>
                 <span>Création:</span> <br>
                 <select name="jumpMenu" id="jumpMenu" style="width:220px;">
                     <option value="0">Fournir par client</option>
@@ -86,7 +94,7 @@
                                     style="border:thin ridge #29ABE2; border-radius:3px; padding:10px; font-size:13px; width:125px; height:20px; position:relative; color:#666">
                                 <div
                                         style="position:absolute; width:147px; height:20px; background-color:#29ABE2; top:-18px; left:-1px;"></div>
-                                <center><span id="day1">Délai Rush 24h</span><br/>
+                                <center><span id="day1"></span><br/>
                             </div>
                         </td>
                         <td align="right">
@@ -94,7 +102,7 @@
                                     style="border:thin ridge #29ABE2; border-radius:3px; padding:10px; font-size:13px; width:125px; height:20px; position:relative;  color:#666">
                                 <div
                                         style="position:absolute; width:147px; height:20px; background-color:#29ABE2; top:-18px; left:-1px;"></div>
-                                <center><span id="day2">Délai Express 48h à 72h</span><br/>
+                                <center><span id="day2"></span><br/>
                             </div>
                         </td>
                         <td align="right">
@@ -102,7 +110,7 @@
                                     style="border:thin ridge #29ABE2; border-radius:3px; padding:10px; font-size:13px; width:125px; height:20px; position:relative;   color:#666">
                                 <div
                                         style="position:absolute; width:147px; height:20px; background-color:#29ABE2; top:-18px; left:-1px;"></div>
-                                <center><span id="day3">Délai Normal 5J</span><br/>
+                                <center><span id="day3"></span><br/>
                             </div>
                         </td>
                     </tr>

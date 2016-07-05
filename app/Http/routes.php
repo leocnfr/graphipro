@@ -131,3 +131,6 @@ Route::get('/phpinfo',function (){
 Route::get('/home', 'HomeController@index');
 //前台获取papier
 Route::get('/papier','JsonController@getPapier');
+//获取pelliculage
+Route::get('/pelliculage','JsonController@getPelle');
+Route::get('/price','JsonController@getPrice');
