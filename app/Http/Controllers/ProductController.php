@@ -46,7 +46,7 @@ class ProductController extends Controller
     {
         $product=Products::findOrFail($id);
         $types=Type::all();
-        $pros=Promotion::all();
+        $pros=Promotion::where('product_id',$id);
         return view('admin.products.edit',compact('product','types','pros'));
 
     }
