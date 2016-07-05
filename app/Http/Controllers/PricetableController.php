@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\FinishTime;
+use App\Price;
 use App\Pricetablelist;
+use App\Time;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -63,6 +66,8 @@ class PricetableController extends Controller
     public function destroy($id)
     {
         Pricetablelist::destroy($id);
+        Price::where('price_table_list_id',$id)->delete();
+        FinishTime::where('price_table_list_id',$id)->delete();
         return redirect()->back();
 
     }
