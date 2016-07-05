@@ -21,7 +21,7 @@
                 <td>{{$product->name}}</td>
 				<td>{{isset($product->cate->name)?$product->cate->name:''}}</td>
 				<td>
-					<button class="btn btn-danger">删除</button>
+					<button class="btn btn-danger" onclick="return confirm('确认删除?')">删除</button>
 					<a href="{{url('admin/products/'.$product->id)}}" class="btn btn-success">编辑</a>
 				</td>
     		</tr>

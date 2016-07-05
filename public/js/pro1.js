@@ -122,18 +122,22 @@ function getPrice(proid) {
             })
             $('#result').html(html);
             $(".price").on('click',function(event){
-                $(".choosed").each(function(){
-                    $(".choosed").attr('class','price');
-                });
-                $(this).toggleClass("choosed");
-                var price = (parseInt(event.target.innerText)*1.2).toFixed(2);
-                $("#showprice").html(price);
-                $("#price").val(price);
-                var tdSeq = $(this).parent().find("td").index($(this)[0]);
-                var trSeq = $(this).parent().parent().find("tr").index($(this).parent()[0]);
-                ex=$(this).parent().find("td:first-child").text();
-                day=$("#day"+tdSeq).text();
-
+                if (event.target.innerText)
+                {
+                    return false
+                }else {
+                    $(".choosed").each(function(){
+                        $(".choosed").attr('class','price');
+                    });
+                    $(this).toggleClass("choosed");
+                    var price = (parseInt(event.target.innerText)*1.2).toFixed(2);
+                    $("#showprice").html(price);
+                    $("#price").val(price);
+                    var tdSeq = $(this).parent().find("td").index($(this)[0]);
+                    var trSeq = $(this).parent().parent().find("tr").index($(this).parent()[0]);
+                    ex=$(this).parent().find("td:first-child").text();
+                    day=$("#day"+tdSeq).text();
+                }
             });
         }
     });
