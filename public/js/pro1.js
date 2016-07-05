@@ -152,5 +152,7 @@ $('#pelliculage').change(function () {
     getPrice(proid);
 
 });
+$
+
 getPapier(proid);
 getPell(proid);

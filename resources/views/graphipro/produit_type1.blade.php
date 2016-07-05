@@ -14,7 +14,10 @@
     }
 </style>
 <table width="1000" border="0">
-    @include('graphipro.loading')
+    <div id="loading" style="display: none">
+        @include('graphipro.loading')
+
+    </div>
     <tr>
         <td valign="top" width="450">
             <div style="font-size:20px; color:#29ABE2; margin-top:20px;">1. Choisir les options d'impression</div>
@@ -134,5 +137,11 @@
 </table>
 <script>
     var proid=<?php echo $product->id?>;
+    (document).ajaxStart(function(){
+        $('#loading').show();
+    }).ajaxStop(function () {
+        $('#loading').hide();
+
+    });
 </script>
 <script src="/js/pro1.js"></script>
