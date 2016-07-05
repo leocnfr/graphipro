@@ -76,7 +76,7 @@ function getPrice(proid) {
                 html+='<td align="center" class="price '+val.price2==0?'':'not-allow'+' ">';
                 html+=val.price2==0?'':val.price2;
                 html+='</td>';
-                html+='<td align="center" class="price '+val.price3==0?'':'not-allow'+' ">';
+                html+='<td align="center" class="price">';
                 html+=val.price3==0?'':val.price3;
                 html+='</td>';
                 html+='</tr>';
