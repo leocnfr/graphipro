@@ -121,13 +121,15 @@ function getPrice(proid) {
                 html+='</tr>';
             })
             $('#result').html(html);
+
             $(".price").on('click',function(event){
-                if (event.target.innerText)
+                if (isNaN(parseInt(event.target.innerText)))
                 {
-                    return false
-                }else {
+                    return false;
+                }else
+                {
                     $(".choosed").each(function(){
-                        $(".choosed").attr('class','price');
+                        $(".choosed").removeClass('choosed');
                     });
                     $(this).toggleClass("choosed");
                     var price = (parseInt(event.target.innerText)*1.2).toFixed(2);
@@ -138,6 +140,8 @@ function getPrice(proid) {
                     ex=$(this).parent().find("td:first-child").text();
                     day=$("#day"+tdSeq).text();
                 }
+
+
             });
         }
     });
