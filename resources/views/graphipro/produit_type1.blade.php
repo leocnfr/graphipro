@@ -4,6 +4,10 @@
         background: #F2F2F2;
         cursor: pointer;
     }
+    .not-allow
+    {
+        cursor: not-allowed;
+    }
 </style>
 <table width="1000" border="0">
 

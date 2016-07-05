@@ -70,14 +70,14 @@ function getPrice(proid) {
                 html+='<td height="30" width="35" align="right" class="count">';
                 html+=val.count+'ex';
                 html+='</td>';
-                html+='<td align="center" class="price">';
-                html+=val.price1;
+                html+='<td align="center" class="price '+val.price1==0?'':'not-allow'+' ">';
+                html+=val.price1==0?'':val.price1;
                 html+='</td>';
-                html+='<td align="center" class="price">';
-                html+=val.price2;
+                html+='<td align="center" class="price '+val.price2==0?'':'not-allow'+' ">';
+                html+=val.price2==0?'':val.price2;
                 html+='</td>';
-                html+='<td align="center" class="price">';
-                html+=val.price3;
+                html+='<td align="center" class="price '+val.price3==0?'':'not-allow'+' ">';
+                html+=val.price3==0?'':val.price3;
                 html+='</td>';
                 html+='</tr>';
             })
