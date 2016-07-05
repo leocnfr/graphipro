@@ -137,7 +137,11 @@
                     </td>
                     <td>
                         <a   class="btn btn-default" href="{{url('/admin/products/'.$product->id.'/price/'.$pricetablelist->id)}}">编辑</a>
-                        <button class="btn btn-danger">删除</button>
+                        <form action="{{url('/admin/price-table/'.$pricetablelist->id)}}" method="post">
+                            {!! csrf_field() !!}
+                            {!! method_field('DELETE') !!}
+                            <button class="btn btn-danger" onclick="return confirm('确认删除?')">删除</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

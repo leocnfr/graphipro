@@ -59,6 +59,7 @@ Route::group(['middleware' => ['admin']], function () {
     //产品价格列表
     Route::post('/admin/price-table','PricetableController@store');
     Route::post('/admin/price-table/edit','PricetableController@edit');
+    Route::delete('/admin/price-table/{id}','PricetableController@destroy');
     //价格
     Route::get('/admin/products/{proid}/price/{ptlid}','PriceController@index');
     //存数量和价格

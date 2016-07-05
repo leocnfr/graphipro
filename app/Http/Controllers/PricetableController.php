@@ -59,4 +59,11 @@ class PricetableController extends Controller
         return redirect()->back();
 
     }
+
+    public function destroy($id)
+    {
+        Pricetablelist::destroy($id);
+        return redirect()->back();
+
+    }
 }

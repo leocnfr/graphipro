@@ -15,4 +15,9 @@ class PromotionController extends Controller
         Promotion::create($request->all());
         return redirect()->back();
     }
+
+    public function destroy()
+    {
+        
+    }
 }
