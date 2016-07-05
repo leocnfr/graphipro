@@ -92,7 +92,8 @@
                 <td><input type="number" name="price"></td>
                 <td><button class="btn btn-default">添加</button></td>
     		</tr>
-            @foreach($pros as $pro)
+        </form>
+        @foreach($pros as $pro)
                 <tr>
                     <form action="{{url('/admin/promotion/'.$pro->id)}}" method="post">
                         {!! csrf_field() !!}
@@ -111,7 +112,6 @@
                     </td>
                 </tr>
             @endforeach
-        </form>
     	</tbody>
     </table>
     <div class="row">

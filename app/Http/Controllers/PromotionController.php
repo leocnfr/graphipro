@@ -16,8 +16,22 @@ class PromotionController extends Controller
         return redirect()->back();
     }
 
-    public function destroy()
+    public function destroy($id)
     {
-        
+        Promotion::destroy($id);
+        return redirect()->back();
+
+    }
+
+    public function update(Request $request)
+    {
+
+        Promotion::where('id',$request->get('id'))
+                    ->update([
+                        'count'=>$request->get('count'),
+                        'price'=>$request->get('price')
+                    ]);
+        return redirect()->back();
+
     }
 }
