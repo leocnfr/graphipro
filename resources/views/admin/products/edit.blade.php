@@ -50,6 +50,10 @@
                 {{Form::label('','Delais')}}
                 {{Form::textarea('delais',$product->delais,array('cols'=>30,'rows'=>10,'placeholder'=>'papier','class'=>'form-control'))}}
             </div>
+            <div class="form-group">
+                {{Form::label('','设计费')}}
+                {{Form::number('design_price',$product->design_price)}}
+            </div>
             <div>
                 <div class="form-group-sm">
                     {{Form::label('','首页显示')}}:
@@ -72,6 +76,44 @@
 
         </div>
     </div>
+    <table class="table table-hover">
+    	<thead>
+    		<tr>
+    			<th>数量</th>
+                <th>价格</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+        <form action="{{url('/admin/promotion')}}" method="post">
+            {!! csrf_field() !!}
+            <input type="hidden" value="{{$product->id}}">
+    		<tr>
+    			<td><input type="number" name="count" ></td>
+                <td><input type="number" name="price"></td>
+                <td><button class="btn btn-default">添加</button></td>
+    		</tr>
+            @foreach($pros as $pro)
+                <tr>
+                    <form action="{{url('/admin/promotion/'.$pro->id)}}" method="post">
+                        {!! csrf_field() !!}
+                        {!! method_field('PUT') !!}
+                        <input type="hidden" name="id" value="{{$pro->id}}">
+                    <td><input type="number" value="{{$pro->count}}" name="count"></td>
+                    <td><input type="number" value="{{$pro->price}}" name="price"></td>
+                    <td>
+                        <button class="btn btn-default" onclick="return confirm('确认修改?')">修改</button>
+                    </form>
+                    <form action="{{url('/admin/promotion/'.$pro->id)}}" method="post" style="display: inline-block">
+                        {!! csrf_field() !!}
+                        {!! method_field('DELETE') !!}
+                        <button class="btn btn-danger" onclick="return confirm('确认删除?')">删除</button>
+                    </form>
+                    </td>
+                </tr>
+            @endforeach
+        </form>
+    	</tbody>
+    </table>
     <div class="row">
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">添加价格列表</button>
         @include('admin.products.price_table_list')

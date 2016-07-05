@@ -14,7 +14,7 @@
                         @foreach($formats->showAll() as $format)
                             <div class="checkbox-inline">
                                 <label>
-                                    <input type="checkbox" value="{{$format->id}}" id="" name="formats[]">{{$format->format}}
+                                    <input type="checkbox" value="{{$format->id}}" id="" name="formats[]" required>{{$format->format}}
                                 </label>
                             </div>
                         @endforeach
@@ -25,7 +25,7 @@
                         @foreach($papiers->showAll() as $papier)
                             <div class="checkbox-inline">
                                 <label>
-                                    <input type="checkbox" value="{{$papier->id}}" id="" name="papiers[]">{{$papier->papier}}
+                                    <input type="checkbox" value="{{$papier->id}}" id="" name="papiers[]" required>{{$papier->papier}}
 
                                 </label>
                             </div>
@@ -35,12 +35,12 @@
                         <label for="">Imprimer</label>
                         <div class="radio-inline">
                             <label>
-                                <input type="radio" name="imprimer" id="inputID" value="1" checked="checked">recto
+                                <input type="radio" name="imprimer" id="inputID" value="1" checked="checked" required>recto
                             </label>
                         </div>
                         <div class="radio-inline">
                         	<label>
-                        		<input type="radio" name="imprimer" id="inputID" value="2" >recto et verso
+                        		<input type="radio" name="imprimer" id="inputID" value="2" required>recto et verso
                         	</label>
                         </div>
 

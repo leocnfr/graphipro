@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Products;
+use App\Promotion;
 use App\Type;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = Products::all();
+        $products = Products::paginate(10);
         return view('admin.products.show',compact('products'));
     }
 
@@ -45,7 +46,8 @@ class ProductController extends Controller
     {
         $product=Products::findOrFail($id);
         $types=Type::all();
-        return view('admin.products.edit',compact('product','types'));
+        $pros=Promotion::all();
+        return view('admin.products.edit',compact('product','types','pros'));
 
     }
 

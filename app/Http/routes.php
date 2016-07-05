@@ -40,11 +40,15 @@ Route::group(['middleware' => ['admin']], function () {
     Route::post('/admin/category','TypeController@store');
     Route::delete('/admin/category','TypeController@destroy');
     //产品
-    Route::get('/admin/products','ProductController@index');
+    Route::get('/admin/products{query?}','ProductController@index');
     Route::get('/admin/products/new','ProductController@store');
     Route::post('admin/products/new','ProductController@save');
     Route::get('/admin/products/{id}','ProductController@edit');
     Route::post('/admin/products/{id}','ProductController@update');
+    //产品团购价格
+    Route::post('/admin/promotion','PromotionController@store');
+    Route::delete('/admin/promotion/{id}','PromotionController@destroy');
+    Route::put('/admin/promotion/{id}','PromotionController@update');
     //finish time
     Route::get('/admin/finish-time','TimeController@show');
     Route::get('/admin/finish-time/show','TimeController@showAll');
@@ -115,10 +119,7 @@ Route::get('/admin/users/societe','BackpageController@SocieteClient');
 //前台页面
 Route::get('/','FrontPageController@index');
 
-Route::get('/product/{id}',function($id){
-    $product=Products::find($id);
-    return view('graphipro.produit_template',compact('product'));
-});
+Route::get('/product/{id}','FrontPageController@product');
 
 
 
@@ -127,3 +128,5 @@ Route::get('/phpinfo',function (){
     return view('home');
 });
 Route::get('/home', 'HomeController@index');
+//前台获取format
+Route::get('/format','JsonController@getFormat');

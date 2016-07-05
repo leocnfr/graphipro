@@ -1,6 +1,10 @@
 @extends('admin.template.admin_template')
 @section('page_title','Product List')
 @section('content')
+	{{--<form action="{{url('/admin/products')}}" method="get">--}}
+		{{--<input type="text" placeholder="根据分类和名称查找产品" class="form-control" name="query">--}}
+
+	{{--</form>--}}
     <table class="table table-hover">
     	<thead>
     		<tr>
@@ -24,4 +28,6 @@
             @endforeach
     	</tbody>
     </table>
+	{!! $products->links() !!}
+
 @endsection
