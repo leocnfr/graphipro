@@ -51,7 +51,7 @@ class JsonController extends Controller
             ->where('product_id',$request->get('proid'))
             ->where('papiers','like','%'.$request->get('papier').'%')
             ->where('imprimers',$request->get('imprimer'))
-            ->first();
+            ->get();
         $pelliculages=array();
         foreach ($tables as $table) {
             $pelliculages= array_merge(json_decode($table->pelliculages),$pelliculages);
