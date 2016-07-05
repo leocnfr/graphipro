@@ -14,4 +14,9 @@ class Papier extends Model
     {
         return Papier::all();
     }
+
+    public function showOne($id)
+    {
+        return Papier::find($id)->papier;
+    }
 }

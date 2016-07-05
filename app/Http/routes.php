@@ -129,5 +129,5 @@ Route::get('/phpinfo',function (){
     return view('home');
 });
 Route::get('/home', 'HomeController@index');
-//前台获取format
-Route::get('/format','JsonController@getFormat');
+//前台获取papier
+Route::get('/papier','JsonController@getPapier');

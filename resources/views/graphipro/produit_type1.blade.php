@@ -10,7 +10,7 @@
                 <select id="formate" style="width:220px;" name="formate">
                     @inject('formate','App\Format')
                     @foreach($formats as $format)
-                        <option value="">{{}}</option>
+                        <option value="{{$format}}">{{$formate->showOne($format)->format}}</option>
                     @endforeach
                 </select>
                 <br/>
@@ -116,4 +116,7 @@
         </td>
     </tr>
 </table>
+<script>
+    var proid=<?php echo $product->id?>;
+</script>
 <script src="/js/pro1.js"></script>
