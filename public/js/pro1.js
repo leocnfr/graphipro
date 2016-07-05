@@ -92,5 +92,12 @@ $('#formate').change(function () {
 $('#papier').change(function () {
     getPell(proid);
 });
+$('#imprimer').change(function () {
+    getPell(proid)
+})
+$('#pelliculage').change(function () {
+    getPrice(proid);
+
+});
 getPapier(proid);
 getPell(proid);
