@@ -134,12 +134,14 @@
         </td>
     </tr>
 </table>
-<script>
+<script type="text/javascript">
     var proid=<?php echo $product->id?>;
-    (document).ajaxStart(function(){
+    jQuery(document).ajaxStart(function(){
         $('#loading').show();
+        console.log('start');
     }).ajaxStop(function () {
         $('#loading').hide();
+        console.log('stop');
 
     });
 </script>
