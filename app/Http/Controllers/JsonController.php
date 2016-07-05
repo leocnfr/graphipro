@@ -52,16 +52,13 @@ class JsonController extends Controller
             ->where('papiers','like','%'.$request->get('papier').'%')
             ->where('imprimers',$request->get('imprimer'))
             ->first();
-        $count=count(json_decode($tables->pelliculages));
-        if ($count==0)
-        {
-            echo  'notshow';
-        }else
-        {
-            $pelliculages=json_decode($tables->pelliculages);
-            foreach ($pelliculages as $pelliculage) {
-                echo  '<option value="'.$pelliculage.'">'.Pelliculage::find($pelliculage)->pelliculage.'</option>';
-            }
+        $pelliculages=array();
+        foreach ($tables as $table) {
+            $pelliculages= array_merge(json_decode($table->pelliculages),$pelliculages);
+        }
+        $pelliculages=array_unique($pelliculages);
+        foreach ($pelliculages as $pelliculage) {
+            echo  '<option value="'.$pelliculage.'">'.Pelliculage::find($pelliculage)->papier.'</option>';
         }
     }
 
