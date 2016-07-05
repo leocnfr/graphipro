@@ -14,9 +14,8 @@
     }
 </style>
 <table width="1000" border="0">
-    <div id="loading" style="display: none">
+    <div id="loading" style="display: block">
         @include('graphipro.loading')
-
     </div>
     <tr>
         <td valign="top" width="450">
