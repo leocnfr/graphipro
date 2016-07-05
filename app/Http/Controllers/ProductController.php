@@ -57,11 +57,7 @@ class ProductController extends Controller
         {
             $photo=$file->getClientOriginalName();
             $request->file('photo')->move(('storage/uploads'),$file->getClientOriginalName());
-
-        }else{
-            $photo=Products::find($request->id)->first()->productimg;
-        }
-        Products::where('id',intval($request->id))
+            Products::where('id',intval($request->id))
                 ->update(
                     [
                         'name'=>$request->get('name'),
@@ -75,6 +71,23 @@ class ProductController extends Controller
                         'design_price'=>$request->get('design_price')
                     ]
                 );
+
+        }else{
+            Products::where('id',intval($request->id))
+                ->update(
+                    [
+                        'name'=>$request->get('name'),
+                        'type_id'=>$request->get('type_id'),
+                        'intro'=>$request->get('intro'),
+                        'format'=>$request->get('format'),
+                        'papier'=>$request->get('papier'),
+                        'delais'=>$request->get('delais'),
+                        'is_show'=>$request->get('is_show'),
+                        'design_price'=>$request->get('design_price')
+                    ]
+                );
+        }
+
         return redirect()->back();
     }
 }
