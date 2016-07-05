@@ -58,7 +58,7 @@ class JsonController extends Controller
         }
         $pelliculages=array_unique($pelliculages);
         foreach ($pelliculages as $pelliculage) {
-            echo  '<option value="'.$pelliculage.'">'.Pelliculage::find($pelliculage)->papier.'</option>';
+            echo  '<option value="'.$pelliculage.'">'.Pelliculage::find($pelliculage)->pelliculage.'</option>';
         }
     }
 
