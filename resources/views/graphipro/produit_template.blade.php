@@ -17,7 +17,7 @@
         </div>
         @if($product->type_id==2)
             @include('graphipro.product_type2')
-        @else
+        @elseif($product->type_id==22)
             @include('graphipro.produit_type1')
         @endif
     </div>
