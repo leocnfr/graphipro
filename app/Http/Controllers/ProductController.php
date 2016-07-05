@@ -71,7 +71,8 @@ class ProductController extends Controller
                         'papier'=>$request->get('papier'),
                         'delais'=>$request->get('delais'),
                         'is_show'=>$request->get('is_show'),
-                        'productimg'=>$photo
+                        'productimg'=>$photo,
+                        'design_price'=>$request->get('design_price')
                     ]
                 );
         return redirect()->back();
