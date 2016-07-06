@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Products;
+use App\Promotion;
 use App\Type;
 use Illuminate\Http\Request;
 
@@ -18,7 +19,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = Products::all();
+        $products = Products::paginate(10);
         return view('admin.products.show',compact('products'));
     }
 
@@ -45,7 +46,8 @@ class ProductController extends Controller
     {
         $product=Products::findOrFail($id);
         $types=Type::all();
-        return view('admin.products.edit',compact('product','types'));
+        $pros=Promotion::where('product_id',$id)->get();
+        return view('admin.products.edit',compact('product','types','pros'));
 
     }
 
@@ -55,11 +57,7 @@ class ProductController extends Controller
         {
             $photo=$file->getClientOriginalName();
             $request->file('photo')->move(('storage/uploads'),$file->getClientOriginalName());
-
-        }else{
-            $photo=Products::find($request->id)->first()->productimg;
-        }
-        Products::where('id',intval($request->id))
+            Products::where('id',intval($request->id))
                 ->update(
                     [
                         'name'=>$request->get('name'),
@@ -69,9 +67,27 @@ class ProductController extends Controller
                         'papier'=>$request->get('papier'),
                         'delais'=>$request->get('delais'),
                         'is_show'=>$request->get('is_show'),
-                        'productimg'=>$photo
+                        'productimg'=>$photo,
+                        'design_price'=>$request->get('design_price')
                     ]
                 );
+
+        }else{
+            Products::where('id',intval($request->id))
+                ->update(
+                    [
+                        'name'=>$request->get('name'),
+                        'type_id'=>$request->get('type_id'),
+                        'intro'=>$request->get('intro'),
+                        'format'=>$request->get('format'),
+                        'papier'=>$request->get('papier'),
+                        'delais'=>$request->get('delais'),
+                        'is_show'=>$request->get('is_show'),
+                        'design_price'=>$request->get('design_price')
+                    ]
+                );
+        }
+
         return redirect()->back();
     }
 }

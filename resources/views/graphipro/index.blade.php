@@ -101,5 +101,4 @@
         swal({!! Session::get('sweet_alert.alert') !!});
     </script>
 @endif
-ss
 @endsection

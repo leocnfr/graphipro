@@ -41,11 +41,18 @@ class Pricetablelist extends Model
 
     public function showPelliculage($id)
     {
-        $pelliculages=Pricetablelist::findOrFail($id);
-        $pelliculages= json_decode($pelliculages->pelliculages);
-        foreach ($pelliculages as $pelliculage) {
-            echo  $this->pelliculage($pelliculage);
-        }
+        $pelliculages=Pricetablelist::findOrFail($id)->pelliculages;
+        $count=count(json_decode($pelliculages));
+            if ($count==0)
+            {
+                return 'non pelliculage';
+            }else{
+                $pelliculages= json_decode($pelliculages);
+                foreach ($pelliculages as $pelliculage) {
+                    return  $this->pelliculage($pelliculage)." , ";
+                }
+            }
+
     }
     public function pelliculage($id){
         return Pelliculage::findOrFail($id)->pelliculage;
@@ -56,5 +63,30 @@ class Pricetablelist extends Model
     {
         $imprimers= Pricetablelist::findOrFail($id)->imprimers;
         return $imprimers==1?'recto':'recto et verso';
+    }
+    
+    //在价格页面显示
+    public function formats($id)
+    {
+        $formats=Pricetablelist::where('id',$id)->first()->formats;
+
+        return json_decode($formats);
+    }
+
+    public function papiers($id)
+    {
+        $papiers=Pricetablelist::where('id',$id)->first()->papiers;
+        return json_decode($papiers);
+    }
+
+    public function imprimers($id)
+    {
+        return Pricetablelist::where('id',$id)->first()->imprimers;
+    }
+
+    public function pelliculages($id)
+    {
+        $pelliculages=Pricetablelist::where('id',$id)->first()->pelliculages;
+        return json_decode($pelliculages);
     }
 }

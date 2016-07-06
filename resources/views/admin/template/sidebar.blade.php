@@ -40,7 +40,7 @@
                 <ul class="treeview-menu">
                     <li><a href="{{url('admin/users/person')}}"><i class="fa fa-circle-o"></i><span>个人客户</span></a></li>
                     <li><a href="{{url('admin/users/societe')}}"><i class="fa fa-circle-o"></i>专业客户</a></li>
-                    <li><a href="{{url('admin/users/create')}}"><i class="fa fa-circle-o"></i>建立客户</a></li>
+                    {{--<li><a href="{{url('admin/users/create')}}"><i class="fa fa-circle-o"></i>建立客户</a></li>--}}
                 </ul>
             </li>
             <li class="treeview">
@@ -58,7 +58,8 @@
                 <a href="{{url('admin/attribute')}}">产品属性</a>
             </li>
             <li class="treeview">
-                <a href="{{url('admin/finish-time')}}">完成时间</a>
+                <a href="{{url('admin/finish-time')}}"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                    完成时间</a>
             </li>
         </ul><!-- /.sidebar-menu -->
     </section>

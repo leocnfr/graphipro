@@ -1,0 +1,66 @@
+@extends('graphipro.template')
+@section('content')
+    <div style=" width:1000px; margin:20px auto;  min-height:350px;  ">
+
+    <div style="font-size:25px; color:#29ABE2; float:left; width:690px; "> MON PANIER<br/>
+        <span style="color:#666; font-size:14px;">Vérification de la commande sélectionné</span><br/><br/>
+        <img src="/images/panier1.png"/>
+        <form action="{{url('/payment')}}" method="post" enctype="multipart/form-data" id="payment">
+            @foreach($carts as $cart)
+            <div style="width:690px; padding:10px; position:relative; border:thin ridge #29ABE2; border-radius:3px; font-size:14px; color:#666; height:100px; margin-top:20px;" >
+                <div style="position:absolute; right:10px; top:10px;cursor:pointer;">
+                    {{--<form action="{{url('/panier')}}" method="post">--}}
+                        {{--{!! csrf_field()!!}--}}
+                        {{--{!! method_field('DELETE') !!}--}}
+                        {{--<input type="hidden" name="raw_id" value="{{$cart->__raw_id}}">--}}
+                        {{--<input name="submit" type="image" value="ee" src="/images/ferme.png" />--}}
+                    {{--</form>--}}
+                </div>
+                <img src="/storage/uploads/{{$cart->img}}" style="float:left; height:100px;"/>
+
+                <div style="float:left; width:200px; margin-left:10px; color:#999; height:100px; border-right:thin ridge #F2F2F2; padding-right:15px">
+                    <span style="font-size:20px; color:#29ABE2;">{{$cart->name}}</span><br/>
+                    {{$cart->format}}/{{$cart->papier}}/{{$cart->imprimer}}/{{$cart->pelliculage}}
+                </div>
+                <div style="float:left;  margin-left:25px;">
+
+                    <span>Délai {{$cart->day}}</span>
+                    <br/>
+                    Quantité: {{$cart->ex}}ex<br/>
+                    Prix: <span style="font-size:18px; color:#29ABE2;">{{$cart->price}}</span> TTC <br>
+
+                    @if($cart->design_price==0)
+                        Ficher fournir par client <br>
+                        <input type="file" name="files[]">
+                        @else
+                        Creation:{{$cart->design_price}}
+                    @endif
+                </div>
+            </div>
+            @endforeach
+            <!--- car1 --->
+        </form>
+
+    <!--- 1 --->
+    </div>
+
+    <div style="font-size:18px; color:#29ABE2; float:right; margin-top:20px; margin-right:45px; position:relative; padding:10px; border:thin ridge #29ABE2; border-radius:3px;width: 145.36px">
+        {{$count}}article(s):<br/>
+        <span style="font-size:35px;">{{$total_price}}</span> TTC
+        <br/>
+        <div id="valide" style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; float:left;cursor:pointer; ">Valider
+    </div>
+    </div>
+    <a href="{{url('/')}}">
+        <div
+                style="float:right; margin-right:45px; margin-top:20px; font-size:18px; padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF;">
+            Continuer mes achats
+        </div>
+    </a>
+    </div>
+    <script>
+        $('#valide').click(function () {
+            $('#payment').submit();
+        })
+    </script>
+@endsection

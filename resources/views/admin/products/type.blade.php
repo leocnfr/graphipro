@@ -40,10 +40,10 @@
 					<td>{{$type->name}}</td>
 					<td>
 						<button class="btn btn-primary">编辑</button>
-						<form action="{{url('/admin/products/category')}}" method="POST">
+						<form action="{{url('/admin/category')}}" method="post">
+							{!! csrf_field() !!}
+							{!! method_field('DELETE') !!}
 							<input type="hidden" value="{{$type->id}}" name="id">
-							<input type="hidden" name="_method" value="delete">
-							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<button class="btn btn-danger" onclick="return confirm('确定删除')">删除</button>
 						</form>
 					</td>

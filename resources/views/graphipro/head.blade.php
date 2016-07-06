@@ -451,6 +451,3 @@
 
 </div>
 
-<script src="http://www.greensock.com/js/src/TweenMax.min.js" type="text/javascript"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
-<script src="/js/js.js"></script>

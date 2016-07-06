@@ -58,22 +58,20 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        if (Admin::where('email',$request->get('email'))
-            ->where('password',bcrypt($request->get('password')))
-            ->where('state','1')
-        ) {
+
             if (Auth::guard('admin')->attempt(['email' => $request->get('email'), 'password' => $request->get('password')])) {
                 // Authentication passed...
+                if (Auth::guard('admin')->user()->state==0)
+                {
+                    alert()->error('没有权限', 'Error!');
+                    Auth::guard('admin')->logout();
+                    return redirect('/admin/login')->withInput();
+
+                }
                 return redirect('/admin');
             }else{
-                alert()->error('用户名或密码不对', 'Error!');
+                alert()->error('请注册', 'Error!');
                 return redirect('/admin/login')->withInput();
             }
-        }  else
-        {
-            alert()->error('没有注册或没有权限', 'Error!');
-            return view('admin.auth.login');
-        }
-
     }
 }

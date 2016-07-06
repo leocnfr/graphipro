@@ -10,7 +10,7 @@ class Products extends Model
     protected $table='products';
 
     protected $fillable=[
-        'name','type_id','productimg','intro'
+        'name','type_id','productimg','intro','design_price'
     ];
 
     public function cate()
