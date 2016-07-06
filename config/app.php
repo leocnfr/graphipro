@@ -158,7 +158,9 @@ return [
         
         Collective\Html\HtmlServiceProvider::class,
         //sweetalter
-        UxWeb\SweetAlert\SweetAlertServiceProvider::class
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+        //cart
+        'Overtrue\LaravelShoppingCart\ServiceProvider',
 
 
     ],
@@ -209,7 +211,9 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         //sweetalert
-        'Alert' => UxWeb\SweetAlert\SweetAlert::class
+        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
+        //cart
+        'Cart'      => 'Overtrue\LaravelShoppingCart\Facade',
 
     ],
 

@@ -51,28 +51,13 @@
                     </select>
                 </div>
                 <span>Création:</span> <br>
-                <select name="jumpMenu" id="jumpMenu" style="width:220px;">
+                <select name="jumpMenu" id="design_price" style="width:220px;">
                     <option value="0">Fournir par client</option>
                     <option value="{{$product->design_price}}">Recto seule +{{$product->design_price}}€</option>
                 </select>
                 <br/>
-                <span>Autre option:</span>
 
-                <table width="200">
-                    <tr>
-                        <td><label>
-                                <input type="checkbox" name="CheckboxGroup1" value="Vernis selective"
-                                       id="CheckboxGroup1_0"/>
-                                Vernis selectif</label></td>
 
-                        <td><label>
-                                <input type="checkbox" name="CheckboxGroup1" value="Coins rond" id="CheckboxGroup1_1"/>
-                                Coins rond</label></td>
-                    </tr>
-                </table>
-                <input type="hidden" value="" name="price" id="price"/>
-                <input type="hidden" value="" name="id"/>
-                <input type="hidden" value="" name="pname"/>
             </div>
 
             <div style="font-size:20px; color:#29ABE2; margin-top:20px;">2. Option de livraison</div>
@@ -142,5 +127,8 @@
         console.log('stop');
 
     });
+    $('#design_price').change(function () {
+        $('#s_design_price').val($('#design_price').val());
+    })
 </script>
 <script src="/js/pro1.js"></script>

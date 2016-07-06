@@ -134,3 +134,6 @@ Route::get('/papier','JsonController@getPapier');
 //获取pelliculage
 Route::get('/pelliculage','JsonController@getPelle');
 Route::get('/price','JsonController@getPrice');
+
+//存储购物车
+Route::post('/panier','OrderController@store');

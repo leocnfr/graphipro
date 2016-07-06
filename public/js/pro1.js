@@ -139,9 +139,13 @@ function getPrice(proid) {
                     var trSeq = $(this).parent().parent().find("tr").index($(this).parent()[0]);
                     ex=$(this).parent().find("td:first-child").text();
                     day=$("#day"+tdSeq).text();
+                    $('#ex').val(parseInt(ex));
+                    $('#day').val(day);
+                    $('#s-format').val($('#formate').val());
+                    $('#s-papier').val($('#papier').val());
+                    $('#s-imprimer').val($('#imprimer').val());
+                    $('#s-pelliculage').val($('#pelliculage').val());
                 }
-
-
             });
         }
     });
