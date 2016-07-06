@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\File;
 use App\Format;
 use App\Papier;
 use App\Pelliculage;
@@ -10,6 +11,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Cart;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
+
 class OrderController extends Controller
 {
     //
@@ -56,5 +60,30 @@ class OrderController extends Controller
         Cart::remove($request->get('raw_id'));
 
         return redirect()->back();
+    }
+
+    public function showAll()
+    {
+        $files=Storage::files('files');
+        return view('admin.order.show',compact('files'));
+    }
+
+    public function download()
+    {
+
+//       $file= Storage::get('files/Amazon.pdf');
+//        return response()->download('storage/uploads/PARTIE 2.jpg.pdf');
+        $file = File::findOrFail(2);
+        header( "Content-type:  application/octet-stream ");
+        header("Accept-Ranges:  bytes");
+        header("Accept-Length: " . $file->size);
+        header("Content-Disposition:  attachment;  filename= " . $file->name);
+        $headers=array([
+            "Content-type"=>"application/octet-stream ",
+            "Accept-Ranges"=>" bytes",
+        ]);
+        //读取数据库中的文件路径
+        return response()->download('storage/uploads/Amazon.pdf', 'Amazon', $headers);
+
     }
 }

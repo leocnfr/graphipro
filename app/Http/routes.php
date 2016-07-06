@@ -67,8 +67,11 @@ Route::group(['middleware' => ['admin']], function () {
     //删除
     Route::delete('/admin/price/{id}','PriceController@destroy');
     Route::put('/admin/price','PriceController@edit');
-
-
+    
+    //订单
+    Route::get('/admin/orders','OrderController@showAll');
+    //下载文件
+    Route::get('/admin/file','OrderController@download');
 });
 
 Route::group(['middleware' => ['web']], function () {
