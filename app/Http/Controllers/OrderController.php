@@ -39,4 +39,9 @@ class OrderController extends Controller
         alert()->success('购买成功', 'Success!');
         return redirect('product/'.$product_id);
     }
+
+    public function showPanier()
+    {
+        dd(Cart::all());
+    }
 }

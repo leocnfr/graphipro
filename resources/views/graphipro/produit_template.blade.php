@@ -21,7 +21,7 @@
                 <input type="hidden" id="s-imprimer" name="imprimer">
                 <input type="hidden" id="s-pelliculage" name="pelliculage">
                 <input type="hidden" id="s_design_price" name="design_price">
-                <span style="font-size:35px;" id="showprice" ></span> TTC <br /><br />
+                <span style="font-size:35px;" id="showprice" >0€</span> TTC <br /><br />
                 <button style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; float:left; " id="panier">Ajouter au panier</button>
             </form>
         </div>
