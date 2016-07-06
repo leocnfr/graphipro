@@ -52,7 +52,7 @@
                 </div>
                 <span>Création:</span> <br>
                 <select name="jumpMenu" id="design_price" style="width:220px;">
-                    <option value="0">Fournir par client</option>
+                    <option value="0">Demande le creation</option>
                     <option value="{{$product->design_price}}">Recto seule +{{$product->design_price}}€</option>
                 </select>
                 <br/>

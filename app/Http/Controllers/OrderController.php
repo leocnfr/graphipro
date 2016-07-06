@@ -18,6 +18,7 @@ class OrderController extends Controller
     {
         $product_id=$request->get('product_id');
         $product_name=Products::find($request->get('product_id'))->name;
+        $img=Products::find($request->get('product_id'))->productimg;
         $price=$request->get('price');
         $format=Format::find($request->get('format'))->format;
         $papier=Papier::find($request->get('papier'))->papier;
@@ -34,7 +35,8 @@ class OrderController extends Controller
                 'pelliculage'=>$pelliculage,
                 'day'=>$day,
                 'ex'=>$ex,
-                'design_price'=>$design_price
+                'design_price'=>$design_price,
+                'img'=>$img
             ]);
         alert()->success('购买成功', 'Success!');
         return redirect('product/'.$product_id);
@@ -42,6 +44,17 @@ class OrderController extends Controller
 
     public function showPanier()
     {
-        dd(Cart::all());
+//        dd(Cart::all());
+        $carts=Cart::all();
+        $count=Cart::countRows();
+        $total_price=number_format(Cart::totalPrice(),2);
+        return view('graphipro.panier',compact('carts','count','total_price'));
+    }
+
+    public function destroy(Request $request)
+    {
+        Cart::remove($request->get('raw_id'));
+
+        return redirect()->back();
     }
 }
