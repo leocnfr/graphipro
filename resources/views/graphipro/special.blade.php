@@ -5,6 +5,9 @@
             <div style="padding:10px; width:400px; border-radius:3px; background-color:#F2F2F2; line-height:35px; color:#29ABE2">
                 Formate:
                 <select name="formate" id="formate" v-model="selected">
+                    @foreach($product->hasSpec as $spec)
+                        <option value="{{$spec->price}}">{{$spec->size}}</option>
+                    @endforeach
                 </select>
                 <br/>
                 <span>Quantité:</span>
