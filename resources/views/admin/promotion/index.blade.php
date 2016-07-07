@@ -15,11 +15,11 @@
 	</div>
     <div class="form-group">
         <label for="">原价</label>
-        <input type="number" class="form-control" name="price">
+        <input type="number" step="0.01" class="form-control" name="price">
     </div>
     <div class="form-group">
         <label for="">折扣价</label>
-        <input type="number" class="form-control" name="pro_price">
+        <input type="number" class="form-control" name="pro_price" step="0.01">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

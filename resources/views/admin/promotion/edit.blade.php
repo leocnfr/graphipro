@@ -17,11 +17,11 @@
     </div>
     <div class="form-group">
         <label for="">原价</label>
-        <input type="number" class="form-control" name="price" value="{{$pro->price}}">
+        <input type="number" class="form-control" name="price" value="{{$pro->price}}" step="0.01">
     </div>
     <div class="form-group">
         <label for="">折扣价</label>
-        <input type="number" class="form-control" name="pro_price" value="{{$pro->pro_price}}">
+        <input type="number" class="form-control" name="pro_price" value="{{$pro->pro_price}}" step="0.01">
     </div>
     <div class="form-group">
         <label for="">是否显示:</label> <br>

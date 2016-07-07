@@ -153,3 +153,4 @@ Route::delete('/panier','OrderController@destroy');
 
 //付款
 Route::post('/payment','PaymentController@payment');
+Route::get('/checkout','PaymentController@checkout');
