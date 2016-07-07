@@ -103,7 +103,7 @@
 @endif
 <script>
     $('#show-product').click(function () {
-        $('.product-list').stop().slideDown();
+        $('.list').stop().slideDown();
         var scrollX=$(document).scrollTop();
         if (scrollX<424){
             $('body').animate({scrollTop:424}, '500')

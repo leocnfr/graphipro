@@ -62,6 +62,10 @@
         padding:8px; background-color:#29ABE2; border-radius:3px; position:absolute; right:10px; bottom:10px;
         color: white;
     }
+    .list:nth-child(n+3)
+    {
+        display: none;
+    }
 </style>
 <div class="cat" style=" width:1000px; margin:20px 0 auto;  color:#333; font-size:20px;  position:relative">
     @foreach($products->chunk(6) as $items)
