@@ -47,7 +47,8 @@
         float: left;
     }
     .product-info{
-            float: right;
+        float: right;
+        width: 140px;
     }
 </style>
 <div class="cat" style=" width:1000px; margin:20px 0 auto;  color:#333; font-size:20px;  position:relative">
@@ -68,7 +69,7 @@
                     {{$item->name}} <br>
                     @foreach($item->hasPro as $pro)
                         <span style="font-size:12px; color:#999">{{$pro->count}}
-                            à partir de <span style="font-size:18px; color:#29ABE2">{{$pro->price}}</span>
+                            à partir de <span style="font-size:18px; color:#29ABE2">{{$pro->price}}</span> <br>
                         </span>
 
                     @endforeach
