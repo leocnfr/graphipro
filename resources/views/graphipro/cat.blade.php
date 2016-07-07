@@ -34,6 +34,12 @@
     {
         position: absolute;
         display: none;
+        z-index: 99;
+        width: 380px;
+        height: 210px;
+        padding: 10px;
+        border: thin ridge rgb(41, 171, 226);
+        background-color: rgb(255, 255, 255)
     }
     .product-item-info > img
     {
@@ -41,7 +47,7 @@
         float: left;
     }
     .product-info{
-
+            float: right;
     }
 </style>
 <div class="cat" style=" width:1000px; margin:20px 0 auto;  color:#333; font-size:20px;  position:relative">
