@@ -101,4 +101,13 @@
         swal({!! Session::get('sweet_alert.alert') !!});
     </script>
 @endif
+<script>
+    $('#show-product').click(function () {
+        $('.product-list').stop().slideDown();
+        var scrollX=$(document).scrollTop();
+        if (scrollX<424){
+            $('body').animate({scrollTop:424}, '500')
+        }
+    })
+</script>
 @endsection

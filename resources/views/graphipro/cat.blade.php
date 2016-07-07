@@ -102,6 +102,7 @@
         $(this).show();
     },function () {
         $(this).hide();
-    })
+    });
+
 </script>
 
