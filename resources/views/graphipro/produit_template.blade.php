@@ -27,6 +27,8 @@
         </div>
         @if($product->type_id==24)
             @include('graphipro.product_type2')
+            @elseif(in_array($product->id,array(17,19,18)))
+            @include('graphipro.special')
         @else
             @include('graphipro.produit_type1')
         @endif
