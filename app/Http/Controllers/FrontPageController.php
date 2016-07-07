@@ -14,7 +14,8 @@ class FrontPageController extends Controller
     //
     public function index()
     {
-        return view('graphipro.index');
+        $products=Products::all();
+        return view('graphipro.index',compact('products'));
     }
 
     public function login()
