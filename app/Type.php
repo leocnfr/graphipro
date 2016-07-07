@@ -14,4 +14,9 @@ class Type extends Model
     {
         Type::create($arr);
     }
+
+    public function hasProduct()
+    {
+        return $this->hasMany(Products::class,'type_id');
+    }
 }

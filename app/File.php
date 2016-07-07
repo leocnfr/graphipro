@@ -8,5 +8,5 @@ class File extends Model
 {
     //
     protected $table='files';
-    protected $fillable=['name','size','path'];
+    protected $fillable=['name','size','path','mime'];
 }

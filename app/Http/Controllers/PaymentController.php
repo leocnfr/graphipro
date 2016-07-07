@@ -14,18 +14,15 @@ class PaymentController extends Controller
     //
     public function payment(Request $request)
     {
-        Storage::disk('local')->put('file.txt', 'Contents');
         $files=$request->file('files');
         $data=array();
         foreach ($files as $file) {
-            Storage::put('files/'.
-                $file->getClientOriginalName(),
-                file_get_contents($file->getRealPath())
-            );
+            $file->move(('storage/uploads'),$file->getClientOriginalName());
             array_push($data,[
                 'name'=>$file->getClientOriginalName(),
                 'size'=>$file->getClientSize(),
-                'path'=>'files/'.$file->getClientOriginalName()
+                'path'=>'files/'.$file->getClientOriginalName(),
+                'mime'=>$file->getClientMimeType()
             ]);
         }
         DB::table('files')->insert($data);

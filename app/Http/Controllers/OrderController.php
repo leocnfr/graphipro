@@ -64,26 +64,19 @@ class OrderController extends Controller
 
     public function showAll()
     {
+        $directories = Storage::allDirectories('files');
         $files=Storage::files('files');
-        return view('admin.order.show',compact('files'));
+        return view('admin.order.show',compact('files','directories'));
     }
 
     public function download()
     {
+        $file= public_path(). "/download/info.pdf";
 
-//       $file= Storage::get('files/Amazon.pdf');
-//        return response()->download('storage/uploads/PARTIE 2.jpg.pdf');
-        $file = File::findOrFail(2);
-        header( "Content-type:  application/octet-stream ");
-        header("Accept-Ranges:  bytes");
-        header("Accept-Length: " . $file->size);
-        header("Content-Disposition:  attachment;  filename= " . $file->name);
-        $headers=array([
-            "Content-type"=>"application/octet-stream ",
-            "Accept-Ranges"=>" bytes",
-        ]);
-        //读取数据库中的文件路径
-        return response()->download('storage/uploads/Amazon.pdf', 'Amazon', $headers);
+        $headers = array(
+            'Content-Type: application/pdf',
+        );
 
+        return Response()->download('storage/uploads/PARTIE 2.jpg.pdf', 'filename.pdf', $headers);
     }
 }

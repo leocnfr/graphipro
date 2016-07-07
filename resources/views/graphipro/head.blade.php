@@ -5,7 +5,7 @@
 </div>
 <div style="height:100px; width:100%; background-color:#F2F2F2;">
     <div style="width:1000px; margin:0 auto;">
-        <a href="index.php"><img src="/images/logo1.png" height="100" style=" float:left"> </a>
+        <a href="{{url('/')}}"><img src="/images/logo1.png" height="100" style=" float:left"> </a>
         <div style=" float:left; margin-left:20px; padding-top:12px; position:relative">
             <img src="/images/headt4.png" style=" position:absolute; top:48px; left:167px; z-index:10; " />
             <img id="head11" src="/images/headt1.png" style="position:absolute; left:39px; top:24px; visibility:hidden">
@@ -48,7 +48,10 @@
 
                     <div style="margin-left:14px;">
                         <!--                  Carte      -->
-
+                        @inject('types','App\Type')
+                        @foreach($types::all() as $type)
+                            <li>{{$type->name}}</li>
+                        @endforeach
                         <a href="produit.php" style="">
                             <li>Carte de fidelite</li>
                         </a>
