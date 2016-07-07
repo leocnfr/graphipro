@@ -30,21 +30,59 @@
     .product-item >span.ex{
      color:#999
     }
+    .product-item-info
+    {
+        position: absolute;
+        display: none;
+    }
+    .product-item-info > img
+    {
+        display: inline-block;
+        float: left;
+    }
+    .product-info{
+
+    }
 </style>
 <div class="cat" style=" width:1000px; margin:20px 0 auto;  color:#333; font-size:20px;  position:relative">
     @foreach($products->chunk(6) as $items)
     <div class="list">
         @foreach($items as $item)
-        <div class="product-item">
-            <img src="/storage/uploads/{{$item->productimg}}" alt="" width="140" height="140">
-            <span class="name">{{$item->name}}</span> <br>
-            <span class="ex">100ex à partir de </span>
-            <span class="price">10€</span>
-            <span class="ht">HT</span>
-        </div>
+            <div style="position: relative;float: left">
+            <div class="product-item">
+                <img src="/storage/uploads/{{$item->productimg}}" alt="" width="140" height="140">
+                <span class="name">{{$item->name}}</span> <br>
+                <span class="ex">100ex à partir de </span>
+                <span class="price">10€</span>
+                <span class="ht">HT</span>
+            </div>
+            <div class="product-item-info" >
+                <img src="/storage/uploads/{{$item->productimg}}" alt="" width="200" height="200">
+                <div class="product-info">
+                    {{$item->name}}
+                    @foreach($item->hasPro as $pro)
+                        <span style="font-size:12px; color:#999">{{$pro->count}}
+                            à partir de <span style="font-size:18px; color:#29ABE2">{{$pro->price}}</span>
+                        </span>
+
+                    @endforeach
+                </div>
+            </div>
+            </div>
         @endforeach
     </div>
     @endforeach
 </div>
-
+<script>
+    $('.product-item').hover(function () {
+        $(this).next().show();
+    },function () {
+        $(this).next().hide();
+    });
+    $('.product-item-info').hover(function () {
+        $(this).show();
+    },function () {
+        $(this).hide();
+    })
+</script>
 
