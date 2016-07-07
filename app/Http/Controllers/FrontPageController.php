@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Alert;
 use App\Pricetablelist;
+use App\Pro;
 use App\Products;
 use Illuminate\Http\Request;
 
@@ -36,5 +37,11 @@ class FrontPageController extends Controller
         }
         $formats=array_unique($formats);
         return view('graphipro.produit_template',compact('product','formats'));
+    }
+
+    public function pro($id)
+    {
+        $pro=Pro::findOrFail($id);
+        return view('graphipro.produit_template',compact('pro'));
     }
 }

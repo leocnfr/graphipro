@@ -8,7 +8,7 @@
 
     <center>
         <div style="padding:8px; background-color:#29ABE2; border-radius:3px; width:80px; margin-top:5px;">
-            <a  style="color:#FFF; text-decoration:none;; font-size:14px;"  type="button">Commandez</a>
+            <a href="{{url('/promotion/'.$pro->id)}}" style="color:#FFF; text-decoration:none;; font-size:14px;"  type="button">Commandez</a>
         </div>
     </center>
 </div>
