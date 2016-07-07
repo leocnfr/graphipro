@@ -25,11 +25,12 @@
                 <button style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; float:left; " id="panier">Ajouter au panier</button>
             </form>
         </div>
-        @if($product->type_id==2)
+        @if($product->type_id==24)
             @include('graphipro.product_type2')
-        @elseif($product->type_id==22)
+        @else
             @include('graphipro.produit_type1')
         @endif
+
     </div>
 
 </div>
