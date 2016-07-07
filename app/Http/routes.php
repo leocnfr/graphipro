@@ -126,6 +126,8 @@ Route::get('/admin/users/person','BackpageController@PersonClient');
 Route::get('/admin/users/societe','BackpageController@SocieteClient');
 
 
+
+
 //前台页面
 Route::get('/','FrontPageController@index');
 

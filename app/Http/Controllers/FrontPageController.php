@@ -42,6 +42,6 @@ class FrontPageController extends Controller
     public function pro($id)
     {
         $pro=Pro::findOrFail($id);
-        return view('graphipro.produit_template',compact('pro'));
+        return view('graphipro.promotion',compact('pro'));
     }
 }

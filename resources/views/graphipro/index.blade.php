@@ -26,7 +26,7 @@
 
 <div style="float:left; width:626px;">
     <div style="font-size:25px; color:#FFF; padding:5px; background-color:#29ABE2; width:616px; margin-top:20px;"><img src="/images/promo.png" height="20" /> PROMOTIONS</div>
-    @include('graphipro.promotion')
+    @include('graphipro.promotions')
 </div>
 <div style="float:left; width:364px; margin-left:10px; color:#666;">
     <div style="font-size:25px; color:#FFF; padding:5px; background-color:#999; width:354px; margin-top:20px;"><img src="/images/point.png" height="20" /> NOS POINT FORTS</div>

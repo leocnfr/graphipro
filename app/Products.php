@@ -17,4 +17,5 @@ class Products extends Model
     {
         return $this->belongsTo('App\Type','type_id');
     }
+
 }

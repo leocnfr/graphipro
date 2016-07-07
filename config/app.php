@@ -162,6 +162,8 @@ return [
         //cart
         'Overtrue\LaravelShoppingCart\ServiceProvider',
 
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
+
 
     ],
 
