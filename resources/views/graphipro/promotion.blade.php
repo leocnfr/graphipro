@@ -19,7 +19,7 @@
                     <td valign="top" width="450">
                         <!--					<div style="font-size:20px; color:#29ABE2; margin-top:20px;">1. Choisir les options d'impression</div><br />-->
                         <div style="padding:10px; width:400px; border-radius:3px; background-color:#F2F2F2; line-height:35px; color:#000; font-size:18px;">
-                            {{{$pro->des}}}
+                            {!! $pro->des !!}
                         </div>
                         <div style="font-size:20px; color:#29ABE2; margin-top:20px;">2. Option de livraison</div><br />
                         <div style="padding:10px; width:400px; border-radius:3px; background-color:#F2F2F2;">

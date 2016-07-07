@@ -27,7 +27,7 @@
     	<thead>
     		<tr>
     			<th>产品</th>
-                <th>描述</th>
+                <th style="width: 46vw">描述</th>
                 <th>原价</th>
                 <th>折扣价</th>
                 <th>是否显示</th>
@@ -39,7 +39,7 @@
                     <tr>
                         <td>{{$pro->product->name}}</td>
                         <td>
-                            {{$pro->des}}
+                            {!! $pro->des !!}
                         </td>
                         <td>
                             {{$pro->price}}
