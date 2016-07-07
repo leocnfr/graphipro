@@ -49,6 +49,12 @@ Route::group(['middleware' => ['admin']], function () {
     Route::post('/admin/promotion','PromotionController@store');
     Route::delete('/admin/promotion/{id}','PromotionController@destroy');
     Route::put('/admin/promotion/{id}','PromotionController@update');
+    //产品的promotion
+    Route::get('/admin/pro','ProController@index');
+    Route::post('/admin/pro','ProController@store');
+    Route::get('/admin/pro/{id}','ProController@edit');
+    Route::post('/admin/pro/{id}','ProController@update');
+    Route::delete('/admin/pro/{id}','ProController@destroy');
     //finish time
     Route::get('/admin/finish-time','TimeController@show');
     Route::get('/admin/finish-time/show','TimeController@showAll');

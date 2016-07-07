@@ -61,6 +61,9 @@
                 <a href="{{url('admin/finish-time')}}"><i class="fa fa-clock-o" aria-hidden="true"></i>
                     完成时间</a>
             </li>
+                <li class="treeview">
+                    <a href="{{url('admin/pro')}}">产品折扣</a>
+                </li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
