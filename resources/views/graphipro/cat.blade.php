@@ -57,6 +57,11 @@
     {
         position: relative;float: left
     }
+    .btn-command
+    {
+        padding:8px; background-color:#29ABE2; border-radius:3px; position:absolute; right:10px; bottom:10px;
+        color: white;
+    }
 </style>
 <div class="cat" style=" width:1000px; margin:20px 0 auto;  color:#333; font-size:20px;  position:relative">
     @foreach($products->chunk(6) as $items)
@@ -78,9 +83,9 @@
                         <span style="font-size:12px; color:#999">{{$pro->count}}
                             à partir de <span style="font-size:18px; color:#29ABE2">{{$pro->price}}€</span> <br>
                         </span>
-
                     @endforeach
                 </div>
+                <a href="{{url('/product/'.$item->id)}}" class="btn-command">Commande</a>
             </div>
             </div>
         @endforeach
