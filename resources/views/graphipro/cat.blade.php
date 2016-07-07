@@ -33,7 +33,7 @@
     <div class="list">
         @foreach($items as $item)
         <div class="product-item">
-            <img src="/storage/uploads/{{$item->procutimg}}" alt="" width="140" height="140">
+            <img src="/storage/uploads/{{$item->procutdimg}}" alt="" width="140" height="140">
             <span class="name">{{$item->name}}</span> <br>
             <span class="ex">100ex à partir de </span>
             <span class="price">10€</span>
