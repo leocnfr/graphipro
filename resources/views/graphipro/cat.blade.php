@@ -65,7 +65,7 @@
             <div class="product-item-info" >
                 <img src="/storage/uploads/{{$item->productimg}}" alt="" width="200" height="200">
                 <div class="product-info">
-                    {{$item->name}}
+                    {{$item->name}} <br>
                     @foreach($item->hasPro as $pro)
                         <span style="font-size:12px; color:#999">{{$pro->count}}
                             à partir de <span style="font-size:18px; color:#29ABE2">{{$pro->price}}</span>
