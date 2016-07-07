@@ -50,15 +50,19 @@
         float: right;
         width: 140px;
     }
-    .list > .product-item-info:last-child{
-        right: 0px;
+    .list > .product-table:last-child >.product-item-info{
+        right: -23px;
+    }
+    .product-table
+    {
+        position: relative;float: left
     }
 </style>
 <div class="cat" style=" width:1000px; margin:20px 0 auto;  color:#333; font-size:20px;  position:relative">
     @foreach($products->chunk(6) as $items)
     <div class="list">
         @foreach($items as $item)
-            <div style="position: relative;float: left">
+            <div class="product-table">
             <div class="product-item">
                 <img src="/storage/uploads/{{$item->productimg}}" alt="" width="140" height="140">
                 <span class="name">{{$item->name}}</span> <br>
