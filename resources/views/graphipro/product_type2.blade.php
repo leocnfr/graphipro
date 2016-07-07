@@ -40,9 +40,7 @@
 
             <div style="font-size:20px; color:#29ABE2; margin-top:20px;">
                 <span v-if="m2<10">3.Option de livraison</span>
-                2.Option de livraison
-            </div
-            ><br />
+            </div><br />
             <div style="padding:10px; width:400px; border-radius:3px; background-color:#F2F2F2;">
                 Choix le moyen de livraison:
                 <select name="jumpMenu" id="jumpMenu" style="width:220px;">
