@@ -174,6 +174,11 @@
                     return (this.quantity*this.m2*parseInt(this.materiels.price)*1.2).toFixed(2);
                 }
             }
+        },
+        methods:{
+            calculatePrice:function () {
+                
+            }
         }
 
     });

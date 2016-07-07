@@ -22,4 +22,9 @@ class Products extends Model
     {
         return $this->hasMany(Promotion::class,'product_id');
     }
+
+    public function hasSpec()
+    {
+        return $this->hasMany(SpecialPrice::class,'product_id');
+    }
 }
