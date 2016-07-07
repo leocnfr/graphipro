@@ -25,7 +25,10 @@
     }
     .product-item >span.price{
         font-size:18px;
-
+        color: #29ABE2;
+    }
+    .product-item >span.ex{
+     color:#999
     }
 </style>
 <div class="cat" style=" width:1000px; margin:20px 0 auto;  color:#333; font-size:20px;  position:relative">
