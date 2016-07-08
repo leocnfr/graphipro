@@ -9,7 +9,7 @@
 
         </div>
 
-        @if($product->type_id==24)
+        @if($product->id==25)
             <div style="font-size:18px; color:#29ABE2; float:right; margin-top:20px; margin-right:45px; position:relative; padding:10px; border:thin ridge #29ABE2; border-radius:3px;">
                 Prix total:<br />
                 <form action="{{url('/panier')}}" method="post">
