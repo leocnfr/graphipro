@@ -49,6 +49,7 @@ class JsonController extends Controller
             ->where('product_id',$request->get('proid'))
             ->where('papiers','like','%'.$request->get('papier').'%')
             ->get();
+        dd($tables);
         $imprimers=array();
         foreach ($tables as $table) {
             $imprimers= array_push($table->imprimers,$imprimers);
