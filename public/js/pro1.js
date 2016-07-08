@@ -175,12 +175,11 @@ $('#papier').change(function () {
 });
 $('#imprimer').change(function () {
     getPell(proid)
-})
+});
 $('#pelliculage').change(function () {
     getPrice(proid);
 
 });
-$
 
 getPapier(proid);
 getImprimer(proid);
