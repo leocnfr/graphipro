@@ -54,7 +54,14 @@ class JsonController extends Controller
             array_push($imprimers,$table->imprimers);
         }
         $imprimers=array_unique($imprimers);
-        dd($imprimers);
+        foreach ($imprimers as $imprimer) {
+            if ($imprimer==1)
+            {
+                echo 'Recto';
+            }else{
+                echo 'Recto et verso';
+            }
+        }
     }
 
     public function getPelle(Request $request)
