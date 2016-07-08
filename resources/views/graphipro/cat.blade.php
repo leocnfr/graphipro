@@ -62,12 +62,12 @@
     }
     .btn-command
     {
-        padding:8px;  border-radius:3px; position:absolute; right:10px; bottom:10px;
+        position:relative;
+        margin: 0px auto;
+        text-align: center;
         color: white;
         font-size: 12px;
         top:50%;
-        left: 40%;
-
     }
     .list:nth-child(n+3)
     {
