@@ -138,6 +138,7 @@ class AuthController extends Controller
             alert()->success('Bonjour,'.Auth::guard('web')->user()->prenom, 'Success!');
             return redirect('/');
         }else{
+            alert()->error('您的账号或密码有误','登录失败');
             return redirect()->back()->withInput();
         }
     }
