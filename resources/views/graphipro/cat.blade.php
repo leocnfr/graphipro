@@ -12,6 +12,7 @@
         margin:10px 0px 0px 23px;
         text-align: center;
         float: left;
+        cursor: pointer;
     }
     .product-item>img
     {
@@ -46,12 +47,14 @@
         display: inline-block;
         float: left;
     }
-    .product-info{
-        float: right;
+    .command-div
+    {
         width: 140px;
-    }
-    .list > .product-table:last-child >.product-item-info{
-        right: -23px;
+        height: 140px;
+        position:absolute;
+        display: none;
+        background: rgba(0,0,0,0.6);
+        margin:10px 0px 0px 23px;
     }
     .product-table
     {
@@ -59,8 +62,12 @@
     }
     .btn-command
     {
-        padding:8px; background-color:#29ABE2; border-radius:3px; position:absolute; right:10px; bottom:10px;
+        padding:8px;  border-radius:3px; position:absolute; right:10px; bottom:10px;
         color: white;
+        font-size: 12px;
+        top:50%;
+        left: 40%;
+
     }
     .list:nth-child(n+3)
     {
@@ -72,25 +79,16 @@
     <div class="list">
         @foreach($items as $item)
             <div class="product-table">
-            <div class="product-item">
-                <img src="/storage/uploads/{{$item->productimg}}" alt="" width="140" height="140">
-                <span class="name">{{$item->name}}</span> <br>
-                <span class="ex">100ex à partir de </span>
-                <span class="price">10€</span>
-                <span class="ht">HT</span>
-            </div>
-            <div class="product-item-info" >
-                <img src="/storage/uploads/{{$item->productimg}}" alt="" width="200" height="200">
-                <div class="product-info">
-                    {{$item->name}} <br>
-                    @foreach($item->hasPro as $pro)
-                        <span style="font-size:12px; color:#999">{{$pro->count}}
-                            à partir de <span style="font-size:18px; color:#29ABE2">{{$pro->price}}€</span> <br>
-                        </span>
-                    @endforeach
+                <div class="product-item">
+                    <img src="/storage/uploads/{{$item->productimg}}" alt="" width="140" height="140">
+                    <span class="name">{{$item->name}}</span> <br>
+                    <span class="ex">100ex à partir de </span>
+                    <span class="price">10€</span>
+                    <span class="ht">HT</span>
                 </div>
-                <a href="{{url('/product/'.$item->id)}}" class="btn-command">Commande</a>
-            </div>
+                <div class="command-div">
+                    <a href="{{url('/product/'.$item->id)}}" class="btn-command">Commande</a>
+                </div>
             </div>
         @endforeach
     </div>
@@ -102,7 +100,7 @@
     },function () {
         $(this).next().hide();
     });
-    $('.product-item-info').hover(function () {
+    $('.command-div').hover(function () {
         $(this).show();
     },function () {
         $(this).hide();
