@@ -44,6 +44,22 @@ function getPapier(proid) {
     });
 
 }
+function getImprimer(proid) {
+    var format=$('#formate').val();
+    var papier=$('#papier').val();
+    $.ajax({
+        type:"get",
+        url: "/imprimer",
+        data:{
+            format : format,
+            proid : proid,
+            papier:papier,
+        },
+        success:function (res) {
+            console.log(res);
+        }
+    })
+}
 function getPell(proid) {
     var format=$('#formate').val();
     var papier=$('#papier').val();
@@ -167,4 +183,5 @@ $('#pelliculage').change(function () {
 $
 
 getPapier(proid);
+getImprimer(proid);
 getPell(proid);

@@ -43,7 +43,21 @@ class JsonController extends Controller
         }
     }
 
-
+    public function getImprimer(Request $request)
+    {
+        $tables=Pricetablelist::where('formats','like','%'.$request->get('formate').'%')
+            ->where('product_id',$request->get('proid'))
+            ->where('papiers','like','%'.$request->get('papier').'%')
+            ->get();
+        $imprimers=array();
+        foreach ($tables as $table) {
+            $imprimers= array_merge(json_decode($table->imprimer),$imprimers);
+        }
+        $imprimers=array_unique($imprimers);
+        foreach ($imprimers as $imprimer) {
+            echo  '<option value="'.$imprimer.'">'.Pelliculage::find($imprimer)->imprimer.'</option>';
+        }
+    }
 
     public function getPelle(Request $request)
     {
