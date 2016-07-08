@@ -164,8 +164,8 @@
             ]
         },
         computed:{
-            m2: calculateSize,
-            price: calculatePrice
+            m2: calculateSize(),
+            price: calculatePrice()
         },
         methods:{
             calculatePrice:function () {
