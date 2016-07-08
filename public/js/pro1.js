@@ -57,7 +57,8 @@ function getImprimer(proid) {
             papier:papier,
         },
         success:function (res) {
-            console.log(res);
+            $('#imprimer').html(res);
+            getPell(proid);
         }
     })
 }
@@ -183,4 +184,3 @@ $('#pelliculage').change(function () {
 });
 
 getPapier(proid);
-getPell(proid);
