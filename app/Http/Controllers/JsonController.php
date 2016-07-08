@@ -51,7 +51,7 @@ class JsonController extends Controller
             ->get();
         $imprimers=array();
         foreach ($tables as $table) {
-            $imprimers= array_merge(json_decode($table->imprimer),$imprimers);
+            $imprimers= array_merge(json_decode($table->imprimers),$imprimers);
         }
         $imprimers=array_unique($imprimers);
         foreach ($imprimers as $imprimer) {
