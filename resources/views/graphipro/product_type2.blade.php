@@ -185,4 +185,7 @@
     vm.$watch('hauter', function (val) {
         $('#s-hauter').val(val);
     });
+    vm.$watch('price', function (val) {
+        $('#price').val(val);
+    });
 </script>
