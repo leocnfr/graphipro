@@ -172,11 +172,13 @@
                     var val=(0.5*this.quantity*parseInt(this.materiels.price)*1.2).toFixed(2);
                     $('#price').val(val);
                     $('#showprice').val(val);
+                    console.log(val);
                     return val;
                 }else {
                     var val=(this.quantity*this.m2*parseInt(this.materiels.price)*1.2).toFixed(2);
                     $('#price').val(val);
                     $('#showprice').val(val);
+                    console.log(val);
                     return val;
                 }
             }
