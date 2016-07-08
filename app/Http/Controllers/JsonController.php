@@ -90,7 +90,7 @@ class JsonController extends Controller
             ->where('imprimers',$request->get('imprimer'))
             ->where('pelliculages','like','%'.$request->get('pelliculage').'%')
             ->first();
-        $prices=Price::where('price_table_list_id',$tables->id)->get();
+        $prices=Price::where('price_table_list_id',$tables->id)->orderBy('count')->get();
         $times=FinishTime::where('price_table_list_id',$tables->id)->first();
         $array=array('prices'=>$prices,'times'=>$times);
         return json_encode($array);
