@@ -57,9 +57,10 @@ class JsonController extends Controller
         foreach ($imprimers as $imprimer) {
             if ($imprimer==1)
             {
-                echo 'Recto';
+
+                echo  '<option value="'.$imprimer.'">'.'Recto'.'</option>';
             }else{
-                echo 'Recto et verso';
+                echo  '<option value="'.$imprimer.'">'.'Recto et verso'.'</option>';
             }
         }
     }
