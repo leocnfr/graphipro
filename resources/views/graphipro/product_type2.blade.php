@@ -170,15 +170,9 @@
             price: function () {
                 if (this.m2<=0.3){
                     var val=(0.5*this.quantity*parseInt(this.materiels.price)*1.2).toFixed(2);
-                    $('#price').val(val);
-                    $('#showprice').html(val);
-                    console.log(val);
                     return val;
                 }else {
                     var val=(this.quantity*this.m2*parseInt(this.materiels.price)*1.2).toFixed(2);
-                    $('#price').val(val);
-                    $('#showprice').html(val);
-                    console.log(val);
                     return val;
                 }
             }
@@ -193,5 +187,8 @@
     vm.$watch('hauter', function (val) {
         $('#s-hauter').val(val);
     });
-
+    vm.$watch('price', function (val) {
+        $('#price').val(val);
+        $('#showprice').html(val);
+    });
 </script>
