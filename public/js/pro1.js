@@ -39,6 +39,7 @@ function getPapier(proid) {
         },
         success: function (res) {
             $('#papier').html(res);
+            getImprimer(proid);
             getPrice(proid);
         }
     });
@@ -182,5 +183,4 @@ $('#pelliculage').change(function () {
 });
 
 getPapier(proid);
-getImprimer(proid);
 getPell(proid);
