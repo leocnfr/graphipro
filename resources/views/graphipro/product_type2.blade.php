@@ -134,7 +134,7 @@
 </table>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.js"></script>
 <script>
-    new Vue({
+    var vm =new Vue({
         el:'body',
         data:{
             larger:'',
@@ -166,7 +166,6 @@
         computed:{
             m2: function () {
                 return (this.larger*this.hauter/10000).toFixed(2);
-                $('#m2').val((this.larger*this.hauter/10000).toFixed(2));
             },
             price: function () {
                 if (this.m2<=0.3){
@@ -177,6 +176,13 @@
             }
         }
 
+
     });
 
+    vm.$watch('larger', function (val) {
+        $('#s-larger').val(val);
+    });
+    vm.$watch('hauter', function (val) {
+        $('#s-hauter').val(val);
+    });
 </script>
