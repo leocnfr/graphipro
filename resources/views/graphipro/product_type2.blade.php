@@ -170,7 +170,7 @@
             price: function () {
                 if (this.m2<=0.3){
                     var val=(0.5*this.quantity*parseInt(this.materiels.price)*1.2).toFixed(2);
-                    $('.price').val(val);
+                    $('#price').val(val);
                     $('#showprice').val(val);
                     return val;
                 }else {
