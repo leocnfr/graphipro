@@ -20,6 +20,7 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
+        dd($request->all());
         $product_id=$request->get('product_id');
         $product_name=Products::find($request->get('product_id'))->name;
         $img=Products::find($request->get('product_id'))->productimg;
@@ -42,7 +43,7 @@ class OrderController extends Controller
                 ]);
         }elseif (in_array($product_id,array(17,19,18))){
                 $size=$request->get('size');
-                
+
         }else
         {
             $format=Format::find($request->get('format'))->format;

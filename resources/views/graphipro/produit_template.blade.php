@@ -18,7 +18,8 @@
                     <input type="hidden" id="price" name="price" v-model="price">
                     <input type="hidden" id="s-larger" name="s-larger">
                     <input type="hidden" id="s-hauter" name="s-hauter">
-                    <input type="hidden" id="ex" name="ex">
+                    <input type="hidden" name="materiels" v-model="materiels.text">
+                    <input type="hidden" id="ex" name="ex" v-model="quantity">
                     <input type="hidden" id="s_design_price" name="design_price">
                     <span style="font-size:35px;" id="showprice">@{{price}}€</span> TTC <br /><br />
                     <button style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; float:left; " id="panier">Ajouter au panier</button>
