@@ -15,12 +15,12 @@
                 <form action="{{url('/panier')}}" method="post">
                     {!! csrf_field() !!}
                     <input type="hidden" id="product_id" name="product_id" value="{{$product->id}}">
-                    <input type="hidden" id="price" name="price">
+                    <input type="hidden" id="price" name="price" v-model="price">
                     <input type="hidden" id="s-larger" name="s-larger">
                     <input type="hidden" id="s-hauter" name="s-hauter">
                     <input type="hidden" id="ex" name="ex">
                     <input type="hidden" id="s_design_price" name="design_price">
-                    <span style="font-size:35px;" id="showprice">0€</span> TTC <br /><br />
+                    <span style="font-size:35px;" id="showprice" v-model="price">0€</span> TTC <br /><br />
                     <button style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; float:left; " id="panier">Ajouter au panier</button>
                 </form>
             </div>
