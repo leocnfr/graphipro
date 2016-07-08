@@ -65,6 +65,7 @@
         position:relative;
         margin: 0px auto;
         text-align: center;
+        display: block;
         color: white;
         font-size: 12px;
         top:50%;
