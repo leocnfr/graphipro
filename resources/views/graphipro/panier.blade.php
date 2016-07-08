@@ -19,8 +19,13 @@
                 <img src="/storage/uploads/{{$cart->img}}" style="float:left; height:100px;"/>
 
                 <div style="float:left; width:200px; margin-left:10px; color:#999; height:100px; border-right:thin ridge #F2F2F2; padding-right:15px">
+
                     <span style="font-size:20px; color:#29ABE2;">{{$cart->name}}</span><br/>
-                    {{$cart->format}}/{{$cart->papier}}/{{$cart->imprimer}}/{{$cart->pelliculage}}
+                    @if($cart->id==25)
+                        @elseif(in_array($cart->id,array(17,19,18)))
+                        @else
+                        {{$cart->format}}/{{$cart->papier}}/{{$cart->imprimer}}/{{$cart->pelliculage}}
+                    @endif
                 </div>
                 <div style="float:left;  margin-left:25px;">
 
