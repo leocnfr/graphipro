@@ -20,7 +20,6 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->all());
         $product_id=$request->get('product_id');
         $product_name=Products::find($request->get('product_id'))->name;
         $img=Products::find($request->get('product_id'))->productimg;
