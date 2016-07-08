@@ -50,7 +50,7 @@
     <!--- 1 --->
     </div>
 
-    <div style="font-size:18px; color:#29ABE2; float:right; margin-top:20px; margin-right:45px; position:relative; padding:10px; border:thin ridge #29ABE2; border-radius:3px;width: 145.36px">
+    <div style="font-size:18px; color:#29ABE2; float:right; margin-top:20px; margin-right:45px; position:relative; padding:10px; border:thin ridge #29ABE2; border-radius:3px;min-width: 145.36px">
         {{$count}}article(s):<br/>
         <span style="font-size:35px;">{{$total_price}}</span> TTC
         <br/>
