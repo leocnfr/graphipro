@@ -54,9 +54,7 @@ class JsonController extends Controller
             $imprimers= array_merge(json_decode($table->imprimers),$imprimers);
         }
         $imprimers=array_unique($imprimers);
-        foreach ($imprimers as $imprimer) {
-            echo  '<option value="'.$imprimer.'">'.Pelliculage::find($imprimer)->imprimer.'</option>';
-        }
+        dd($imprimers);
     }
 
     public function getPelle(Request $request)
