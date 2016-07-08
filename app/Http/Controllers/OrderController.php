@@ -68,15 +68,7 @@ class OrderController extends Controller
         return redirect('product/'.$product_id);
     }
 
-    public function showPanier()
-    {
-//        dd(Cart::all());
-        $carts=Cart::all();
-        $count=Cart::countRows();
-        $total_price=number_format(Cart::totalPrice(),2);
-        return view('graphipro.panier',compact('carts','count','total_price'));
-    }
-
+   
     public function destroy(Request $request)
     {
         Cart::remove($request->get('raw_id'));

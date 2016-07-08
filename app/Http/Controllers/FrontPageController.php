@@ -8,6 +8,7 @@ use App\Products;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Cart;
 
 class FrontPageController extends Controller
 {
@@ -45,4 +46,13 @@ class FrontPageController extends Controller
         $pro=Pro::findOrFail($id);
         return view('graphipro.promotion',compact('pro'));
     }
+    public function showPanier()
+    {
+//        dd(Cart::all());
+        $carts=Cart::all();
+        $count=Cart::countRows();
+        $total_price=number_format(Cart::totalPrice(),2);
+        return view('graphipro.panier',compact('carts','count','total_price'));
+    }
+
 }

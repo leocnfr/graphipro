@@ -152,7 +152,7 @@ Route::get('/price','JsonController@getPrice');
 //存储购物车
 Route::post('/panier','OrderController@store');
 //购物车页面
-Route::get('/panier','OrderController@showPanier');
+Route::get('/panier','FrontPageController@showPanier');
 //删除购物车内容
 Route::delete('/panier','OrderController@destroy');
 

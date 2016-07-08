@@ -77,7 +77,7 @@
             </a>
         </div>
         <div style="float:right;  border-radius:0 0 8px 8px; background-color:#29ABE2; height:45px; color:#FFF; padding:5px;">
-            <a href="panier.php" style="color:#FFF;">
+            <a href="{{url('/panier')}}" style="color:#FFF;">
                 <img src="images/pannier.png" height="40" style="float:left;">
 
                 <div style="float:left; margin-left:5px;"><span style="font-size:18px;">MON PANIER</span><br>
