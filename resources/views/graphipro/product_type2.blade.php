@@ -164,20 +164,16 @@
             ]
         },
         computed:{
-            m2: calculateSize(),
-            price: calculatePrice()
-        },
-        methods:{
-            calculatePrice:function () {
+            m2: function () {
+                return (this.larger*this.hauter/10000).toFixed(2);
+                $('#m2').val((this.larger*this.hauter/10000).toFixed(2));
+            },
+            price: function () {
                 if (this.m2<=0.3){
                     return (0.5*this.quantity*parseInt(this.materiels.price)*1.2).toFixed(2);
                 }else {
                     return (this.quantity*this.m2*parseInt(this.materiels.price)*1.2).toFixed(2);
                 }
-            },
-            calculateSize:function () {
-                return (this.larger*this.hauter/10000).toFixed(2);
-
             }
         }
 
