@@ -22,7 +22,7 @@
 
                     <span style="font-size:20px; color:#29ABE2;">{{$cart->name}}</span><br/>
                     @if($cart->id==25)
-                        {{$cart->larger}}cm*{{$cart->hauter}}cm/{{$cart->materiels}}/{{$cart->ex}}
+                        {{$cart->larger}}cm*{{$cart->hauter}}cm/{{$cart->materiels}}/{{$cart->ex}}ex
                     @elseif(in_array($cart->id,array(17,19,18)))
                         @else
                         {{$cart->format}}/{{$cart->papier}}/{{$cart->imprimer}}/{{$cart->pelliculage}}
