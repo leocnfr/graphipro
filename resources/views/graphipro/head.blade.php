@@ -90,8 +90,7 @@
                 </div>
             </a>
         </div>
-        <a href="login.php"
-           style="padding:5px; float:right; border-radius:0 0 8px 8px; background-color:#29ABE2; height:45px; font-size:16px; color:#FFF; margin-right:10px;">
+        <a href="{{url('/login')}}" style="padding:5px; float:right; border-radius:0 0 8px 8px; background-color:#29ABE2; height:45px; font-size:16px; color:#FFF; margin-right:10px;">
             <center><img src="images/login.png">Login</center>
         </a>
     </div>

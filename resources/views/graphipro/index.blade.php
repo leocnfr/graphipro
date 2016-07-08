@@ -4,7 +4,7 @@
 
     <!--img-->
     <div class="content">
-        <div class="slider" id="slider">
+        <div class="slider" id="slider" >
             <ul class="sliderbox">
                 <li>
                     <a href="#"><img src="/images/1.jpg" ></a>

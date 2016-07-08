@@ -89,7 +89,7 @@ pre{background:#eee; padding:10px;}
 .menu ul li.active{background: #fff;}
 .menu ul li a{line-height:32px; padding:0 4px;}
 .content{width:1000px; margin:0 auto;}
-.slider{height:315px; margin:0 auto; overflow:hidden; position:relative;}
+.slider{height:315px; margin:0 auto; overflow:hidden; position:relative;  clear: both;}
 .sliderbox{position:relative;}/*必须加这句css,否则向左右，上下滚动时会没有效果*/
 .slidernav{position:absolute; right:4px; bottom:5px; z-index:1;}
 .slidernav li{float:left; width:24px;}
