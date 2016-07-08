@@ -161,3 +161,5 @@ Route::post('/payment','PaymentController@payment');
 Route::get('/checkout','PaymentController@checkout');
 //产品的promotion
 Route::get('/promotion/{id}','FrontPageController@pro');
+//compte
+Route::get('/compte','FrontPageController@compte');

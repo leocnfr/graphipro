@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Cart;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,6 +15,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        $carts=Cart::all();
+        $count=Cart::countRows();
+        $total_price=number_format(Cart::totalPrice(),2);
+        view()->share(['count'=>$count,'total_price'=>$total_price,'carts'=>$carts]);
     }
 
     /**

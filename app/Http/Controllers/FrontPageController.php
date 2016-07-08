@@ -55,4 +55,8 @@ class FrontPageController extends Controller
         return view('graphipro.panier',compact('carts','count','total_price'));
     }
 
+    public function compte()
+    {
+        return view('graphipro.compte');
+    }
 }

@@ -63,36 +63,43 @@
         </div>
         <div class="menu1" >
             <a class="aa" href="#" onmouseover="$(this).next().show()" onmouseout="$(this).next().hide()">
-                <center>Gastronomie & <br>Sac publicité <img src="images/fleche.png"></center>
+                <center>Gastronomie & <br>Sac publicité <img src="/images/fleche.png"></center>
             </a>
         </div>
         <div class="menu1" >
             <a class="aa" href="#" onmouseover="$(this).next().show()" onmouseout="$(this).next().hide()">
-                <center>Impression publicitaire <img src="images/fleche.png"></center>
+                <center>Impression publicitaire <img src="/images/fleche.png"></center>
             </a>
         </div>
         <div class="menu1" >
             <a class="aa" href="#" onmouseover="$(this).next().show()" onmouseout="$(this).next().hide()">
-                <center>Stands & <br>Présentoirs <img src="images/fleche.png"></center>
+                <center>Stands & <br>Présentoirs <img src="/images/fleche.png"></center>
             </a>
         </div>
         <div style="float:right;  border-radius:0 0 8px 8px; background-color:#29ABE2; height:45px; color:#FFF; padding:5px;">
             <a href="{{url('/panier')}}" style="color:#FFF;">
-                <img src="images/pannier.png" height="40" style="float:left;">
+                <img src="/images/pannier.png" height="40" style="float:left;">
 
                 <div style="float:left; margin-left:5px;"><span style="font-size:18px;">MON PANIER</span><br>
                    <span id="head-item">
+                       {{$count}}
                    </span>
                     article(s)
                     <span id="head-price">
-
+                        {{$total_price}}
                     </span> €
                 </div>
             </a>
         </div>
-        <a href="{{url('/login')}}" style="padding:5px; float:right; border-radius:0 0 8px 8px; background-color:#29ABE2; height:45px; font-size:16px; color:#FFF; margin-right:10px;">
-            <center><img src="images/login.png">Login</center>
+        @if (Auth::guard('web')->check())
+        <a href="{{url('/compte')}}" style="padding:5px; float:right; border-radius:0 0 8px 8px; background-color:#29ABE2; height:45px; font-size:16px; color:#FFF; margin-right:10px;">
+            <center><img src="/images/login.png">Espace-Client</center>
         </a>
+            @else
+            <a href="{{url('/login')}}" style="padding:5px; float:right; border-radius:0 0 8px 8px; background-color:#29ABE2; height:45px; font-size:16px; color:#FFF; margin-right:10px;">
+                <center><img src="/images/login.png">Login</center>
+            </a>
+        @endif
     </div>
 </div>
 <script src="http://www.greensock.com/js/src/TweenMax.min.js" type="text/javascript"></script>

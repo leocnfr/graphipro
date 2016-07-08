@@ -93,7 +93,7 @@ class AuthController extends Controller
                 'address'=>$request->get('address'),
                 'post'=>$request->get('post'),
                 'ville'=>$request->get('ville'),
-                'password'=>bcrypt($request->get('passeword')),
+                'password'=>bcrypt($request->get('password')),
                 'type'=>$type
             ]);
         }else{
@@ -118,13 +118,27 @@ class AuthController extends Controller
                 'address'=>$request->get('address'),
                 'post'=>$request->get('post'),
                 'ville'=>$request->get('ville'),
-                'password'=>bcrypt($request->get('passeword')),
+                'password'=>bcrypt($request->get('password')),
                 'type'=>$type,
                 'societe'=>$request->get('societe')
             ]);
         }
         alert()->success('You have been  inscription.', 'Success!');
-
         return view('graphipro.index');
+    }
+
+    public function login(Request $request)
+    {
+        $this->validate($request,[
+            'email'=>'required|email',
+            'password'=>'required|min:6'
+        ]);
+
+        if(Auth::guard('web')->attempt(array('email' => $request->get('email'), 'password' => $request->get('password')))){
+            alert()->success('Bonjour,'.Auth::guard('web')->user()->prenom, 'Success!');
+            return redirect('/');
+        }else{
+            return redirect()->back()->withInput();
+        }
     }
 }

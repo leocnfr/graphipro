@@ -15,6 +15,11 @@
 @include('graphipro.head')
 @yield('content')
 @include('graphipro.foot')
+@if (Session::has('sweet_alert.alert'))
+    <script>
+        swal({!! Session::get('sweet_alert.alert') !!});
+    </script>
+@endif
 <script>
     $(function(){
         $("#slider").powerSlider({handle:"fadeTo"});
