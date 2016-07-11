@@ -157,7 +157,7 @@ Route::post('/panier','OrderController@store');
 //购物车页面
 Route::get('/panier','FrontPageController@showPanier');
 //删除购物车内容
-Route::delete('/panier','OrderController@destroy');
+Route::get('/panier/{rawid}','OrderController@destroy');
 
 //付款
 Route::post('/payment','PaymentController@payment');

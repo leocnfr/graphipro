@@ -9,12 +9,7 @@
             @foreach($carts as $cart)
             <div style="width:690px; padding:10px; position:relative; border:thin ridge #29ABE2; border-radius:3px; font-size:14px; color:#666; height:100px; margin-top:20px;" >
                 <div style="position:absolute; right:10px; top:10px;cursor:pointer;">
-                    {{--<form action="{{url('/panier')}}" method="post">--}}
-                        {{--{!! csrf_field()!!}--}}
-                        {{--{!! method_field('DELETE') !!}--}}
-                        {{--<input type="hidden" name="raw_id" value="{{$cart->__raw_id}}">--}}
-                        {{--<input name="submit" type="image" value="ee" src="/images/ferme.png" />--}}
-                    {{--</form>--}}
+                    <a href="{{url('/panier/'.$cart->__raw_id)}}"><img src="/images/ferme.png" alt=""></a>
                 </div>
                 <img src="/storage/uploads/{{$cart->img}}" style="float:left; height:100px;"/>
 

@@ -78,10 +78,9 @@ class OrderController extends Controller
     }
 
    
-    public function destroy(Request $request)
+    public function destroy($rawid)
     {
-        Cart::remove($request->get('raw_id'));
-
+        Cart::remove($rawid);
         return redirect()->back();
     }
 
@@ -102,4 +101,6 @@ class OrderController extends Controller
 
         return Response()->download('storage/uploads/PARTIE 2.jpg.pdf', 'filename.pdf', $headers);
     }
+
+
 }
