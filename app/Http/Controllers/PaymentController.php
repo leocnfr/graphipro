@@ -22,18 +22,17 @@ class PaymentController extends Controller
 //            echo 'mastercard';
 //        }
         $files=$request->file('files');
-        dd($files);
-//        $data=array();
-//        foreach ($files as $file) {
-//            $file->move(('storage/uploads'),$file->getClientOriginalName());
-//            array_push($data,[
-//                'name'=>$file->getClientOriginalName(),
-//                'size'=>$file->getClientSize(),
-//                'path'=>'files/'.$file->getClientOriginalName(),
-//                'mime'=>$file->getClientMimeType()
-//            ]);
-//        }
-//        DB::table('files')->insert($data);
+        $data=array();
+        foreach ($files as $file) {
+            $file->move(('storage/uploads'),$file->getClientOriginalName());
+            array_push($data,[
+                'name'=>$file->getClientOriginalName(),
+                'size'=>$file->getClientSize(),
+                'path'=>'files/'.$file->getClientOriginalName(),
+                'mime'=>$file->getClientMimeType()
+            ]);
+        }
+        DB::table('files')->insert($data);
 
     }
 
