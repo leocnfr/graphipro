@@ -96,6 +96,8 @@ Route::group(['middleware' => ['web']], function () {
 //注册
     Route::get('/inscription','FrontPageController@register');
     Route::post('/register/{type}','Auth\AuthController@register');
+    //logout
+    Route::get('/logout','Auth\AuthController@logout');
 });
 
 

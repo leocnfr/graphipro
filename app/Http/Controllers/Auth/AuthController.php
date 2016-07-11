@@ -142,4 +142,10 @@ class AuthController extends Controller
             return redirect()->back()->withInput();
         }
     }
+
+    public function logout()
+    {
+        Auth::guard('web')->logout();
+        return redirect('login');
+    }
 }
