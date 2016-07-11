@@ -34,6 +34,7 @@
                         Ficher fournir par client <br>
                         <input type="file" name="files[]">
                         @else
+                        {{$total_price=$total_price+$cart->desing_price}}
                         Creation:{{$cart->design_price}}
                     @endif
                 </div>
@@ -47,6 +48,7 @@
 
     <div style="font-size:18px; color:#29ABE2; float:right; margin-top:20px; margin-right:45px; position:relative; padding:10px; border:thin ridge #29ABE2; border-radius:3px;min-width: 145.36px">
         {{$count}}article(s):<br/>
+
         <span style="font-size:35px;">{{$total_price}}</span> TTC
         <br/>
         @if($total_price>0)
