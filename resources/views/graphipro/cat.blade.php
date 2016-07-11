@@ -31,17 +31,7 @@
     .product-item >span.ex{
      color:#999
     }
-    .product-item-info
-    {
-        position: absolute;
-        display: none;
-        z-index: 99;
-        width: 380px;
-        height: 210px;
-        padding: 10px;
-        border: thin ridge rgb(41, 171, 226);
-        background-color: rgb(255, 255, 255)
-    }
+
     .product-item-info > img
     {
         display: inline-block;
@@ -54,21 +44,13 @@
         position:absolute;
         display: none;
         background: rgba(0,0,0,0.6);
-        margin:10px 0px 0px 23px;
+        cursor: pointer;
+        top: 10px;
+        text-align: center;
     }
     .product-table
     {
         position: relative;float: left
-    }
-    .btn-command
-    {
-        position:relative;
-        margin: 0px auto;
-        text-align: center;
-        display: block;
-        color: white;
-        font-size: 12px;
-        top:50%;
     }
     .list:nth-child(n+3)
     {
@@ -78,25 +60,26 @@
 <div class="cat" style=" width:1000px; margin:20px 0 auto;  color:#333; font-size:20px;  position:relative">
     @foreach($products->chunk(6) as $items)
     <div class="list">
-        @foreach($items as $item)
+        @foreach($items as $key=>$item)
             <div class="product-table">
                 <div class="product-item">
-                    <img src="/storage/uploads/{{$item->productimg}}" alt="" width="140" height="140">
+                    <img src="/storage/uploads/{{$item->productimg}}" alt="" width="140" height="140" class="product-item-img">
+                    <div class="command-div">
+                        <a href="{{url('/product/'.$item->id)}}" style="font-size: 12px;color: white;top: 50%;position: relative;">Commande</a>
+                    </div>
                     <span class="name">{{$item->name}}</span> <br>
                     <span class="ex">100ex à partir de </span>
                     <span class="price">10€</span>
                     <span class="ht">HT</span>
                 </div>
-                <a class="command-div">
-                    <a href="{{url('/product/'.$item->id)}}" class="btn-command">Commande</a>
-                </a>
+
             </div>
         @endforeach
     </div>
     @endforeach
 </div>
 <script>
-    $('.product-item').hover(function () {
+    $('.product-item-img').hover(function () {
         $(this).next().show();
     },function () {
         $(this).next().hide();
