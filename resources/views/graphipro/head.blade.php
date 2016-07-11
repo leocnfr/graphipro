@@ -11,6 +11,7 @@
     #top2
     {
         height:100px; width:100%; background-color:#F2F2F2;
+        float: left;
     }
     .menu1
     {
@@ -44,7 +45,7 @@
         <!-- <img src="images/service.png" height="100" style="float:right;"> -->
     </div>
 </div>
-<div id="jump" style="width:100%;  height:55px; background-image:url(/images/bar.png)">
+<div id="jump" style="width:100%;  height:55px; background-image:url(/images/bar.png);clear: left">
     <div style="width:1000px; margin:0 auto;clear: both">
         <div class="menu1" >
             <a class="aa" href="#" onmouseover="$(this).next().show()" onmouseout="$(this).next().hide()">
