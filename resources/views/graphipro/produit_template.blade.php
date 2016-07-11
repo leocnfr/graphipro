@@ -74,9 +74,9 @@
     </script>
 @endif
 <script>
-//$('.disable').click(function (e) {
-//    e.preventDefault();
-//});
+$('.disable').click(function () {
+return false;
+});
 $('.able').click(function () {
     $('#pro-form').submit();
 })
