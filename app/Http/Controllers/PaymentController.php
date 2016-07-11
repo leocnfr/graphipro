@@ -24,7 +24,7 @@ class PaymentController extends Controller
         $files=$request->file('files');
         $data=array();
         foreach ($files as $file) {
-            $file->move(('storage/uploads'),$file->getClientOriginalName());
+//            $file->move(('storage/uploads'),$file->getClientOriginalName());
             array_push($data,[
                 'name'=>$file->getClientOriginalName(),
                 'size'=>$file->getClientSize(),
