@@ -124,7 +124,7 @@ class AuthController extends Controller
             ]);
         }
         alert()->success('You have been  inscription.', 'Success!');
-        return view('graphipro.index');
+        return redirect('/');
     }
 
     public function login(Request $request)
