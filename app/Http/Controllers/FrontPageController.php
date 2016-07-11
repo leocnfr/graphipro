@@ -51,7 +51,12 @@ class FrontPageController extends Controller
 //        dd(Cart::all());
         $carts=Cart::all();
         $count=Cart::countRows();
-        $total_price=number_format(Cart::totalPrice(),2);
+        $total_price=Cart::totalPrice();
+
+        foreach ($carts as $cart){
+            $total_price=$total_price+$cart->design_price;
+        }
+        
         return view('graphipro.panier',compact('carts','count','total_price'));
     }
 

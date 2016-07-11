@@ -34,7 +34,6 @@
                         Ficher fournir par client <br>
                         <input type="file" name="files[]">
                         @else
-                        {{$total_price=$total_price+$cart->desing_price}}
                         Creation:{{$cart->design_price}}
                     @endif
                 </div>
