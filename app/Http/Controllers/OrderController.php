@@ -13,6 +13,7 @@ use App\Http\Requests;
 use Cart;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
+use Validator;
 
 class OrderController extends Controller
 {
@@ -20,6 +21,14 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
+        $validator=Validator::make($request->all(),[
+            'price'=>'required|min:1'
+        ]);
+        if ($validator->fails()){
+            alert()->error('购买失败', 'fails!');
+            return redirect('product/'.$request->get('product_id'));
+
+        }
         $product_id=$request->get('product_id');
         $product_name=Products::find($request->get('product_id'))->name;
         $img=Products::find($request->get('product_id'))->productimg;

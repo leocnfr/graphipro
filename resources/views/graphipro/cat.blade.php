@@ -87,9 +87,9 @@
                     <span class="price">10€</span>
                     <span class="ht">HT</span>
                 </div>
-                <div class="command-div">
+                <a class="command-div">
                     <a href="{{url('/product/'.$item->id)}}" class="btn-command">Commande</a>
-                </div>
+                </a>
             </div>
         @endforeach
     </div>
