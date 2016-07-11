@@ -1,5 +1,10 @@
 @extends('graphipro.template')
 @section('content')
+    <style>
+        .disable{
+            cursor: not-allowed;
+        }
+    </style>
 <div style="width: 100%">
     <div style="width:1000px;margin:0px auto; margin-top:20px; color:#333">
         <a href="{{url('/')}}" style="color:#666">Accueil</a> > <span id="pro_name">{{$product->name}}</span><br />
@@ -69,6 +74,8 @@
     </script>
 @endif
 <script>
-
+$('.disable').click(function (e) {
+    e.preventDefault();
+})
 </script>
 @endsection
