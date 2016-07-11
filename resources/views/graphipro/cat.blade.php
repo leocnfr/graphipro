@@ -65,7 +65,7 @@
                 <div class="product-item">
                     <img src="/storage/uploads/{{$item->productimg}}" alt="" width="140" height="140" class="product-item-img">
                     <div class="command-div">
-                        <a href="{{url('/product/'.$item->id)}}" style="font-size: 12px;color: white;top: 50%;position: relative;">Commande</a>
+                        <a href="{{url('/product/'.$item->id)}}" style="font-size: 12px;color: white;top: 50%;position: relative;padding: 3px;border: 1px solid white">Commande</a>
                     </div>
                     <span class="name">{{$item->name}}</span> <br>
                     <span class="ex">100ex à partir de </span>

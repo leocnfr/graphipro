@@ -50,10 +50,11 @@
                     <select id="pelliculage" style="width:220px;" name="pelliculage">
                     </select>
                 </div>
-                <span>Création:</span> <br>
-                <select name="jumpMenu" id="design_price" style="width:220px;">
-                    <option value="0">Demande le creation</option>
-                    <option value="{{$product->design_price}}">Recto seule +{{$product->design_price}}€</option>
+                <span>Création:</span>
+                <br>
+                <select id="creation" name="jumpMenu" id="jumpMenu" style="width:220px;">
+                    <option value="0">Fournir par client</option>
+                    <option value="{{$product->design_price}}">+{{$product->design_price}}</option>
                 </select>
                 <br/>
 

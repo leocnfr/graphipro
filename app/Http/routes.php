@@ -158,10 +158,10 @@ Route::post('/panier','OrderController@store');
 Route::get('/panier','FrontPageController@showPanier');
 //删除购物车内容
 Route::get('/panier/{rawid}','OrderController@destroy');
-
+//checkout
 //付款
 Route::post('/payment','PaymentController@payment');
-Route::get('/checkout','PaymentController@checkout');
+Route::post('/checkout','PaymentController@checkout');
 //产品的promotion
 Route::get('/promotion/{id}','FrontPageController@pro');
 //compte

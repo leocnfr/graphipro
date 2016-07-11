@@ -36,8 +36,9 @@ class PaymentController extends Controller
 
     }
 
-    public function checkout()
+    public function checkout(Request $request)
     {
-        return view('graphipro.payment');
+        
+        return view('graphipro.checkout');
     }
 }

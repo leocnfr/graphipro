@@ -56,7 +56,7 @@ class OrderController extends Controller
         {
             $format=Format::find($request->get('format'))->format;
             $papier=Papier::find($request->get('papier'))->papier;
-            $request->get('imprimer')==1?$imprimer='Recto':'Recto et verso';
+            $request->get('imprimer')==1?$imprimer='Recto':$imprimer='Recto et verso';
             $pelliculage=Pelliculage::find($request->get('pelliculage'))->pelliculage;
             $day=$request->get('day');
             Cart::add($product_id, $product_name, 1, $price,
@@ -93,13 +93,9 @@ class OrderController extends Controller
 
     public function download()
     {
-        $file= public_path(). "/download/info.pdf";
-
-        $headers = array(
-            'Content-Type: application/pdf',
-        );
-
-        return Response()->download('storage/uploads/PARTIE 2.jpg.pdf', 'filename.pdf', $headers);
+        $path = storage_path('app/files/Amazon.pdf');
+        
+        return response()->download($path);
     }
 
 
