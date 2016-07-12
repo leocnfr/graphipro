@@ -4,7 +4,7 @@
 
     <!--img-->
     <div class="content">
-        <div class="slider" id="slider">
+        <div class="slider" id="slider" >
             <ul class="sliderbox">
                 <li>
                     <a href="#"><img src="/images/1.jpg" ></a>
@@ -23,10 +23,10 @@
     <div style="font-size:25px; color:#FFF; padding:5px; background-color:#29ABE2; width:990px; margin-top:20px; position:relative; "><img src="/images/cat.png" height="20" /> CATEGORIES
         <div id="show-product" style="float:right; margin-right:15px; border:thin ridge #FFF; padding:5px; color:#FFF; cursor:pointer; font-size:15px; border-radius:3px;">Tous</div>
     </div>
-
-<div style="float:left; width:626px;">
+    @include('graphipro.cat')
+<div style="float:left; width:626px;clear: both">
     <div style="font-size:25px; color:#FFF; padding:5px; background-color:#29ABE2; width:616px; margin-top:20px;"><img src="/images/promo.png" height="20" /> PROMOTIONS</div>
-
+    @include('graphipro.promotions')
 </div>
 <div style="float:left; width:364px; margin-left:10px; color:#666;">
     <div style="font-size:25px; color:#FFF; padding:5px; background-color:#999; width:354px; margin-top:20px;"><img src="/images/point.png" height="20" /> NOS POINT FORTS</div>
@@ -101,4 +101,13 @@
         swal({!! Session::get('sweet_alert.alert') !!});
     </script>
 @endif
+<script>
+    $('#show-product').click(function () {
+        $('.list').stop().slideDown();
+        var scrollX=$(document).scrollTop();
+        if (scrollX<424){
+            $('body').animate({scrollTop:424}, '500')
+        }
+    })
+</script>
 @endsection

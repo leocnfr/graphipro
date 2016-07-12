@@ -19,8 +19,14 @@
                 <img src="/storage/uploads/{{$cart->img}}" style="float:left; height:100px;"/>
 
                 <div style="float:left; width:200px; margin-left:10px; color:#999; height:100px; border-right:thin ridge #F2F2F2; padding-right:15px">
+
                     <span style="font-size:20px; color:#29ABE2;">{{$cart->name}}</span><br/>
-                    {{$cart->format}}/{{$cart->papier}}/{{$cart->imprimer}}/{{$cart->pelliculage}}
+                    @if($cart->id==25)
+                        {{$cart->larger}}cm*{{$cart->hauter}}cm/{{$cart->materiels}}/{{$cart->ex}}ex
+                    @elseif(in_array($cart->id,array(17,19,18)))
+                        @else
+                        {{$cart->format}}/{{$cart->papier}}/{{$cart->imprimer}}/{{$cart->pelliculage}}
+                    @endif
                 </div>
                 <div style="float:left;  margin-left:25px;">
 
@@ -44,7 +50,7 @@
     <!--- 1 --->
     </div>
 
-    <div style="font-size:18px; color:#29ABE2; float:right; margin-top:20px; margin-right:45px; position:relative; padding:10px; border:thin ridge #29ABE2; border-radius:3px;width: 145.36px">
+    <div style="font-size:18px; color:#29ABE2; float:right; margin-top:20px; margin-right:45px; position:relative; padding:10px; border:thin ridge #29ABE2; border-radius:3px;min-width: 145.36px">
         {{$count}}article(s):<br/>
         <span style="font-size:35px;">{{$total_price}}</span> TTC
         <br/>

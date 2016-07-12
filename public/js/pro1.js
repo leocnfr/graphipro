@@ -39,10 +39,28 @@ function getPapier(proid) {
         },
         success: function (res) {
             $('#papier').html(res);
+            getImprimer(proid);
             getPrice(proid);
         }
     });
 
+}
+function getImprimer(proid) {
+    var format=$('#formate').val();
+    var papier=$('#papier').val();
+    $.ajax({
+        type:"get",
+        url: "/imprimer",
+        data:{
+            format : format,
+            proid : proid,
+            papier:papier,
+        },
+        success:function (res) {
+            $('#imprimer').html(res);
+            getPell(proid);
+        }
+    })
 }
 function getPell(proid) {
     var format=$('#formate').val();
@@ -159,12 +177,10 @@ $('#papier').change(function () {
 });
 $('#imprimer').change(function () {
     getPell(proid)
-})
+});
 $('#pelliculage').change(function () {
     getPrice(proid);
 
 });
-$
 
 getPapier(proid);
-getPell(proid);

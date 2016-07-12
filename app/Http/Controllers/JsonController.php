@@ -43,7 +43,27 @@ class JsonController extends Controller
         }
     }
 
+    public function getImprimer(Request $request)
+    {
+        $tables=Pricetablelist::where('formats','like','%'.$request->get('formate').'%')
+            ->where('product_id',$request->get('proid'))
+            ->where('papiers','like','%'.$request->get('papier').'%')
+            ->get();
+        $imprimers=array();
+        foreach ($tables as $table) {
+            array_push($imprimers,$table->imprimers);
+        }
+        $imprimers=array_unique($imprimers);
+        foreach ($imprimers as $imprimer) {
+            if ($imprimer==1)
+            {
 
+                echo  '<option value="'.$imprimer.'">'.'Recto'.'</option>';
+            }else{
+                echo  '<option value="'.$imprimer.'">'.'Recto et verso'.'</option>';
+            }
+        }
+    }
 
     public function getPelle(Request $request)
     {
@@ -70,7 +90,7 @@ class JsonController extends Controller
             ->where('imprimers',$request->get('imprimer'))
             ->where('pelliculages','like','%'.$request->get('pelliculage').'%')
             ->first();
-        $prices=Price::where('price_table_list_id',$tables->id)->get();
+        $prices=Price::where('price_table_list_id',$tables->id)->orderBy('count')->get();
         $times=FinishTime::where('price_table_list_id',$tables->id)->first();
         $array=array('prices'=>$prices,'times'=>$times);
         return json_encode($array);

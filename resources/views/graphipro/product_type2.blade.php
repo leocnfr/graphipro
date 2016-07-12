@@ -40,9 +40,7 @@
 
             <div style="font-size:20px; color:#29ABE2; margin-top:20px;">
                 <span v-if="m2<10">3.Option de livraison</span>
-                2.Option de livraison
-            </div
-            ><br />
+            </div><br />
             <div style="padding:10px; width:400px; border-radius:3px; background-color:#F2F2F2;">
                 Choix le moyen de livraison:
                 <select name="jumpMenu" id="jumpMenu" style="width:220px;">
@@ -136,7 +134,7 @@
 </table>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.js"></script>
 <script>
-    new Vue({
+    var vm =new Vue({
         el:'body',
         data:{
             larger:'',
@@ -171,13 +169,23 @@
             },
             price: function () {
                 if (this.m2<=0.3){
-                    return (0.5*this.quantity*parseInt(this.materiels.price)*1.2).toFixed(2);
+                    var val=(0.5*this.quantity*parseInt(this.materiels.price)*1.2).toFixed(2);
+                    return val;
                 }else {
-                    return (this.quantity*this.m2*parseInt(this.materiels.price)*1.2).toFixed(2);
+                    var val=(this.quantity*this.m2*parseInt(this.materiels.price)*1.2).toFixed(2);
+                    return val;
                 }
             }
         }
 
+
+    });
+
+    vm.$watch('larger', function (val) {
+        $('#s-larger').val(val);
+    });
+    vm.$watch('hauter', function (val) {
+        $('#s-hauter').val(val);
     });
 
 </script>

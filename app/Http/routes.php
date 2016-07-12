@@ -49,6 +49,12 @@ Route::group(['middleware' => ['admin']], function () {
     Route::post('/admin/promotion','PromotionController@store');
     Route::delete('/admin/promotion/{id}','PromotionController@destroy');
     Route::put('/admin/promotion/{id}','PromotionController@update');
+    //产品的promotion
+    Route::get('/admin/pro','ProController@index');
+    Route::post('/admin/pro','ProController@store');
+    Route::get('/admin/pro/{id}','ProController@edit');
+    Route::post('/admin/pro/{id}','ProController@update');
+    Route::delete('/admin/pro/{id}','ProController@destroy');
     //finish time
     Route::get('/admin/finish-time','TimeController@show');
     Route::get('/admin/finish-time/show','TimeController@showAll');
@@ -62,13 +68,19 @@ Route::group(['middleware' => ['admin']], function () {
     Route::delete('/admin/price-table/{id}','PricetableController@destroy');
     //价格
     Route::get('/admin/products/{proid}/price/{ptlid}','PriceController@index');
+    //特殊产品
+    Route::post('/admin/special','SpecialPriceController@store');
+    Route::delete('/admin/special/{id}','SpecialPriceController@destroy');
     //存数量和价格
     Route::post('/admin/price','PriceController@store');
     //删除
     Route::delete('/admin/price/{id}','PriceController@destroy');
     Route::put('/admin/price','PriceController@edit');
-
-
+    
+    //订单
+    Route::get('/admin/orders','OrderController@showAll');
+    //下载文件
+    Route::get('/admin/file','OrderController@download');
 });
 
 Route::group(['middleware' => ['web']], function () {
@@ -117,6 +129,8 @@ Route::get('/admin/users/person','BackpageController@PersonClient');
 Route::get('/admin/users/societe','BackpageController@SocieteClient');
 
 
+
+
 //前台页面
 Route::get('/','FrontPageController@index');
 
@@ -134,13 +148,19 @@ Route::get('/papier','JsonController@getPapier');
 //获取pelliculage
 Route::get('/pelliculage','JsonController@getPelle');
 Route::get('/price','JsonController@getPrice');
-
+//获取imprimer
+Route::get('/imprimer','JsonController@getImprimer');
 //存储购物车
 Route::post('/panier','OrderController@store');
 //购物车页面
-Route::get('/panier','OrderController@showPanier');
+Route::get('/panier','FrontPageController@showPanier');
 //删除购物车内容
 Route::delete('/panier','OrderController@destroy');
 
 //付款
 Route::post('/payment','PaymentController@payment');
+Route::get('/checkout','PaymentController@checkout');
+//产品的promotion
+Route::get('/promotion/{id}','FrontPageController@pro');
+//compte
+Route::get('/compte','FrontPageController@compte');

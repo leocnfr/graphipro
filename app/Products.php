@@ -17,4 +17,14 @@ class Products extends Model
     {
         return $this->belongsTo('App\Type','type_id');
     }
+
+    public function hasPro()
+    {
+        return $this->hasMany(Promotion::class,'product_id');
+    }
+
+    public function hasSpec()
+    {
+        return $this->hasMany(SpecialPrice::class,'product_id');
+    }
 }
