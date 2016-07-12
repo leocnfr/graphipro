@@ -260,7 +260,7 @@
                 </div>
 
                 <div style="float:right;">
-                    <img src="img/pub2.jpg" width="370"/>
+                    <img src="/images/pub2.jpg" width="370"/>
                 </div>
             </div>
 
