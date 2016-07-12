@@ -219,6 +219,51 @@
             <a class="aa" href="#" onmouseover="$(this).next().show()" onmouseout="$(this).next().hide()">
                 <center>Impression & <br> Grand format <img src="/images/fleche.png"></center>
             </a>
+            <div class="headmenu2" onmouseover="$(this).show()" onmouseout="$(this).hide()">
+                <!--deco -->
+                <div style="position:absolute; height:10px; width:100%;  background-color:#29ABE2; top:-10px; left:0; ">
+                    <div style="position:absolute; top:-6px; left:320px;"><img src="images/fleche1.png"/></div>
+                </div>
+                <!--deco -->
+                <div class="noregle" style="float:left; width:350px;">
+                    <img src="images/fleche2.png"/> <span style="font-size:20px; color:#29ABE2">Impression</span><br/>
+
+                    <div style="margin-left:14px;">
+                        @foreach($product->showByCat(23) as $item)
+                            <a href="{{url('/product/'.$item->id)}}" style="">
+                                <li>{{$item->name}}</li>
+                            </a>
+                        @endforeach
+                    </div>
+                    <br/>
+
+                    <img src="images/fleche2.png"/> <span style="font-size:20px; color:#29ABE2">Grand format</span><br/>
+
+                    <div style="margin-left:14px; padding-bottom:10px;"><a href="#" style="">
+                            @foreach($product->showByCat(24) as $item)
+                                <a href="{{url('/product/'.$item->id)}}" style="">
+                                    <li>{{$item->name}}</li>
+                                </a>
+                        @endforeach
+                    </div>
+                    <br/>
+
+                    <div style="font-size:12px; border-top:thin ridge #999; padding-top:10px; width:350px; ">
+                        Gestion de l’impression de l’ensemble de vos supports de communication : tous les formats sur
+                        tout type de grammage<br/><br/>
+                        *Autocollant: autocollant (brillant ou mat), caisson adhésif, dépoli argenté<br/>
+                        **Bache: bache m1, bache 550g<br/>
+                        ***Autre support: caisson, toile, stastique, film transparent, papier, papier photo, papier dos
+                        bleu
+                    </div>
+
+                </div>
+
+                <div style="float:right;">
+                    <img src="img/pub2.jpg" width="370"/>
+                </div>
+            </div>
+
         </div>
         <div class="menu1">
             <a class="aa" href="#" onmouseover="$(this).next().show()" onmouseout="$(this).next().hide()">
