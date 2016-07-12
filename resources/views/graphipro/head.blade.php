@@ -171,6 +171,49 @@
             <a class="aa" href="#" onmouseover="$(this).next().show()" onmouseout="$(this).next().hide()">
                 <center>Carte &<br> Papeterie <img src="/images/fleche.png"></center>
             </a>
+            <div class="headmenu1" onmouseover="$(this).show()" onmouseout="$(this).hide()">
+                <!--deco -->
+                <div style="position:absolute; height:10px; width:100%;  background-color:#29ABE2; top:-10px; left:0; ">
+                    <div style="position:absolute; top:-6px; left:190px;"><img src="images/fleche1.png"/></div>
+                </div>
+                <!--deco -->
+                <div class="noregle" style="float:left; width:350px;">
+                    <div style="float:left;">
+                        <img src="images/fleche2.png"/> <span style="font-size:20px; color:#29ABE2">Carte</span><br/>
+
+                        <div style="margin-left:14px;">
+                            @foreach($product->showByCat(22) as $item)
+                                <a href="{{url('/product/'.$item->id)}}" style="">
+                                    <li>{{$item->name}}</li>
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <div style="float:left; margin-left:20px;">
+                        <img src="images/fleche2.png"/> <span
+                                style="font-size:20px; color:#29ABE2">Papeterie</span><br/>
+
+                        <div style="margin-left:14px;">
+                            @foreach($product->showByCat(25) as $item)
+                                <a href="{{url('/product/'.$item->id)}}" style="">
+                                    <li>{{$item->name}}</li>
+                                </a>
+                            @endforeach
+                        </div>
+                        <br/>
+                    </div>
+                    <div style="border-top:thin ridge #999; padding-top:10px; width:350px; font-size:12px; float:left ">
+                        Nous nous engageons avec vous à confectionner les objets incontournables qui vous permettront de
+                        vous faire connaître
+                    </div>
+                </div>
+
+                <div style="float:right;">
+                    <img src="images/pub1.jpg" width="370"/>
+                </div>
+            </div>
+
         </div>
         <div class="menu1">
             <a class="aa" href="#" onmouseover="$(this).next().show()" onmouseout="$(this).next().hide()">
