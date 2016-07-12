@@ -40,7 +40,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('web', ['except' => 'logout']);
+        $this->middleware('guest:web', ['except' => 'logout']);
     }
 
     /**

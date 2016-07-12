@@ -16,7 +16,9 @@ use Stripe\Stripe;
 
 class PaymentController extends Controller
 {
-    //
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function showpayment(Request $request)
     {
 //        $card=$request->get('card_number');

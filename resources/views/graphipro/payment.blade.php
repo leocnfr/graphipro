@@ -90,7 +90,7 @@
         </div>
 
         <div class="form-group">
-            {!! Form::submit('Place order!', ['class' => 'btn btn-primary btn-order', 'id' => 'submitBtn', 'style' => 'margin-bottom: 10px;']) !!}
+            {!! Form::submit('Submit!', ['class' => 'btn btn-primary btn-order', 'id' => 'submitBtn', 'style' => 'margin-bottom: 10px;']) !!}
         </div>
 
         <div class="row">
