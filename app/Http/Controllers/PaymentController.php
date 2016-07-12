@@ -41,6 +41,12 @@ class PaymentController extends Controller
 
     public function postpayment(Request $request)
     {
+        $carts=Cart::all();
+        $amount=Cart::totalPrice();
+        foreach ($carts as $cart){
+            $amount=$amount+$cart->design_price;
+        }
+
         $token = $request->input('stripeToken');
 
         Stripe::setApiKey('sk_test_QD9r7RPD0PtSMbyt3WuHOFbJ');
@@ -65,7 +71,7 @@ class PaymentController extends Controller
 
         try {
             $charge = Charge::create([
-                'amount' => 100,
+                'amount' => $amount*100,
                 'currency' => 'eur',
                 'customer' => $customerID,
                 'metadata' => [
