@@ -151,7 +151,7 @@ Route::get('/panier/{rawid}','OrderController@destroy');
 //产品的promotion
 Route::get('/promotion/{id}','FrontPageController@pro');
 
-Route::group(['middleware' => ['auth.basic']], function () {
+Route::group(['middleware' => ['web']], function () {
 //付款
     Route::post('/payment','PaymentController@showpayment');
     Route::post('/postpayment','PaymentController@postpayment');

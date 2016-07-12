@@ -6,7 +6,7 @@
         <span style="color:#666; font-size:14px;">Vérification de la commande sélectionné</span><br/><br/>
         <img src="/images/panier1.png"/>
         <form action="{{url('/payment')}}" method="post" enctype="multipart/form-data" id="payment">
-            {!! csrf_token() !!}
+            {!! csrf_field() !!}
             @foreach($carts as $cart)
             <div style="width:690px; padding:10px; position:relative; border:thin ridge #29ABE2; border-radius:3px; font-size:14px; color:#666; height:100px; margin-top:20px;" >
                 <div style="position:absolute; right:10px; top:10px;cursor:pointer;">
