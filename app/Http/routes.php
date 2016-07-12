@@ -80,7 +80,7 @@ Route::group(['middleware' => ['admin']], function () {
     //订单
     Route::get('/admin/orders','OrderController@showAll');
     //下载文件
-    Route::get('/admin/file','OrderController@download');
+    Route::get('/admin/files/{file}','OrderController@download');
 });
 
 Route::group(['middleware' => ['web']], function () {
@@ -160,7 +160,8 @@ Route::get('/panier','FrontPageController@showPanier');
 Route::get('/panier/{rawid}','OrderController@destroy');
 //checkout
 //付款
-Route::post('/payment','PaymentController@payment');
+Route::post('/payment','PaymentController@showpayment');
+Route::post('/postpayment','PaymentController@postpayment');
 Route::post('/checkout','PaymentController@checkout');
 //产品的promotion
 Route::get('/promotion/{id}','FrontPageController@pro');

@@ -5,7 +5,7 @@
     <div style="font-size:25px; color:#29ABE2; float:left; width:690px; "> MON PANIER<br/>
         <span style="color:#666; font-size:14px;">Vérification de la commande sélectionné</span><br/><br/>
         <img src="/images/panier1.png"/>
-        <form action="{{url('/checkout')}}" method="post" enctype="multipart/form-data" id="payment">
+        <form action="{{url('/payment')}}" method="post" enctype="multipart/form-data" id="payment">
             @foreach($carts as $cart)
             <div style="width:690px; padding:10px; position:relative; border:thin ridge #29ABE2; border-radius:3px; font-size:14px; color:#666; height:100px; margin-top:20px;" >
                 <div style="position:absolute; right:10px; top:10px;cursor:pointer;">
@@ -32,7 +32,7 @@
 
                     @if($cart->design_price==0)
                         Ficher fournir par client <br>
-                        <input type="file" name="files[]">
+                       {{$cart->filename}}
                         @else
                         Creation:{{$cart->design_price}}
                     @endif

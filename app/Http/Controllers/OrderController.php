@@ -29,6 +29,13 @@ class OrderController extends Controller
             return redirect('product/'.$request->get('product_id'));
 
         }
+       if ($request->hasFile('file'))
+        {
+            $filename=$request->file('file')->getClientOriginalName();
+            Storage::put('tmp/'.$request->file('file')->getClientOriginalName(),file_get_contents($request->file('file')));
+
+        }
+
         $product_id=$request->get('product_id');
         $product_name=Products::find($request->get('product_id'))->name;
         $img=Products::find($request->get('product_id'))->productimg;
@@ -47,14 +54,17 @@ class OrderController extends Controller
                     'materiels'=>$materiels,
                     'ex'=>$ex,
                     'design_price'=>$design_price,
-                    'img'=>$img
+                    'img'=>$img,
+                    'filename'=>$filename,
+                    'filesize'=>$filesize,
+                    'filesrc'=>$filesrc
                 ]);
         }elseif (in_array($product_id,array(17,19,18))){
                 $size=$request->get('size');
 
         }else
         {
-            $format=Format::find($request->get('format'))->format;
+            $format=Format::find($request->get('formate'))->format;
             $papier=Papier::find($request->get('papier'))->papier;
             $request->get('imprimer')==1?$imprimer='Recto':$imprimer='Recto et verso';
             $pelliculage=Pelliculage::find($request->get('pelliculage'))->pelliculage;
@@ -68,7 +78,9 @@ class OrderController extends Controller
                     'day'=>$day,
                     'ex'=>$ex,
                     'design_price'=>$design_price,
-                    'img'=>$img
+                    'img'=>$img,
+                    'filename'=>isset($filename)?$filename:'',
+                    'tmpname'=>isset($tmpname)?$tmpname:''
                 ]);
         }
 
@@ -91,9 +103,9 @@ class OrderController extends Controller
         return view('admin.order.show',compact('files','directories'));
     }
 
-    public function download()
+    public function download($file)
     {
-        $path = storage_path('app/files/Amazon.pdf');
+        $path = storage_path('app/'.$file);
         
         return response()->download($path);
     }
