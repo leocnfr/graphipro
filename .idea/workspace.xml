@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="06bec871-8c22-4ab5-8c14-27a7df6a96b7" name="Default" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> a119347/master
 <<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Format.php" afterPath="$PROJECT_DIR$/app/Format.php" />
@@ -1031,9 +1034,12 @@
     <entry file="file://$PROJECT_DIR$/resources/views/admin/auth/register.blade.php">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.5488722" vertical-offset="1508" max-vertical-offset="2040">
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> a119347/master
         <state relative-caret-position="17">
           <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
           <folding />
