@@ -90,14 +90,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/admin/register','Admin\AuthController@showRegistrationForm');
     Route::post('/admin/register','Admin\AuthController@postRegister');
     Route::get('/admin/logout','Admin\AuthController@logout');
-//登录
-    Route::get('/login','FrontPageController@login');
-    Route::post('/login','Auth\AuthController@login');
-//注册
-    Route::get('/inscription','FrontPageController@register');
-    Route::post('/register/{type}','Auth\AuthController@register');
-    //logout
-    Route::get('/logout','Auth\AuthController@logout');
+
+
 });
 
 
@@ -139,11 +133,6 @@ Route::get('/','FrontPageController@index');
 Route::get('/product/{id}','FrontPageController@product');
 
 
-
-
-Route::get('/phpinfo',function (){
-    return view('home');
-});
 Route::get('/home', 'HomeController@index');
 //前台获取papier
 Route::get('/papier','JsonController@getPapier');
@@ -158,12 +147,23 @@ Route::post('/panier','OrderController@store');
 Route::get('/panier','FrontPageController@showPanier');
 //删除购物车内容
 Route::get('/panier/{rawid}','OrderController@destroy');
-//checkout
-//付款
-Route::post('/payment','PaymentController@showpayment');
-Route::post('/postpayment','PaymentController@postpayment');
-Route::post('/checkout','PaymentController@checkout');
+
 //产品的promotion
 Route::get('/promotion/{id}','FrontPageController@pro');
-//compte
-Route::get('/compte','FrontPageController@compte');
+
+Route::group(['middleware' => ['auth.basic']], function () {
+//付款
+    Route::post('/payment','PaymentController@showpayment');
+    Route::post('/postpayment','PaymentController@postpayment');
+    //compte
+
+    Route::get('/compte','FrontPageController@compte');
+    //登录
+    Route::get('/login','FrontPageController@login');
+    Route::post('/login','Auth\AuthController@login');
+//注册
+    Route::get('/inscription','FrontPageController@register');
+    Route::post('/register/{type}','Auth\AuthController@register');
+    //logout
+    Route::get('/logout','Auth\AuthController@logout');
+});
