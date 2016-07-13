@@ -113,7 +113,7 @@
                     </div>
                     <br/>
 
-                    <img src="images/fleche2.png"/> <span style="font-size:20px; color:#29ABE2">Grand format</span><br/>
+                    <img src="/images/fleche2.png"/> <span style="font-size:20px; color:#29ABE2">Grand format</span><br/>
 
                     <div style="margin-left:14px;">
                         @foreach($product->showByCat(24) as $item)
@@ -210,7 +210,7 @@
                 </div>
 
                 <div style="float:right;">
-                    <img src="images/pub1.jpg" width="370"/>
+                    <img src="/images/pub1.jpg" width="370"/>
                 </div>
             </div>
 
@@ -222,7 +222,9 @@
             <div class="headmenu2" onmouseover="$(this).show()" onmouseout="$(this).hide()">
                 <!--deco -->
                 <div style="position:absolute; height:10px; width:100%;  background-color:#29ABE2; top:-10px; left:0; ">
-                    <div style="position:absolute; top:-6px; left:320px;"><img src="images/fleche1.png"/></div>
+                    <div style="position:absolute; top:-6px; left:320px;">
+                        <img src="/images/fleche1.png"/>
+                    </div>
                 </div>
                 <!--deco -->
                 <div class="noregle" style="float:left; width:350px;">
