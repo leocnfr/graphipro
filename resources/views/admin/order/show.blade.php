@@ -20,7 +20,11 @@
                 <td>{!! $order->content !!}</td>
                 <td>{{$order->ex}}</td>
                 <td>{{$order->price}}</td>
-                <td>{{basename($order->file_src)}}</td>
+                <td>
+                    {{basename($order->file_src)}}
+                    <a href="{{basename($order->file_src)}}"><i class="fa fa-download" aria-hidden="true"></i></a>
+
+                </td>
                 <td> {{$order->created_at}} <br>
                     {{$order->created_at->diffForHumans()}}
                 </td>
