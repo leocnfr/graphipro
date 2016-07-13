@@ -74,7 +74,7 @@ class JsonController extends Controller
             ->get();
         $pelliculages=array();
         foreach ($tables as $table) {
-            echo $tables->id."<br>";
+            echo $table->id."<br>";
 //            $pelliculages= array_merge(json_decode($table->pelliculages),$pelliculages);
         }
         $pelliculages=array_unique($pelliculages);
