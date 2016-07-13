@@ -97,17 +97,19 @@ class PaymentController extends Controller
             $content="";
             if ($cart->id==25)
             {
+                $content.=$cart->name."<br/>";
                 $content.=$cart->larger*$cart->hauter."<br>";
                 $content.=$cart->materiels;
                 $content.=$cart->ex;
             }else if(in_array($cart->id,array(17,19,18)))
             {
+                $content.=$cart->name."<br/>";
                 $content.=$cart->format."<br/>";
                 $content.=$cart->papier."<br/>";
                 $content.=$cart->imprimer."<br/>";
                 $content.=$cart->pelliculage."<br/>";
             }else{
-
+                $content.=$cart->name."<br/>";
             }
             array_push($orders,[
                 'user_id'=>Auth::user()->id,
