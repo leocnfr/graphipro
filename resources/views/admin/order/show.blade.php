@@ -16,7 +16,7 @@
         @foreach($orders as $order)
             <tr>
                 <td></td>
-                <td>{{$order->belongsUser->societe==null?$order->belongsUser->nome:$order->belongsUser->societe}}</td>
+                <td>{{empty($order->belongsUser->societe)?$order->belongsUser->nome:$order->belongsUser->societe}}</td>
                 <td>{!! $order->content !!}</td>
                 <td>{{$order->ex}}</td>
                 <td>{{$order->price}}</td>
