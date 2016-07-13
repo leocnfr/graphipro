@@ -74,10 +74,11 @@ class JsonController extends Controller
             ->get();
         $pelliculages=array();
         foreach ($tables as $table) {
-            $pelliculages= array_merge(json_decode($table->pelliculages),$pelliculages);
+            print_r(json_decode($table->pelliculages));
+//            $pelliculages= array_merge(json_decode($table->pelliculages),$pelliculages);
         }
         $pelliculages=array_unique($pelliculages);
-        dd($pelliculages);
+
         foreach ($pelliculages as $pelliculage) {
             echo  '<option value="'.$pelliculage.'">'.Pelliculage::find($pelliculage)->pelliculage.'</option>';
         }
