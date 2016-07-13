@@ -56,9 +56,7 @@
                     </select>
                 </div>
                 @include('graphipro.desigen_price')
-                <br/>
-                Ficher fournir par client
-                <input type="file" name="file">
+
             </div>
 
             <div style="font-size:20px; color:#29ABE2; margin-top:20px;">2. Option de livraison</div>

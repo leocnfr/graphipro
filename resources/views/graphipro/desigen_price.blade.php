@@ -4,3 +4,6 @@
     <option value="0">Fournir par client</option>
     <option value="{{$product->design_price}}">+{{$product->design_price}}</option>
 </select>
+<br/>
+Ficher fournir par client
+<input type="file" name="file">
