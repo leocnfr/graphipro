@@ -20,7 +20,7 @@
                 <td>{!! $order->content !!}</td>
                 <td>{{$order->ex}}</td>
                 <td>{{$order->price}}</td>
-                <td></td>
+                <td>{{basename($order->file_src)}}</td>
                 <td> {{$order->created_at}} <br>
                     {{$order->created_at->diffForHumans()}}
                 </td>
