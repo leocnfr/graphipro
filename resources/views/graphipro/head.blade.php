@@ -69,11 +69,11 @@
             <div class="headmenu" onmouseover="$(this).show()" onmouseout="$(this).hide()">
                 <!--deco -->
                 <div style="position:absolute; height:10px; width:100%;  background-color:#29ABE2; top:-10px; left:0; ">
-                    <div style="position:absolute; top:-6px; left:60px;"><img src="images/fleche1.png"/></div>
+                    <div style="position:absolute; top:-6px; left:60px;"><img src="/images/fleche1.png"/></div>
                 </div>
                 <!--deco -->
                 <div class="noregle" style="float:left;">
-                    <img src="images/fleche2.png"/> <span style="font-size:20px; color:#29ABE2">Carte</span><br/>
+                    <img src="/images/fleche2.png"/> <span style="font-size:20px; color:#29ABE2">Carte</span><br/>
 
                     <div style="margin-left:14px;">
                         <!--                  Carte      -->
@@ -87,7 +87,7 @@
                     </div>
                     <br/>
 
-                    <img src="images/fleche2.png"/> <span style="font-size:20px; color:#29ABE2">Papeterie</span><br/>
+                    <img src="/images/fleche2.png"/> <span style="font-size:20px; color:#29ABE2">Papeterie</span><br/>
 
                     <div style="margin-left:14px;">
                         @foreach($product->showByCat(25) as $item)
@@ -226,7 +226,7 @@
                 </div>
                 <!--deco -->
                 <div class="noregle" style="float:left; width:350px;">
-                    <img src="images/fleche2.png"/> <span style="font-size:20px; color:#29ABE2">Impression</span><br/>
+                    <img src="/images/fleche2.png"/> <span style="font-size:20px; color:#29ABE2">Impression</span><br/>
 
                     <div style="margin-left:14px;">
                         @foreach($product->showByCat(23) as $item)
@@ -237,7 +237,7 @@
                     </div>
                     <br/>
 
-                    <img src="images/fleche2.png"/> <span style="font-size:20px; color:#29ABE2">Grand format</span><br/>
+                    <img src="/images/fleche2.png"/> <span style="font-size:20px; color:#29ABE2">Grand format</span><br/>
 
                     <div style="margin-left:14px; padding-bottom:10px;"><a href="#" style="">
                             @foreach($product->showByCat(24) as $item)
@@ -272,11 +272,11 @@
             <div class="headmenu3" onmouseover="$(this).show()" onmouseout="$(this).hide()">
                 <!--deco -->
                 <div style="position:absolute; height:10px; width:100%;  background-color:#29ABE2; top:-10px; left:0; ">
-                    <div style="position:absolute; top:-6px; left:450px;"><img src="images/fleche1.png"/></div>
+                    <div style="position:absolute; top:-6px; left:450px;"><img src="/images/fleche1.png"/></div>
                 </div>
                 <!--deco -->
                 <div class="noregle" style="float:left;">
-                    <img src="images/fleche2.png"/> <span style="font-size:20px; color:#29ABE2">Gastronomie & Sac publicité</span><br/>
+                    <img src="/images/fleche2.png"/> <span style="font-size:20px; color:#29ABE2">Gastronomie & Sac publicité</span><br/>
 
                     <div style="margin-left:14px;">
                         @foreach($product->showByCat(27) as $item)
@@ -341,11 +341,11 @@
             <div class="headmenu5" onmouseover="$(this).show()" onmouseout="$(this).hide()">
                 <!--deco -->
                 <div style="position:absolute; height:10px; width:100%;  background-color:#29ABE2; top:-10px; left:0; ">
-                    <div style="position:absolute; top:-6px; left:710px;"><img src="images/fleche1.png"/></div>
+                    <div style="position:absolute; top:-6px; left:710px;"><img src="/images/fleche1.png"/></div>
                 </div>
                 <!--deco -->
                 <div class="noregle" style="float:left;">
-                    <img src="images/fleche2.png"/> <span
+                    <img src="/images/fleche2.png"/> <span
                             style="font-size:20px; color:#29ABE2">Stands & Présentoirs </span><br/>
 
                     <div style="margin-left:14px;">
