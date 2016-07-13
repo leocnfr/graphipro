@@ -68,9 +68,9 @@ class JsonController extends Controller
     public function getPelle(Request $request)
     {
         $tables=Pricetablelist::where('formats','like','%'.$request->get('formate').'%')
-            ->where('product_id',$request->get('proid'))
-            ->where('papiers','like','%'.$request->get('papier').'%')
-            ->where('imprimers',$request->get('imprimer'))
+//            ->where('product_id',$request->get('proid'))
+//            ->where('papiers','like','%'.$request->get('papier').'%')
+//            ->where('imprimers',$request->get('imprimer'))
             ->get();
         dd($tables);
         $pelliculages=array();
