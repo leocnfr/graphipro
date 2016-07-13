@@ -40,7 +40,6 @@ function getPapier(proid) {
         success: function (res) {
             $('#papier').html(res);
             getImprimer(proid);
-            getPrice(proid);
         }
     });
 
@@ -173,14 +172,13 @@ $('#formate').change(function () {
     getPapier(proid);
 });
 $('#papier').change(function () {
-    getPell(proid);
+    getImprimer(proid);
 });
 $('#imprimer').change(function () {
     getPell(proid)
 });
 $('#pelliculage').change(function () {
     getPrice(proid);
-
 });
 
 getPapier(proid);
