@@ -1,8 +1,6 @@
 @extends('admin.template.admin_template')
 @section('content')
 
-    @foreach($files as $file)
-        <a href="{{url('/admin/'.$file)}}">{{$file}}</a> <br>
-    @endforeach
+        <a href="{{url('/tmp/2016-07-13/CSS_chan_yi.epub')}}">Css禅意</a> <br>
 
 @endsection
