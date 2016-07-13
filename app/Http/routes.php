@@ -167,3 +167,5 @@ Route::group(['middleware' => ['web']], function () {
     //logout
     Route::get('/logout','Auth\AuthController@logout');
 });
+
+Route::get('/phpinfo','HomeController@index');

@@ -29,11 +29,10 @@ class OrderController extends Controller
             return redirect('product/'.$request->get('product_id'));
 
         }
-       if ($request->hasFile('file'))
+       if ($request->file('file'))
         {
             $filename=$request->file('file')->getClientOriginalName();
-            Storage::put('tmp/'.$request->file('file')->getClientOriginalName(),file_get_contents($request->file('file')));
-
+            $request->file('file')->move('tmp/'.date('Y-m-d').'/',$filename);
         }
 
         $product_id=$request->get('product_id');
