@@ -56,7 +56,6 @@
                     </select>
                 </div>
                 @include('graphipro.desigen_price')
-
             </div>
 
             <div style="font-size:20px; color:#29ABE2; margin-top:20px;">2. Option de livraison</div>
