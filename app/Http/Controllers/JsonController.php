@@ -72,12 +72,12 @@ class JsonController extends Controller
             ->where('papiers','like','%'.$request->get('papier').'%')
             ->where('imprimers',$request->get('imprimer'))
             ->get();
-        dd($tables);
         $pelliculages=array();
         foreach ($tables as $table) {
             $pelliculages= array_merge(json_decode($table->pelliculages),$pelliculages);
         }
         $pelliculages=array_unique($pelliculages);
+        dd($pelliculages);
         foreach ($pelliculages as $pelliculage) {
             echo  '<option value="'.$pelliculage.'">'.Pelliculage::find($pelliculage)->pelliculage.'</option>';
         }
