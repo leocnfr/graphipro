@@ -16,14 +16,14 @@
         @foreach($orders as $order)
             <tr>
                 <td></td>
-                <td>{{empty($order->belongsUser->societe)?$order->belongsUser->nome:$order->belongsUser->societe}}</td>
+                <td>{{empty($order->belongsUser->societe)?$order->belongsUser->nom:$order->belongsUser->societe}}</td>
                 <td>{!! $order->content !!}</td>
                 <td>{{$order->ex}}</td>
                 <td>{{$order->price}}</td>
+                <td></td>
                 <td> {{$order->created_at}} <br>
                     {{$order->created_at->diffForHumans()}}
                 </td>
-                <td></td>
             </tr>
         @endforeach
         </tbody>
