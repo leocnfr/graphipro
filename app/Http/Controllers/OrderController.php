@@ -99,7 +99,7 @@ class OrderController extends Controller
 
     public function showAll()
     {
-        $orders=Order::all();
+        $orders=Order::paginate(10);
         return view('admin.order.show',compact('orders'));
     }
 

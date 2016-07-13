@@ -107,7 +107,6 @@ class PaymentController extends Controller
 
             }else{
                 $content.=$cart->name."<br/>";
-                $content.=$cart->name."<br/>";
                 $content.=$cart->format."<br/>";
                 $content.=$cart->papier."<br/>";
                 $content.=$cart->imprimer."<br/>";
