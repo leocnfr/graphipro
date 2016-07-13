@@ -105,9 +105,9 @@ class OrderController extends Controller
         return view('admin.order.show',compact('orders'));
     }
 
-    public function download($filepath)
+    public function download($date,$file)
     {
-        dd($filepath);
+        dd($date);
         $path = storage_path('app/'.$file);
         
         return response()->download($path);
