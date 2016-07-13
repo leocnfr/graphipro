@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\File;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -103,20 +104,22 @@ class PaymentController extends Controller
                 $content.=$cart->ex;
             }else if(in_array($cart->id,array(17,19,18)))
             {
+
+            }else{
+                $content.=$cart->name."<br/>";
                 $content.=$cart->name."<br/>";
                 $content.=$cart->format."<br/>";
                 $content.=$cart->papier."<br/>";
                 $content.=$cart->imprimer."<br/>";
                 $content.=$cart->pelliculage."<br/>";
-            }else{
-                $content.=$cart->name."<br/>";
             }
             array_push($orders,[
                 'user_id'=>Auth::user()->id,
                 'content'=>$content,
                 'ex'=>$cart->ex,
                 'price'=>$cart->price,
-                'design_price'=>$cart->design_price
+                'design_price'=>$cart->design_price,
+                'created_at'=>Carbon::now()
             ]);
         }
         DB::table('orders')->insert($orders);
