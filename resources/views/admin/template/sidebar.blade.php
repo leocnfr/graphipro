@@ -64,6 +64,9 @@
                 <li class="treeview">
                     <a href="{{url('admin/pro')}}">产品折扣</a>
                 </li>
+                <li class="treeview">
+                    <a href="{{url('admin/orders')}}">订单</a>
+                </li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\File;
 use App\Format;
+use App\Order;
 use App\Papier;
 use App\Pelliculage;
 use App\Products;
@@ -98,9 +99,8 @@ class OrderController extends Controller
 
     public function showAll()
     {
-        $directories = Storage::allDirectories('files');
-        $files=Storage::files('files');
-        return view('admin.order.show',compact('files','directories'));
+        $orders=Order::all();
+        return view('admin.order.show',compact('orders'));
     }
 
     public function download($file)
