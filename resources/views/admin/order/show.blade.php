@@ -13,8 +13,9 @@
         <tbody>
         @foreach($orders as $order)
             <tr>
+                <td></td>
                 <td>{{$order->belongsUser->nom}}</td>
-                <td>{{$order->content}}</td>
+                <td>{!! $order->content !!}</td>
                 <td>{{$order->price}}</td>
                 <td> {{$order->created_at}} <br>
                     {{$order->created_at->diffForHumans()}}
