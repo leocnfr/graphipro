@@ -85,13 +85,12 @@ class JsonController extends Controller
     public function getPrice(Request $request)
     {
         $tables=Pricetablelist::where('formats','like','%'.$request->get('formate').'%')
-            ->where('product_id',$request->get('proid'))
+            ->where('product_id','=',$request->get('proid'))
             ->where('papiers','like','%'.$request->get('papier').'%')
             ->where('imprimers','=',$request->get('imprimer'))
             ->where('pelliculages','like','%'.$request->get('pelliculage').'%')
             ->first();
-        dd($tables->id);
-        $prices=Price::where('price_table_list_id',$tables->id)->orderBy('count')->get();
+        $prices=Price::where('price_table_list_id','=',$tables->id)->orderBy('count')->get();
         $times=FinishTime::where('price_table_list_id',$tables->id)->first();
         $array=array('prices'=>$prices,'times'=>$times);
         return json_encode($array);
