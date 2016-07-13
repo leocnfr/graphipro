@@ -78,7 +78,7 @@
                     <div style="margin-left:14px;">
                         <!--                  Carte      -->
                         @foreach($product->showByCat(22) as $item)
-                            <a href="{{url('/product/'.$item->id)}}" style="">
+                            <a href="{{url('/product/'.str_slug($item->name))}}" style="">
                                 <li>{{$item->name}}</li>
                             </a>
                         @endforeach
@@ -91,7 +91,7 @@
 
                     <div style="margin-left:14px;">
                         @foreach($product->showByCat(25) as $item)
-                            <a href="{{url('/product/'.$item->id)}}" style="">
+                            <a href="{{url('/product/'.str_slug($item->name))}}" style="">
                                 <li>{{$item->name}}</li>
                             </a>
                         @endforeach
@@ -106,7 +106,7 @@
 
                     <div style="margin-left:14px;">
                         @foreach($product->showByCat(28) as $item)
-                            <a href="{{url('/product/'.$item->id)}}" style="">
+                            <a href="{{url('/product/'.str_slug($item->name))}}" style="">
                                 <li>{{$item->name}}</li>
                             </a>
                         @endforeach
@@ -117,7 +117,7 @@
 
                     <div style="margin-left:14px;">
                         @foreach($product->showByCat(24) as $item)
-                            <a href="{{url('/product/'.$item->id)}}" style="">
+                            <a href="{{url('/product/'.str_slug($item->name))}}" style="">
                                 <li>{{$item->name}}</li>
                             </a>
                         @endforeach
@@ -129,7 +129,7 @@
 
                     <div style="margin-left:14px;">
                         @foreach($product->showByCat(23) as $item)
-                            <a href="{{url('/product/'.$item->id)}}" style="">
+                            <a href="{{url('/product/'.str_slug($item->name))}}" style="">
                                 <li>{{$item->name}}</li>
                             </a>
                         @endforeach
@@ -143,7 +143,7 @@
 
                     <div style="margin-left:14px;">
                         @foreach($product->showByCat(27) as $item)
-                            <a href="{{url('/product/'.$item->id)}}" style="">
+                            <a href="{{url('/product/'.str_slug($item->name))}}" style="">
                                 <li>{{$item->name}}</li>
                             </a>
                         @endforeach
@@ -154,7 +154,7 @@
 
                     <div style="margin-left:14px;">
                         @foreach($product->showByCat(26) as $item)
-                            <a href="{{url('/product/'.$item->id)}}" style="">
+                            <a href="{{url('/product/'.str_slug($item->name))}}" style="">
                                 <li>{{$item->name}}</li>
                             </a>
                         @endforeach
@@ -183,7 +183,7 @@
 
                         <div style="margin-left:14px;">
                             @foreach($product->showByCat(22) as $item)
-                                <a href="{{url('/product/'.$item->id)}}" style="">
+                                <a href="{{url('/product/'.str_slug($item->name))}}" style="">
                                     <li>{{$item->name}}</li>
                                 </a>
                             @endforeach
@@ -196,7 +196,7 @@
 
                         <div style="margin-left:14px;">
                             @foreach($product->showByCat(25) as $item)
-                                <a href="{{url('/product/'.$item->id)}}" style="">
+                                <a href="{{url('/product/'.str_slug($item->name))}}" style="">
                                     <li>{{$item->name}}</li>
                                 </a>
                             @endforeach
@@ -232,7 +232,7 @@
 
                     <div style="margin-left:14px;">
                         @foreach($product->showByCat(23) as $item)
-                            <a href="{{url('/product/'.$item->id)}}" style="">
+                            <a href="{{url('/product/'.str_slug($item->name))}}" style="">
                                 <li>{{$item->name}}</li>
                             </a>
                         @endforeach
@@ -243,7 +243,7 @@
 
                     <div style="margin-left:14px; padding-bottom:10px;"><a href="#" style="">
                             @foreach($product->showByCat(24) as $item)
-                                <a href="{{url('/product/'.$item->id)}}" style="">
+                                <a href="{{url('/product/'.str_slug($item->name))}}" style="">
                                     <li>{{$item->name}}</li>
                                 </a>
                         @endforeach
@@ -282,7 +282,7 @@
 
                     <div style="margin-left:14px;">
                         @foreach($product->showByCat(27) as $item)
-                            <a href="{{url('/product/'.$item->id)}}" style="">
+                            <a href="{{url('/product/'.str_slug($item->name))}}" style="">
                                 <li>{{$item->name}}</li>
                             </a>
                         @endforeach
@@ -318,7 +318,7 @@
 
                     <div style="margin-left:14px;">
                         @foreach($product->showByCat(23) as $item)
-                            <a href="{{url('/product/'.$item->id)}}" style="">
+                            <a href="{{url('/product/'.str_slug($item->name))}}" style="">
                                 <li>{{$item->name}}</li>
                             </a>
                         @endforeach
@@ -352,7 +352,7 @@
 
                     <div style="margin-left:14px;">
                         @foreach($product->showByCat(26) as $item)
-                            <a href="{{url('/product/'.$item->id)}}" style="">
+                            <a href="{{url('/product/'.str_slug($item->name))}}" style="">
                                 <li>{{$item->name}}</li>
                             </a>
                         @endforeach
