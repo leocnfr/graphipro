@@ -55,12 +55,7 @@
                     <select id="pelliculage" style="width:220px;" name="pelliculage" required>
                     </select>
                 </div>
-                <span>Création:</span>
-                <br>
-                <select id="design_price" name="design_price" id="jumpMenu" style="width:220px;" required>
-                    <option value="0">Fournir par client</option>
-                    <option value="{{$product->design_price}}">+{{$product->design_price}}</option>
-                </select>
+                @include('graphipro.desigen_price')
                 <br/>
                 Ficher fournir par client
                 <input type="file" name="file">
