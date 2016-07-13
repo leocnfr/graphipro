@@ -32,7 +32,8 @@ class OrderController extends Controller
        if ($request->file('file'))
         {
             $filename=$request->file('file')->getClientOriginalName();
-            Storage::put('tmp/'.date('Y-m-d').'/'.$request->file('file')->getClientOriginalName(),file_get_contents($request->file('file')));
+            $filepath='tmp/'.date('Y-m-d').'/'.$filename;
+            Storage::put($filepath,file_get_contents($request->file('file')));
         }
 
         $product_id=$request->get('product_id');

@@ -89,6 +89,11 @@ class PaymentController extends Controller
                 ->withInput();
         }
         alert()->success('付款成功','成功');
+        foreach ($carts as $cart) {
+            if ($cart->design_price==0)
+            {
+            }
+        }
         return redirect('/');
     }
 }

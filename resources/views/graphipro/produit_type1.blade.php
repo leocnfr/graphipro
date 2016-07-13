@@ -120,8 +120,6 @@
         console.log('stop');
 
     });
-    $('#design_price').change(function () {
-        $('#s_design_price').val($('#design_price').val());
-    })
+
 </script>
 <script src="/js/pro1.js"></script>
