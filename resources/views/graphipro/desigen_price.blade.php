@@ -5,8 +5,11 @@
     <option value="{{$product->design_price}}">+{{$product->design_price}}</option>
 </select>
 <br/>
-Ficher fournir par client
-<input type="file" name="file" id="uploadfile">
+<div  id="uploadfile">
+    Ficher fournir par client
+    <input type="file" name="file">
+</div>
+
 <script>
     $('#design_price').change(function () {
         if(!$('#design_price').val()==0)
@@ -14,7 +17,6 @@ Ficher fournir par client
             $('#uploadfile').hide();
         }else {
             $('#uploadfile').show();
-
         }
         $('#s_design_price').val($('#design_price').val());
     })
