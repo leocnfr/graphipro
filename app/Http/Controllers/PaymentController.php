@@ -42,6 +42,10 @@ class PaymentController extends Controller
         return view('graphipro.checkout');
     }
 
+    /**
+     * @param Request $request
+     * @return $this|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function postpayment(Request $request)
     {
         $carts=Cart::all();
@@ -88,12 +92,33 @@ class PaymentController extends Controller
                 ->withErrors($e->getMessage())
                 ->withInput();
         }
-        alert()->success('付款成功','成功');
+        $orders=array();
         foreach ($carts as $cart) {
-            if ($cart->design_price==0)
+            $content="";
+            if ($cart->id==25)
             {
+                $content.=$cart->larger*$cart->hauter."<br>";
+                $content.=$cart->materiels;
+                $content.=$cart->ex;
+            }else if(in_array($cart->id,array(17,19,18)))
+            {
+                $content.=$cart->format."<br/>";
+                $content.=$cart->papier."<br/>";
+                $content.=$cart->imprimer."<br/>";
+                $content.=$cart->pelliculage."<br/>";
+            }else{
+
             }
+            array_push($orders,[
+                'user_id'=>Auth::user()->id,
+                'content'=>$content,
+                'ex'=>$cart->ex,
+                'price'=>$cart->price,
+                'design_price'=>$cart->design_price
+            ]);
         }
+        DB::table('orders')->insert($orders);
+        alert()->success('付款成功','成功');
         return redirect('/');
     }
 }

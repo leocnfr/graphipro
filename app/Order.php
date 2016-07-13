@@ -9,5 +9,6 @@ class Order extends Model
     //
     protected $table='orders';
     protected $fillable=['user_id','content','file_src'];
+
     
 }
