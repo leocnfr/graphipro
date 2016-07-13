@@ -80,7 +80,7 @@ Route::group(['middleware' => ['admin']], function () {
     //订单
     Route::get('/admin/orders','OrderController@showAll');
     //下载文件
-    Route::get('/admin/{date}/{file}','OrderController@download');
+    Route::post('/admin/files/download','OrderController@download');
 });
 
 Route::group(['middleware' => ['web']], function () {

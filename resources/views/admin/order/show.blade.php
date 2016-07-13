@@ -22,7 +22,10 @@
                 <td>{{$order->price}}</td>
                 <td>
                     {{basename($order->file_src)}}
-                    <a href="{{"/".$order->file_src}}"><i class="fa fa-download" aria-hidden="true"></i></a>
+                    <form action="{{url('/admin/files/download')}}" method="post">
+                        <input type="hidden" value="{{$order->file_src}}" name="file_path">
+                        <button>Download</button>
+                    </form>
 
                 </td>
                 <td> {{$order->created_at}} <br>
