@@ -30,7 +30,7 @@ class JsonController extends Controller
 
     public function getPapier(Request $request)
     {
-        $tables=Pricetablelist::where('formats','like','%'.$request->get('formate').'%')
+        $tables=Pricetablelist::where('formats','like','%'.$request->get('format').'%')
                                 ->where('product_id',$request->get('proid'))
                                 ->get();
         $papiers=array();
@@ -45,7 +45,7 @@ class JsonController extends Controller
 
     public function getImprimer(Request $request)
     {
-        $tables=Pricetablelist::where('formats','like','%'.$request->get('formate').'%')
+        $tables=Pricetablelist::where('formats','like','%'.$request->get('format').'%')
             ->where('product_id',$request->get('proid'))
             ->where('papiers','like','%'.$request->get('papier').'%')
             ->get();
@@ -67,10 +67,10 @@ class JsonController extends Controller
 
     public function getPelle(Request $request)
     {
-        $tables=Pricetablelist::where('formats','like','%'.$request->get('formate').'%')
-//            ->where('product_id',$request->get('proid'))
-//            ->where('papiers','like','%'.$request->get('papier').'%')
-//            ->where('imprimers',$request->get('imprimer'))
+        $tables=Pricetablelist::where('formats','like','%'.$request->get('format').'%')
+            ->where('product_id',$request->get('proid'))
+            ->where('papiers','like','%'.$request->get('papier').'%')
+            ->where('imprimers',$request->get('imprimer'))
             ->get();
         dd($tables);
         $pelliculages=array();
@@ -87,12 +87,13 @@ class JsonController extends Controller
 
     public function getPrice(Request $request)
     {
-        $tables=Pricetablelist::where('formats','like','%'.$request->get('formate').'%')
+        $tables=Pricetablelist::where('formats','like','%'.$request->get('format').'%')
             ->where('product_id','=',$request->get('proid'))
             ->where('papiers','like','%'.$request->get('papier').'%')
             ->where('imprimers','=',$request->get('imprimer'))
             ->where('pelliculages','like','%'.$request->get('pelliculage').'%')
             ->first();
+        
         $prices=Price::where('price_table_list_id','=',$tables->id)->orderBy('count')->get();
         $times=FinishTime::where('price_table_list_id',$tables->id)->first();
         $array=array('prices'=>$prices,'times'=>$times);
