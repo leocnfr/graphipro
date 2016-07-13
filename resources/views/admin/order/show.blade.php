@@ -21,12 +21,13 @@
                 <td>{{$order->ex}}</td>
                 <td>{{$order->price}}</td>
                 <td>
-                    {{basename($order->file_src)}}
-                    <form action="{{url('/admin/files/download')}}" method="post">
-                        <input type="hidden" value="{{$order->file_src}}" name="file_path">
-                        <button>Download</button>
-                    </form>
-
+                    @if(!empty($order->file_src))
+                        {{basename($order->file_src)}}
+                        <form action="{{url('/admin/files/download')}}" method="post">
+                            <input type="hidden" value="{{$order->file_src}}" name="file_path">
+                            <button>Download</button>
+                        </form>
+                    @endif
                 </td>
                 <td> {{$order->created_at}} <br>
                     {{$order->created_at->diffForHumans()}}
