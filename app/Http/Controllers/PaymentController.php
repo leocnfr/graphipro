@@ -118,8 +118,15 @@ class PaymentController extends Controller
                 'ex'=>$cart->ex,
                 'price'=>$cart->price,
                 'design_price'=>$cart->design_price,
+                'filesrc'=>$cart->despath,
                 'created_at'=>Carbon::now()
             ]);
+        }
+        foreach ($carts as $cart) {
+            if ($cart->design_price==0)
+            {
+                Storage::move($cart->tmppath,$cart->despath);
+            }
         }
         DB::table('orders')->insert($orders);
         alert()->success('付款成功','成功');

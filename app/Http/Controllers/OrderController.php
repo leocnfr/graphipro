@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Cart;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Validator;
 
@@ -33,7 +34,8 @@ class OrderController extends Controller
        if ($request->file('file'))
         {
             $filename=$request->file('file')->getClientOriginalName();
-            $filepath='tmp/'.date('Y-m-d').'/'.$filename;
+            $tmppath='tmp/'.date('Y-m-d').'/'.$filename;
+            $despath='files/'.date('Y-m-d').'/'.$filename;
             Storage::put($filepath,file_get_contents($request->file('file')));
         }
 
@@ -55,10 +57,8 @@ class OrderController extends Controller
                     'materiels'=>$materiels,
                     'ex'=>$ex,
                     'design_price'=>$design_price,
-                    'img'=>$img,
-                    'filename'=>$filename,
-                    'filesize'=>$filesize,
-                    'filesrc'=>$filesrc
+                    'img'=>$img
+                   
                 ]);
         }elseif (in_array($product_id,array(17,19,18))){
                 $size=$request->get('size');
@@ -81,7 +81,9 @@ class OrderController extends Controller
                     'design_price'=>$design_price,
                     'img'=>$img,
                     'filename'=>isset($filename)?$filename:'',
-                    'tmpname'=>isset($tmpname)?$tmpname:''
+                    'tmppath'=>isset($tmppath)?$tmppath:'',
+                    'despath'=>isset($despath)?$despath:''
+
                 ]);
         }
 
