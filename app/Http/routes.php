@@ -130,7 +130,7 @@ Route::get('/admin/users/societe','BackpageController@SocieteClient');
 //前台页面
 Route::get('/','FrontPageController@index');
 
-Route::get('/product/{id}','FrontPageController@product');
+Route::get('/product/{name}','FrontPageController@product');
 
 
 Route::get('/home', 'HomeController@index');

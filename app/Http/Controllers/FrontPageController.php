@@ -29,10 +29,11 @@ class FrontPageController extends Controller
         return view('graphipro.inscription');
     }
 
-    public function product($id)
+    public function product($name)
     {
-        $product=Products::find($id);
-        $tables=Pricetablelist::where('product_id',$id)->get();
+        $name=str_replace('-',' ',$name);
+        $product=Products::where(compact('name'))->first();
+        $tables=Pricetablelist::where('name',$id)->get();
         $formats=array();
         foreach ($tables as $table) {
             $formats= array_merge(json_decode($table->formats),$formats);
