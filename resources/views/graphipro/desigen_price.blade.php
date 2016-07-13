@@ -12,11 +12,11 @@
 
 <script>
     $('#design_price').change(function () {
-        if(!$('#design_price').val()==0)
+        if($('#design_price').val()==0)
         {
-            $('#uploadfile').hide();
-        }else {
             $('#uploadfile').show();
+        }else {
+            $('#uploadfile').hide();
         }
         $('#s_design_price').val($('#design_price').val());
     })
