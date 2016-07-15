@@ -33,8 +33,8 @@ class Products extends Model
         return Products::where('type_id','=',$query)->get();
     }
 
-    public function hasOnePro()
+    public function hasOnePro($proid)
     {
-        return $this->hasMany(Promotion::class,'product_id');
+        return Promotion::where('product_id','=',$proid)->first();
     }
 }
