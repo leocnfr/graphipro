@@ -11,7 +11,7 @@
                 </select>
                 <br/>
                 <span>Quantité:</span>
-                <input size="10" maxlength="10" id="quantity" type="number" min="1" value="1"/> EX
+                <input size="10" maxlength="10" id="quantity" type="number" min="1" value="1" v-model="quantity"/> EX
                 <br/>
                @include('graphipro.desigen_price')
                 <br/>
@@ -29,6 +29,18 @@
     </tr>
 </table>
 <script>
-    var price=$('#quantity').val()*$('#formate').val();
-    $('#showprice').html(parseInt(price).toFixed(2));
+   new Vue({
+      el:'body',
+       data:{
+           quantity:1
+       },
+       computed:{
+         price:getPrice()
+       },
+       methods:{
+           getPrice:function () {
+                this.price=(quantity*selected*1.2).toFixed(2)
+           }
+       }
+   });
 </script>

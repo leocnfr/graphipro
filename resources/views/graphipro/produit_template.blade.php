@@ -39,7 +39,7 @@
                     {{--<input type="hidden" id="product_id" name="product_id" value="{{$product->id}}">--}}
                     {{--<input type="hidden" id="price" name="price">--}}
                     {{--<input type="hidden" id="s_design_price" name="design_price">--}}
-                    <span style="font-size:35px;" id="showprice" >0€</span> TTC <br /><br />
+                    <span style="font-size:35px;" id="showprice" >@{{ price }}€</span> TTC <br /><br />
                     <button style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; float:left; " id="panier">Ajouter au panier</button>
                 {{--</form>--}}
             </div>
