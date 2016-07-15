@@ -42,7 +42,7 @@
        methods:{
            getPrice:function () {
                 var f_price=$('#formate').val();
-                this.price=(this.quantity*f_price1.2).toFixed(2)
+                this.price=(this.quantity*f_price*1.2).toFixed(2)
            }
        }
    });
