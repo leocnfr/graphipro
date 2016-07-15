@@ -4,7 +4,7 @@
             <div style="font-size:20px; color:#29ABE2; margin-top:20px;">1. Choisir les options d'impression</div><br />
             <div style="padding:10px; width:400px; border-radius:3px; background-color:#F2F2F2; line-height:35px; color:#29ABE2">
                 Formate:
-                <select name="formate" id="formate" >
+                <select name="formate" id="formate" v-model="selected">
                     @foreach($product->hasSpec as $spec)
                         <option value="{{$spec->price}}">{{$spec->size}}</option>
                     @endforeach
@@ -34,13 +34,15 @@
       el:'body',
        data:{
            quantity:1
+
        },
        created(){
            this.getPrice()
        },
        methods:{
            getPrice:function () {
-                this.price=(this.quantity*1.2).toFixed(2)
+                var f_price=$('#formate').val();
+                this.price=(this.quantity*f_price1.2).toFixed(2)
            }
        }
    });
