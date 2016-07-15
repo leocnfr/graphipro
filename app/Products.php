@@ -35,6 +35,6 @@ class Products extends Model
 
     public function hasOnePro()
     {
-        return $this->hasOne(Promotion::class,'product_id');
+        return $this->hasMany(Promotion::class,'product_id');
     }
 }
