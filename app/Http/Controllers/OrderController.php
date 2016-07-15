@@ -49,7 +49,7 @@ class OrderController extends Controller
         {
             $larger=$request->get('s-larger');
             $hauter=$request->get('s-hauter');
-            $materiels=$request->get('materiels');
+            $materiels=$request->get('text_materiel');
             Cart::add($product_id, $product_name, 1, $price,
                 [
                     'larger'=>$larger,
