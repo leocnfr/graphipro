@@ -49,6 +49,7 @@
    var price=$('#showprice');
    var formate=$('#formate').val();
     $('#formate').change(function () {
+        console.log(formate);
         price.html((quantity*formate*1.2).toFixed())
     })
 </script>
