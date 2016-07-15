@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
 
 class Products extends Model
 {
@@ -34,9 +33,14 @@ class Products extends Model
         return Products::where('type_id','=',$query)->get();
     }
 
-    public function hasOnePro($proid)
+    public function minCount($proid)
     {
-        dd(DB::table('promotions')->where('product_id','=',$proid)->first());
-        return DB::table('promotions')->where('product_id','=',$proid)->first();
+        return Promotion::where('product_id','=',$proid)->min('count');
+    }
+
+    public function minPrice($proid)
+    {
+        return Promotion::where('product_id','=',$proid)->min('price');
+
     }
 }
