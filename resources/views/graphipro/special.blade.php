@@ -36,9 +36,7 @@
            quantity:1
        },
        computed:{
-         price(){
-             this.getPrice()
-         }
+           price:this.price()
        },
        created(){
            this.getPrice()
