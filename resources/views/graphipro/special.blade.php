@@ -28,6 +28,7 @@
         </td>
     </tr>
 </table>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.js"></script>
 <script>
    new Vue({
       el:'body',
