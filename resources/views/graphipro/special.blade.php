@@ -6,7 +6,7 @@
                 Formate:
                 <select name="formate" id="formate" v-model="selected">
                     @foreach($product->hasSpec as $spec)
-                        <option value="{{$spec->price}}">{{$spec->size}}</option>
+                        <option value="{{$spec->price}}" selected>{{$spec->size}}</option>
                     @endforeach
                 </select>
                 <br/>
