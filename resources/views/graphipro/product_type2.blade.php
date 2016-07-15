@@ -1,10 +1,11 @@
 <table width="1000" border="0" v-cloak id="content">
-    <form action="{{url('/panier')}}" method="post" id="panier-form" enctype="multipart/form-data">
-        <input type="hidden" id="product_id" name="product_id" value="{{$product->id}}">
-        <input type="hidden" id="price" name="price" >
-        <input type="hidden" name="text_materiel" id="text_materiel">
+
         <tr>
         <td valign="top" width="450">
+            <form action="{{url('/panier')}}" method="post" id="panier-form" enctype="multipart/form-data">
+                <input type="hidden" id="product_id" name="product_id" value="{{$product->id}}">
+                <input type="hidden" id="price" name="price" >
+                <input type="hidden" name="text_materiel" id="text_materiel">
             <div style="font-size:20px; color:#29ABE2; margin-top:20px;">1. Choisir les options d'impression</div><br />
             <div style="padding:10px; width:400px; border-radius:3px; background-color:#F2F2F2; line-height:35px; color:#29ABE2">
 
@@ -50,6 +51,8 @@
             </div>
 
 
+
+            </form>
         </td>
         <td valign="top" style="padding-left:30px">
             <div style="width:600px; margin-top:15px; float:left; ">
@@ -129,7 +132,6 @@
         </td>
 
     </tr>
-    </form>
 </table>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.js"></script>
 <script>
