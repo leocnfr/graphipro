@@ -12,6 +12,7 @@
 			<span style="font-size:35px;" id="showprice">
 				{{$pro->pro_price*1.2}}
 			</span>€ TTC <br /><br />
+                <button style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; float:left; " id="panier">Ajouter au panier</button>
 
             </div>
             <table width="500" border="0" style="padding-left: 40px;padding-top: 30px">
