@@ -44,8 +44,9 @@
         display: none;
         background: rgba(0,0,0,0.6);
         cursor: pointer;
-        top: 10px;
+        top: 0px;
         text-align: center;
+        margin: 0px 8px;
     }
     .product-table
     {
