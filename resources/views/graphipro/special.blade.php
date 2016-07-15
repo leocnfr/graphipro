@@ -1,5 +1,5 @@
 <table width="500" border="0" style="padding-left: 40px;padding-top: 30px">
-    <form {{url('/panier')}}" method="post" id="panier-form" >
+    <form action="{{url('/panier')}}" method="post" id="panier-form" enctype="multipart/form-data">
     <input type="hidden" id="product_id" name="product_id" value="{{$product->id}}">
     <input type="hidden" id="price" name="price">
     <tr>
