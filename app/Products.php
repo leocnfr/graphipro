@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Products extends Model
 {
@@ -35,6 +36,6 @@ class Products extends Model
 
     public function hasOnePro($proid)
     {
-        return Promotion::where('product_id','=',$proid)->min('count');
+        return DB::table('promotions')->where('product_id','=',$proid)->first();
     }
 }
