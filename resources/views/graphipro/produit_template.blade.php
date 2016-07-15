@@ -19,7 +19,7 @@
                 Prix total:<br />
 
                     <span style="font-size:35px;" id="showprice">@{{price}}€</span> TTC <br /><br />
-                    <button style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; float:left; " id="panier" :class="price>0?'able':'disable'">Ajouter au panier</button>
+                <button style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; float:left; " id="panier">Ajouter au panier</button>
             </div>
             @include('graphipro.product_type2')
             @elseif(in_array($product->id,array(17,19,18)))
@@ -38,17 +38,9 @@
         @else
             <div style="font-size:18px; color:#29ABE2; float:right; margin-top:20px; margin-right:45px; position:relative; padding:10px; border:thin ridge #29ABE2; border-radius:3px;">
                 Prix total:<br />
-                {{--<form action="{{url('/panier')}}" method="post">--}}
-                    {{--{!! csrf_field() !!}--}}
 
-                    {{--<input type="hidden" id="s-format" name="format">--}}
-                    {{--<input type="hidden" id="s-papier" name="papier">--}}
-                    {{--<input type="hidden" id="s-imprimer" name="imprimer">--}}
-                    {{--<input type="hidden" id="s-pelliculage" name="pelliculage">--}}
-                    {{--<input type="hidden" id="s_design_price" name="design_price">--}}
                     <span style="font-size:35px;" id="showprice" >0€</span> TTC <br /><br />
                     <button style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; float:left; " id="panier">Ajouter au panier</button>
-                {{--</form>--}}
             </div>
             @include('graphipro.produit_type1')
         @endif
