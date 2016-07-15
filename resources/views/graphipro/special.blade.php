@@ -47,11 +47,10 @@
            getPrice:function () {
                 var f_price=$('#formate').val();
                 var price=$('#price');
-               var text=$('#price option:selected').text();
+               var text=$("#formate option:selected").text();
                this.price=(this.quantity*f_price*1.2).toFixed(2);
                 price.val(this.price);
                $('#text_formate').val(text);
-               console.log(text);
            }
        }
    });
@@ -63,7 +62,7 @@
         formate=$('#formate').val();
         showprice.html((quantity*formate*1.2).toFixed());
         price.val((quantity*formate*1.2).toFixed());
-        var text=$('#price option:selected').text();
+        var text=$("#formate option:selected").text();
         $('#text_formate').val(text);
 
     });
