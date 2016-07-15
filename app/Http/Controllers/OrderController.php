@@ -121,5 +121,8 @@ class OrderController extends Controller
         return response()->download($path);
     }
 
-
+    public function storePromotion()
+    {
+        
+    }
 }

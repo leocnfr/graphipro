@@ -1,11 +1,14 @@
 <table width="1000" border="0" v-cloak id="content">
-
-    <tr>
+    <form action="{{url('/panier')}}" method="post" id="panier-form" enctype="multipart/form-data">
+        <input type="hidden" id="product_id" name="product_id" value="{{$product->id}}">
+        <input type="hidden" id="price" name="price" >
+        <input type="hidden" name="formate" id="text_materiel">
+        <tr>
         <td valign="top" width="450">
             <div style="font-size:20px; color:#29ABE2; margin-top:20px;">1. Choisir les options d'impression</div><br />
             <div style="padding:10px; width:400px; border-radius:3px; background-color:#F2F2F2; line-height:35px; color:#29ABE2">
 
-                Larger: <input style="width:72px" type="number" id="larger"  maxlength="10" v-model="larger" min="0" />cm x Hauter: <input  id="hauter"  size="10" maxlength="10" v-model="hauter" type="number" min="0" style="width: 72px" />cm = <input name="" type="text" size="5" maxlength="5" readonly="readonly" id="m2"  v-model="m2" style="width: 60px"/> M2
+                Larger: <input style="width:72px" type="number" id="larger"  maxlength="10" v-model="larger" min="0" name="large"/>cm x Hauter: <input  id="hauter"  size="10" maxlength="10" v-model="hauter" type="number" min="0" style="width: 72px" name="hauter" />cm = <input name="m2" type="text" size="5" maxlength="5" readonly="readonly" id="m2"  v-model="m2" style="width: 60px"/> M2
                 <br/>
                 <span>Matériels:</span>
 
@@ -126,6 +129,7 @@
         </td>
 
     </tr>
+    </form>
 </table>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.js"></script>
 <script>
@@ -182,5 +186,9 @@
     vm.$watch('hauter', function (val) {
         $('#s-hauter').val(val);
     });
+    $('#materiels').change(function () {
+        $('#text_materiel').val($('#materiels').val());
+    });
+    $('#text_materiel').val($('#materiels').val());
 
 </script>
