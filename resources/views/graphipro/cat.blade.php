@@ -16,6 +16,8 @@
     .product-item>img
     {
         display: block;
+        margin: 0px auto;
+
     }
     .product-item >span.name{
         font-size:14px;
@@ -35,7 +37,6 @@
     {
         display: inline-block;
         float: left;
-        margin: 0px auto;
     }
     .command-div
     {
