@@ -9,7 +9,7 @@
             <div style="font-size:20px; color:#29ABE2; margin-top:20px;">1. Choisir les options d'impression</div><br />
             <div style="padding:10px; width:400px; border-radius:3px; background-color:#F2F2F2; line-height:35px; color:#29ABE2">
 
-                Larger: <input style="width:72px" type="number" id="larger"  maxlength="10" v-model="larger" min="0" name="s-large"/>cm x Hauter: <input  id="hauter"  size="10" maxlength="10" v-model="hauter" type="number" min="0" style="width: 72px" name="s-hauter" />cm = <input name="m2" type="text" size="5" maxlength="5" readonly="readonly" id="m2"  v-model="m2" style="width: 60px"/> M2
+                Larger: <input style="width:72px" type="number" id="larger"  maxlength="10" v-model="larger" min="0" name="s-larger"/>cm x Hauter: <input  id="hauter"  size="10" maxlength="10" v-model="hauter" type="number" min="0" style="width: 72px" name="s-hauter" />cm = <input name="m2" type="text" size="5" maxlength="5" readonly="readonly" id="m2"  v-model="m2" style="width: 60px"/> M2
                 <br/>
                 <span>Matériels:</span>
 
