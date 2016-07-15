@@ -187,8 +187,8 @@
         $('#s-hauter').val(val);
     });
     $('#materiels').change(function () {
-        $('#text_materiel').val($('#materiels').val());
+        $('#text_materiel').val($('#materiels option:selected').text());
     });
-    $('#text_materiel').val($('#materiels').val());
+    $('#text_materiel').val($('#materiels option:selected').text());
 
 </script>
