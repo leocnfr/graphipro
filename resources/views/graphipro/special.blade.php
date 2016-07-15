@@ -11,7 +11,7 @@
                 </select>
                 <br/>
                 <span>Quantité:</span>
-                <input size="10" maxlength="10" id="quantity" type="number" min="1" value="1" v-model="quantity"/> EX
+                <input size="10" maxlength="10" id="quantity" type="number" min="1" value="1" v-model="quantity" name="ex"/> EX
                 <br/>
                @include('graphipro.desigen_price')
                 <br/>
@@ -55,6 +55,5 @@
     $('#quantity').change(function () {
         quantity=$('#quantity').val();
         price.html((quantity*formate*1.2).toFixed())
-
     });
 </script>

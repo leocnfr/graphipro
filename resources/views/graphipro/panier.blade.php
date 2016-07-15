@@ -20,6 +20,7 @@
                     @if($cart->id==25)
                         {{$cart->larger}}cm*{{$cart->hauter}}cm/{{$cart->materiels}}/{{$cart->ex}}ex
                     @elseif(in_array($cart->id,array(17,19,18)))
+                        {{$cart->size}}
                         @else
                         {{$cart->format}}/{{$cart->papier}}/{{$cart->imprimer}}/{{$cart->pelliculage}}
                     @endif

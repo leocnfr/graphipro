@@ -61,7 +61,16 @@ class OrderController extends Controller
                    
                 ]);
         }elseif (in_array($product_id,array(17,19,18))){
-                $size=$request->get('size');
+                $size=$request->get('formate');
+                Cart::add($product_id,$product_name,1,$price,[
+                    'size'=>$size,
+                    'ex'=>$ex,
+                    'design_price'=>$design_price,
+                    'img'=>$img,
+                    'filename'=>isset($filename)?$filename:'',
+                    'tmppath'=>isset($tmppath)?$tmppath:'',
+                    'despath'=>isset($despath)?$despath:''
+                ]);
 
         }else
         {
