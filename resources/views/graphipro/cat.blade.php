@@ -35,6 +35,7 @@
     {
         display: inline-block;
         float: left;
+        margin: 0px auto;
     }
     .command-div
     {
