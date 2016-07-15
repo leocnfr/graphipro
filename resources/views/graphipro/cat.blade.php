@@ -8,7 +8,7 @@
     }
     .product-item
     {
-        margin:10px 0px 0px 23px;
+        width: 166px;
         text-align: center;
         float: left;
         cursor: pointer;
@@ -46,7 +46,7 @@
         cursor: pointer;
         top: 0px;
         text-align: center;
-        margin: 0px 8px;
+        margin: 0px 12px;
     }
     .product-table
     {
