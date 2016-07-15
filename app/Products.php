@@ -35,6 +35,6 @@ class Products extends Model
 
     public function hasOnePro($proid)
     {
-        return Promotion::where('product_id','=',$proid)->first()->toJson();
+        return Promotion::where('product_id','=',$proid)->first();
     }
 }
