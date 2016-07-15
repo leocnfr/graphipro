@@ -101,7 +101,7 @@ class OrderController extends Controller
 
     public function showAll()
     {
-        $orders=Order::paginate(10);
+        $orders=Order::paginate(10)->orderBy('created_at','desc');
         return view('admin.order.show',compact('orders'));
     }
 
