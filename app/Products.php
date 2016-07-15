@@ -35,7 +35,7 @@ class Products extends Model
 
     public function hasOnePro($proid)
     {
-        dd(Promotion::where('product_id','=',$proid)->first()->toArray()->count);
+        dd(Promotion::where('product_id','=',$proid)->first()->toArray());
         return Promotion::where('product_id','=',$proid)->first()->toArray();
     }
 }
