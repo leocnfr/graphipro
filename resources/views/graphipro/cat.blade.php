@@ -68,7 +68,7 @@
                         <a href="{{url('/product/'.str_slug($item->name))}}" style="font-size: 12px;color: white;top: 50%;position: relative;padding: 3px;border: 1px solid white">Commande</a>
                     </div>
                     <span class="name">{{$item->name}}</span> <br>
-                    <span class="ex">{{$item->hasOnePro($item->id)}} </span>
+                    <span class="ex">{{$item->hasOnePro($item->id)->count}} </span>
                     <span class="price">{{$item->hasOnePro($item->id)}}€</span>
                     <span class="ht">HT</span>
                 </div>
