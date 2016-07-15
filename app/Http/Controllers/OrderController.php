@@ -36,6 +36,7 @@ class OrderController extends Controller
             $filename=$request->file('file')->getClientOriginalName();
             $tmppath='tmp/'.date('Y-m-d').'/'.$filename;
             $despath='files/'.date('Y-m-d').'/'.$filename;
+            dd(Storage::put($tmppath,file_get_contents($request->file('file'))));
             Storage::put($tmppath,file_get_contents($request->file('file')));
         }
 
