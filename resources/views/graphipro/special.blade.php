@@ -46,15 +46,15 @@
            getPrice:function () {
                 var f_price=$('#formate').val();
                 this.price=(this.quantity*f_price*1.2).toFixed(2)
-               price.val(this.price)
-
+               var price=$('#price');
+                price.val(this.price)
            }
        }
    });
    var quantity=$('#quantity').val();
    var showprice=$('#showprice');
    var formate=$('#formate').val();
-   var price=$('#price').val();
+   var price=$('#price');
     $('#formate').change(function () {
         formate=$('#formate').val();
         showprice.html((quantity*formate*1.2).toFixed());
