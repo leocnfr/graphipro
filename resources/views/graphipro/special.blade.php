@@ -11,13 +11,9 @@
                 </select>
                 <br/>
                 <span>Quantité:</span>
-                <input size="10" maxlength="10" id="quantity" type="number" min="1" /> EX
+                <input size="10" maxlength="10" id="quantity" type="number" min="1" value="1"/> EX
                 <br/>
-                <span>Création:</span>
-                <select id="creation" name="jumpMenu" id="jumpMenu" style="width:220px;">
-                    <option value="0">Fournir par client</option>
-                    <option value="100">100€ ht</option>
-                </select>
+               @include('graphipro.desigen_price')
                 <br/>
                 <input type="hidden" value="" name="price" id="price"/>
                 <input type="hidden" value="" name="id"/>
