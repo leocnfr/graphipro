@@ -17,18 +17,9 @@
         @if($product->id==25)
             <div style="font-size:18px; color:#29ABE2; float:right; margin-top:20px; margin-right:45px; position:relative; padding:10px; border:thin ridge #29ABE2; border-radius:3px;">
                 Prix total:<br />
-                <form action="{{url('/panier')}}" method="post" id="pro-form">
-                    {!! csrf_field() !!}
-                    <input type="hidden" id="product_id" name="product_id" value="{{$product->id}}">
-                    <input type="hidden" id="price" name="price" v-model="price">
-                    <input type="hidden" id="s-larger" name="s-larger">
-                    <input type="hidden" id="s-hauter" name="s-hauter">
-                    <input type="hidden" name="materiels" v-model="materiels.text">
-                    <input type="hidden" id="ex" name="ex" v-model="quantity">
-                    <input type="hidden" id="s_design_price" name="design_price">
+
                     <span style="font-size:35px;" id="showprice">@{{price}}€</span> TTC <br /><br />
                     <button style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; float:left; " id="panier" :class="price>0?'able':'disable'">Ajouter au panier</button>
-                </form>
             </div>
             @include('graphipro.product_type2')
             @elseif(in_array($product->id,array(17,19,18)))
