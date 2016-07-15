@@ -41,7 +41,7 @@
        },
        methods:{
            getPrice:function () {
-                this.price=(quantity*selected*1.2).toFixed(2)
+                this.price=(this.quantity*this.selected*1.2).toFixed(2)
            }
        }
    });
