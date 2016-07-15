@@ -1,13 +1,14 @@
 <table width="500" border="0" style="padding-left: 40px;padding-top: 30px">
     <form action="{{url('/panier')}}" method="post" id="panier-form" enctype="multipart/form-data">
-    <input type="hidden" id="product_id" name="product_id" value="{{$product->id}}">
-    <input type="hidden" id="price" name="price">
+        <input type="hidden" id="product_id" name="product_id" value="{{$product->id}}">
+        <input type="hidden" id="price" name="price" >
+        <input type="hidden" name="formate" id="text_formate">
     <tr>
         <td valign="top" width="450">
             <div style="font-size:20px; color:#29ABE2; margin-top:20px;">1. Choisir les options d'impression</div><br />
             <div style="padding:10px; width:400px; border-radius:3px; background-color:#F2F2F2; line-height:35px; color:#29ABE2">
                 Formate:
-                <select name="formate" id="formate" >
+                <select  id="formate" >
                     @foreach($product->hasSpec as $spec)
                         <option value="{{$spec->price}}" >{{$spec->size}}</option>
                     @endforeach
@@ -45,9 +46,11 @@
        methods:{
            getPrice:function () {
                 var f_price=$('#formate').val();
-                this.price=(this.quantity*f_price*1.2).toFixed(2)
-               var price=$('#price');
-                price.val(this.price)
+                var price=$('#price');
+                var text=$('#price:option:selected').text();
+               this.price=(this.quantity*f_price*1.2).toFixed(2)
+                price.val(this.price);
+               $('#text_formate').val(text);
            }
        }
    });
@@ -59,6 +62,9 @@
         formate=$('#formate').val();
         showprice.html((quantity*formate*1.2).toFixed());
         price.val((quantity*formate*1.2).toFixed())
+        var text=$('#price:option:selected').text();
+        $('#text_formate').val(text);
+
     });
     $('#quantity').change(function () {
         quantity=$('#quantity').val();
