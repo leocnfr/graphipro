@@ -45,11 +45,16 @@
            }
        }
    });
-
+   var quantity=$('#quantity').val();
+   var price=$('#showprice');
+   var formate=$('#formate').val();
     $('#formate').change(function () {
-        var quantity=$('#quantity').val();
-        var price=$('#showprice');
-        var formate=$('#formate').val();
+        formate=$('#formate').val();
         price.html((quantity*formate*1.2).toFixed())
-    })
+    });
+    $('#quantity').change(function () {
+        quantity=$('#quantity').val();
+        price.html((quantity*formate*1.2).toFixed())
+
+    });
 </script>
