@@ -1,4 +1,7 @@
 <table width="500" border="0" style="padding-left: 40px;padding-top: 30px">
+    <form {{url('/panier')}}" method="post" id="panier-form" >
+    <input type="hidden" id="product_id" name="product_id" value="{{$product->id}}">
+    <input type="hidden" id="price" name="price">
     <tr>
         <td valign="top" width="450">
             <div style="font-size:20px; color:#29ABE2; margin-top:20px;">1. Choisir les options d'impression</div><br />
@@ -27,6 +30,7 @@
             </div>
         </td>
     </tr>
+    </form>
 </table>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.js"></script>
 <script>
@@ -46,14 +50,18 @@
        }
    });
    var quantity=$('#quantity').val();
-   var price=$('#showprice');
+   var showprice=$('#showprice');
    var formate=$('#formate').val();
+   var price=$('#price').val();
     $('#formate').change(function () {
         formate=$('#formate').val();
-        price.html((quantity*formate*1.2).toFixed())
+        showprice.html((quantity*formate*1.2).toFixed());
+        price.val((quantity*formate*1.2).toFixed())
     });
     $('#quantity').change(function () {
         quantity=$('#quantity').val();
-        price.html((quantity*formate*1.2).toFixed())
+        showprice.html((quantity*formate*1.2).toFixed())
+        price.val((quantity*formate*1.2).toFixed())
+
     });
 </script>
