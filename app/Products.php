@@ -36,6 +36,7 @@ class Products extends Model
 
     public function hasOnePro($proid)
     {
+        dd(DB::table('promotions')->where('product_id','=',$proid)->first());
         return DB::table('promotions')->where('product_id','=',$proid)->first();
     }
 }
