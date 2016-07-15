@@ -19,7 +19,7 @@
                     </option>
                 </select>
                 <br/>
-                <span>Quantité:</span> <input size="10" maxlength="10" id="quantity" v-model="quantity" number/> EX
+                <span>Quantité:</span> <input size="10" maxlength="10" id="quantity" v-model="quantity" number name="ex"/> EX
 
                 <br/>
 
