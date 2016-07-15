@@ -48,9 +48,10 @@
                 var f_price=$('#formate').val();
                 var price=$('#price');
                var text=$('#price option:selected').text();
-               this.price=(this.quantity*f_price*1.2).toFixed(2)
+               this.price=(this.quantity*f_price*1.2).toFixed(2);
                 price.val(this.price);
                $('#text_formate').val(text);
+               console.log(text);
            }
        }
    });
