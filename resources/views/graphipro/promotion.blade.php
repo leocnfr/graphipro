@@ -34,7 +34,7 @@
                     </td>
                 </tr>
             </table>
-            <div style="font-size:25px; color:#FFF; padding:5px; background-color:#29ABE2; width:990px; margin-top:20px; float:left; position:relative;  "><img src="images/cat.png" height="20" /> INFOS PLUS
+            <div style="font-size:25px; color:#FFF; padding:5px; background-color:#29ABE2; width:990px; margin-top:20px; float:left; position:relative;  "><img src="/images/cat.png" height="20" /> INFOS PLUS
             </div>
             <div style="width:1000px; margin-top:20px;">
                 <div style="padding:10px; margin-top:20px; width:225px; border-radius:3px; background-color:#F2F2F2; float:left; height:225px;">
