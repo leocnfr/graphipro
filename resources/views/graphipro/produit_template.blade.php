@@ -63,8 +63,10 @@
     $('#panier').click(function (e) {
         if ($('#price').val()==0)
         {
+            console.log('text2');
             e.preventDefault();
         }else {
+            console.log('text1');
             $('#panier-form').submit();
         }
     })
