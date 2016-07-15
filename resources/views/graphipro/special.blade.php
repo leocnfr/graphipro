@@ -35,9 +35,6 @@
        data:{
            quantity:1
        },
-       computed:{
-           price:this.price()
-       },
        created(){
            this.getPrice()
        },
