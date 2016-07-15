@@ -33,14 +33,23 @@ class FrontPageController extends Controller
     {
         $name=str_replace('-',' ',$name);
         $product=Products::where(compact('name'))->first();
-
-        $tables=Pricetablelist::where('product_id',$product->id)->get();
-        $formats=array();
-        foreach ($tables as $table) {
-            $formats= array_merge(json_decode($table->formats),$formats);
+        if ($name==photocopie)
+        {
+            return view('graphipro.photocopy');
+        }elseif ($name=='impression a lunite')
+        {
+            return view('graphipro.impression');
+        }else
+        {
+            $tables=Pricetablelist::where('product_id',$product->id)->get();
+            $formats=array();
+            foreach ($tables as $table) {
+                $formats= array_merge(json_decode($table->formats),$formats);
+            }
+            $formats=array_unique($formats);
+            return view('graphipro.produit_template',compact('product','formats'));
         }
-        $formats=array_unique($formats);
-        return view('graphipro.produit_template',compact('product','formats'));
+
     }
 
     public function pro($id)
