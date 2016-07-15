@@ -22,15 +22,15 @@
                 <td>{{$order->price}}</td>
                 <td>
                     @if(!empty($order->file_src))
-                        {{basename($order->file_src)}}
-                        <form action="{{url('/admin/files/download')}}" method="post">
+                        <p style="display:inline-block">{{basename($order->file_src)}}</p>
+                        <form action="{{url('/admin/files/download')}}" method="post" style="display: inline-block">
                             <input type="hidden" value="{{$order->file_src}}" name="file_path">
-                            <button>Download</button>
+                            <button class="fa fa-download" >Download</button>
                         </form>
                     @endif
                 </td>
                 <td> {{$order->created_at}} <br>
-                    {{$order->created_at->diffForHumans()}}
+                    <strong>{{$order->created_at->diffForHumans()}}</strong>
                 </td>
             </tr>
         @endforeach
