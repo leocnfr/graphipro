@@ -36,7 +36,7 @@
            quantity:1
        },
        computed:{
-         price:getPrice()
+         price:getPrice
        },
        methods:{
            getPrice:function () {
