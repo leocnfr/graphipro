@@ -33,7 +33,7 @@ class FrontPageController extends Controller
     {
         $name=str_replace('-',' ',$name);
         $product=Products::where(compact('name'))->first();
-        if ($name==photocopie)
+        if ($name=='photocopie')
         {
             return view('graphipro.photocopy');
         }elseif ($name=='impression a lunite')
