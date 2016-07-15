@@ -7,16 +7,16 @@
 <br/>
 <div  id="uploadfile">
     Ficher fournir par client
-    <input type="file" name="file">
+    <input type="file" name="file" required>
 </div>
 
 <script>
     $('#design_price').change(function () {
         if($('#design_price').val()==0)
         {
-            $('#uploadfile').show();
+            $('#uploadfile').css("visibility", "visible");
         }else {
-            $('#uploadfile').hide();
+            $('#uploadfile').css("visibility", "hidden");
         }
         $('#s_design_price').val($('#design_price').val());
     })

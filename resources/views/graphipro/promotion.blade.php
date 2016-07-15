@@ -12,8 +12,11 @@
 			<span style="font-size:35px;" id="showprice">
 				{{$pro->pro_price*1.2}}
 			</span>€ TTC <br /><br />
+                <form action="{{url('/panier')}}" method="post" id="panier-form" enctype="multipart/form-data">
+                    <input type="hidden" value="promotion" name="promotion">
+                    <input type="hidden" value="{{$pro->id}}" name="id">
                 <button style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; float:left; " id="panier">Ajouter au panier</button>
-
+                </form>
             </div>
             <table width="500" border="0" style="padding-left: 40px;padding-top: 30px">
                 <tr>
