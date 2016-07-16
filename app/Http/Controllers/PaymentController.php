@@ -57,7 +57,7 @@ class PaymentController extends Controller
 
         $token = $request->input('stripeToken');
 
-        Stripe::setApiKey('sk_test_QD9r7RPD0PtSMbyt3WuHOFbJ');
+        Stripe::setApiKey('sk_live_UHcMRmHHRUscDn9jSdh8pAAX');
 //        if (!isset($emailCheck)) {
         // Create a new Stripe customer
         try {
