@@ -50,8 +50,7 @@
             <center>
                 <span style="color:#29ABE2; font-size:20px;">Service Client</span><br>
 
-                <div style="padding:5px; background-color:#29ABE2; color:#FFF; font-size:20px; border-radius:10px;">0146
-                    70 00 63
+                <div style="padding:5px; background-color:#29ABE2; color:#FFF; font-size:20px; border-radius:10px;">01 46 70 00 63
                 </div>
                 <div style="font-size:16px; color:#999; line-height:18px; ">Du lundi au vendredi<br>de 9h30 à 18h30
                 </div>
@@ -231,7 +230,7 @@
                     <img src="/images/fleche2.png"/> <span style="font-size:20px; color:#29ABE2">Impression</span><br/>
 
                     <div style="margin-left:14px;">
-                        @foreach($product->showByCat(23) as $item)
+                        @foreach($product->showByCat(28) as $item)
                             <a href="{{url('/product/'.str_slug($item->name))}}" style="">
                                 <li>{{$item->name}}</li>
                             </a>

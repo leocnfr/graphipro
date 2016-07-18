@@ -1,0 +1,195 @@
+.x_size {
+  max-width: 1000px;
+  margin: auto;
+  min-width: 330px;
+}
+
+#container {
+  margin-top: 60px;
+  width: 1000px;
+}
+
+#contents, section {
+  width: 100%
+}
+
+.content_head {
+  width: 100%;
+  text-align: center;
+  background: yellow;
+  margin: 0px;
+  border: 1px solid white;
+  margin-left: 10px;
+  border: 1px solid silver;
+  color: black;
+}
+
+.content {
+  width: 100%;
+  padding-left: 10px;
+  color: black
+}
+
+@media screen and (min-width: 419px) and (max-width: 800px) {
+  header {
+    width: 100%;
+  }
+  nav {
+    display: none
+  }
+  #nav_setter {
+    display: inline;
+  }
+  #container {
+    margin-top: 90px;
+  }
+  #contents, section {
+    width: 100%;
+    float: none;
+  }
+}
+
+@media screen and (max-width: 418px) {
+  header {
+    width: 100%;
+  }
+  nav {
+    width: 100%;
+    display: none
+  }
+  #nav_setter {
+    display: inline;
+  }
+  #container {
+    margin-top: 90px;
+  }
+  div .fb-like-box {
+    display: none
+  }
+  #contents, section {
+    width: 100%;
+    float: none;
+  }
+}
+
+/*galaxy note2 720x1280/358x639*/
+
+.logs {
+  background-color: rgb(21, 77, 108);
+  margin: 0px;
+  padding: 10px;
+  //height:120px;
+  //margin-bottom:2px;
+}
+
+.a {
+  border: 1px solid black;
+  width: 20%
+}
+
+html {
+  margin: auto;
+}
+
+sup {
+  font-size: 7pt;
+}
+
+a {
+  color: #2255aa;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  border: 0px;
+  margin: 0px;
+}
+
+h1 {
+  color: #29ABE2;
+  font-size: 16px;
+  border: 0px;
+}
+
+//line-height:0px
+h4 {
+  margin: 0px
+}
+
+u {
+  color: #2255aa;
+}
+
+.grey {
+  color: #666666;
+}
+
+.blue {
+  color: #0068B1;
+}
+
+.center {
+  text-align: center;
+}
+
+.fleft {
+  float: left;
+}
+
+.border {
+  border: 1px solid black;
+}
+
+.border-b {
+  border-bottom: 1px solid gray;
+}
+
+.border-t {
+  border-top: 1px solid gray;
+}
+
+.white {
+  background: white
+}
+
+#ms_menu {
+  width: 100%;
+}
+
+#ms_menu a {
+  display: block;
+  width: 200px;
+  background-color: purple;
+  color: white;
+  text-align: center;
+  border-right: 1px solid white;
+}
+
+.white {
+  color: white;
+  font-weight: bolder
+}
+
+.table1 {
+  margin: 0px;
+  width: 100%;
+  border: 0px;
+  background-color: white;
+}
+
+.table1 td {
+  padding: 5px;
+  background: #e6e6e6;
+}
+
+.div1 {
+  width: 98%;
+  margin: 5px;
+}
+
+.yellow {
+  background-color: yellow;
+  color: black;
+  border: none;
+}
