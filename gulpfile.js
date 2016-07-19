@@ -14,6 +14,7 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
     mix.sass('app.scss');
     mix.sass('photocopy.scss','public/css/photocopy.css');
-    mix.sass('impression.scss','public/css/impression.css')
+    mix.sass('impression.scss','public/css/impression.css');
+    mix.browserify('main.js');
 
 });

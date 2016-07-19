@@ -38,8 +38,8 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{url('admin/users/person')}}"><i class="fa fa-circle-o"></i><span>个人客户</span></a></li>
-                    <li><a href="{{url('admin/users/societe')}}"><i class="fa fa-circle-o"></i>专业客户</a></li>
+                    <li><a href="{{url('/admin/users/person')}}"><i class="fa fa-circle-o"></i><span>个人客户</span></a></li>
+                    <li><a href="{{url('/admin/users/societe')}}"><i class="fa fa-circle-o"></i>专业客户</a></li>
                     {{--<li><a href="{{url('admin/users/create')}}"><i class="fa fa-circle-o"></i>建立客户</a></li>--}}
                 </ul>
             </li>
@@ -66,6 +66,10 @@
                 </li>
                 <li class="treeview">
                     <a href="{{url('admin/orders')}}">订单</a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{url('/admin/orders')}}"><i class="fa fa-circle-o"></i>专业客户订单</a></li>
+                        <li><a href="{{url('/admin/category')}}"><i class="fa fa-circle-o"></i>个人客户订单</a></li>
+                    </ul>
                 </li>
         </ul><!-- /.sidebar-menu -->
     </section>

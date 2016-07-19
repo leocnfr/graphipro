@@ -32,19 +32,28 @@ Route::get('/admin','ProductController@index');
 
 Route::group(['middleware' => ['admin']], function () {
 //    Route::auth();
+    /*
+     * client
+     */
+    Route::get('/admin/users/person','BackpageController@personClient');
+    Route::get('/admin/users/person/{user}','UserController@show');
+    Route::get('/admin/users/societe','BackpageController@societeClient');
 
     /**
      * Type
      */
+
     Route::get('/admin/category','TypeController@index');
     Route::post('/admin/category','TypeController@store');
     Route::delete('/admin/category','TypeController@destroy');
+
     //产品
     Route::get('/admin/products{query?}','ProductController@index');
     Route::get('/admin/products/new','ProductController@store');
     Route::post('admin/products/new','ProductController@save');
     Route::get('/admin/products/{id}','ProductController@edit');
     Route::post('/admin/products/{id}','ProductController@update');
+
     //产品团购价格
     Route::post('/admin/promotion','PromotionController@store');
     Route::delete('/admin/promotion/{id}','PromotionController@destroy');
@@ -111,21 +120,6 @@ Route::post('/admin/formate/create','FormatController@store');
 //Pelliculage
 Route::get('/admin/pelliculage','PelliculageController@show');
 Route::post('/admin/pelliculage/create','PelliculageController@store');
-
-
-/**
- * user
- */
-Route::get('/admin/users/create','UserController@create');
-
-/*
- * 后台页面
- */
-Route::get('/admin/users/person','BackpageController@PersonClient');
-Route::get('/admin/users/societe','BackpageController@SocieteClient');
-
-
-
 
 //前台页面
 Route::get('/','FrontPageController@index');
