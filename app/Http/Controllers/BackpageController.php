@@ -17,7 +17,7 @@ class BackpageController extends Controller
     }
     //专业客户
     public function societeClient(){
-        $users=User::showPersonal();
+        $users=User::showSociete();
         return view('admin.users.societe',compact('users'));
     }
 }
