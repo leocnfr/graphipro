@@ -39,6 +39,9 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('/admin/users/person/{user}','UserController@show');
     Route::get('/admin/users/societe','BackpageController@societeClient');
 
+    //livraison地址及价格
+    Route::resource('/admin/livraison','LivraisonConroller');
+
     /**
      * Type
      */

@@ -71,6 +71,9 @@
                         <li><a href="{{url('/admin/category')}}"><i class="fa fa-circle-o"></i>个人客户订单</a></li>
                     </ul>
                 </li>
+                <li class="treeview">
+                    <a href="{{url('/admin/livraison')}}">送货地址及价格</a>
+                </li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
