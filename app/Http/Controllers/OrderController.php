@@ -23,6 +23,12 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
+        $product_id=$request->get('product_id');
+        $product_name=$request->get('product_name');
+        $price=$request->get('price');
+        $ex=$request->get('ex');
+        $design_price=$request->get('design_price');
+        $img=Products::find($product_id)->productimage;
         $validator=Validator::make($request->all(),[
             'price'=>'required|min:1'
         ]);

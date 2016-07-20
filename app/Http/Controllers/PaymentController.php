@@ -79,7 +79,7 @@ class PaymentController extends Controller
 
         try {
             $charge = Charge::create([
-                'amount' => $amount*100,
+                'amount' => $amount,
                 'currency' => 'eur',
                 'customer' => $customerID,
                 'metadata' => [
@@ -122,12 +122,12 @@ class PaymentController extends Controller
                 'created_at'=>Carbon::now()
             ]);
         }
-        foreach ($carts as $cart) {
-            if ($cart->design_price==0)
-            {
-                Storage::move($cart->tmppath,$cart->despath);
-            }
-        }
+//        foreach ($carts as $cart) {
+//            if ($cart->design_price==0)
+//            {
+//                Storage::move($cart->tmppath,$cart->despath);
+//            }
+//        }
         DB::table('orders')->insert($orders);
         alert()->success('付款成功','成功');
         return redirect('/');

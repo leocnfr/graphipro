@@ -1,5 +1,6 @@
 @extends('graphipro.template')
 @section('content')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <div style=" width:1000px; margin:20px auto;  min-height:350px;  ">
 
     <div style="font-size:25px; color:#29ABE2; float:left; width:690px; "> MON PANIER<br/>
@@ -66,9 +67,28 @@
         </div>
     </a>
     </div>
+        {{--<form action="/postpayment" method="POST">--}}
+            {{--{!! csrf_field() !!}--}}
+            {{--<script--}}
+                    {{--src="https://checkout.stripe.com/checkout.js" class="stripe-button"--}}
+                    {{--data-key="pk_live_aRBNdmVCTJAv5JhuZZEvvBIU"--}}
+                    {{--data-amount="{{$total_price}}"--}}
+                    {{--data-name="Graphipro"--}}
+                    {{--data-description="Widget"--}}
+                    {{--data-image="{{url('/images/logo1.png')}}"--}}
+                    {{--data-email="{{Auth::user()->email}}"--}}
+                    {{--data-locale="auto"--}}
+                    {{--data-zip-code="true"--}}
+                    {{--data-currency="eur"--}}
+
+            {{-->--}}
+            {{--</script>--}}
+        {{--</form>--}}
     <script>
+
         $('#valide').click(function () {
             $('#payment').submit();
         })
     </script>
+
 @endsection
