@@ -80,15 +80,31 @@
                     {{--data-locale="auto"--}}
                     {{--data-zip-code="true"--}}
                     {{--data-currency="eur"--}}
-
             {{-->--}}
             {{--</script>--}}
         {{--</form>--}}
-    <script>
+        <script src="https://checkout.stripe.com/checkout.js"></script>
 
-        $('#valide').click(function () {
-            $('#payment').submit();
-        })
+        <script>
+
+        var handler = StripeCheckout.configure({
+            key: 'pk_test_YYzdZX6viYDzv08OInmBXL7F',
+            locale: 'auto',
+            token: function(token) {
+                // You can access the token ID with `token.id`.
+                // Get the token ID to your server-side code for use.
+                token.id;
+            }
+        });
+        $("#valide").on("click", function() {
+            var amount=parseInt(<?php echo $total_price?>);
+            handler.open({
+                image: '/images/logo1.png',
+                name: 'Graphipro',
+                description: '2 widgets',
+                amount: amount
+            });
+        });
     </script>
 
 @endsection
