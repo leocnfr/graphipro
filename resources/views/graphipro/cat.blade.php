@@ -65,9 +65,8 @@
         @foreach($items as $key=>$item)
             <div class="product-table">
                 <div class="product-item">
-                    <div style="width: 140px;height: 140px;overflow: hidden">
-                        <img src="/storage/uploads/{{$item->productimg}}" alt="" width="140" height="140" class="product-item-img">
-                    </div>
+
+                    <img src="/storage/uploads/{{$item->productimg}}" alt="" width="140" height="140" class="product-item-img">
                     <div class="command-div">
                         <a href="{{url('/product/'.str_slug($item->name))}}" style="font-size: 12px;color: white;top: 50%;position: relative;padding: 3px;border: 1px solid white">Commande</a>
                     </div>
