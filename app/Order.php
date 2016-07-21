@@ -3,12 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Order extends Model
 {
     //
     protected $table='orders';
-    protected $fillable=['user_id','content','file_src'];
+    protected $fillable=['user_id','content','file_src','product_name'];
     
     public function belongsUser()
     {
@@ -24,5 +25,14 @@ class Order extends Model
         $ex=$request->get('ex');
         $design_price=$request->get('design_price');
     }
-    
+
+    public function showBonCommand()
+    {
+        return $this->lists('bon_command_id')->unique();
+    }
+
+    public function getByBonId($query)
+    {
+        return $this->where('bon_command_id','=',$query)->get();
+    }
 }

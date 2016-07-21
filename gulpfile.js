@@ -15,6 +15,6 @@ elixir(function(mix) {
     mix.sass('app.scss');
     mix.sass('photocopy.scss','public/css/photocopy.css');
     mix.sass('impression.scss','public/css/impression.css');
-    mix.browserify('main.js');
-
+    // mix.browserify('main.js');
+    mix.sass('pdf.scss','public/css/pdf.css');
 });

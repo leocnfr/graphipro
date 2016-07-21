@@ -163,6 +163,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/register/{type}','Auth\AuthController@register');
     //logout
     Route::get('/logout','Auth\AuthController@logout');
+
+    Route::get('/pdf/{query}','PdfController@make');
 });
 
 Route::get('/phpinfo','HomeController@index');

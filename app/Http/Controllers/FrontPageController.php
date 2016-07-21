@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Alert;
+use App\Order;
 use App\Pricetablelist;
 use App\Pro;
 use App\Products;
@@ -9,6 +10,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Cart;
+use Illuminate\Support\Facades\Auth;
 
 class FrontPageController extends Controller
 {
@@ -26,7 +28,7 @@ class FrontPageController extends Controller
 
     public function register()
     {
-        return view('graphipro.inscription');
+        return view('graphipro.auth.inscription');
     }
 
     public function product($name)
@@ -71,8 +73,11 @@ class FrontPageController extends Controller
         return view('graphipro.panier',compact('carts','count','total_price'));
     }
 
-    public function compte()
+    public function compte(Order $order)
     {
-        return view('graphipro.compte');
+
+        $orders=$order->where('user_id','=',Auth::user()->id)->paginate(15);
+        $bon_commands = $order->showBonCommand();
+        return view('graphipro.compte',compact('orders','bon_commands'));
     }
 }

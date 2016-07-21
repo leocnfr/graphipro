@@ -4,9 +4,57 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "295ac12a04e915fc93907ac43c839d87",
-    "content-hash": "18066118d36465660f697d22ca9cdcb6",
+    "hash": "de8a207bab95b0b002328e85a34e342b",
+    "content-hash": "1c443f06afaa0fbdfe496f9e18228a09",
     "packages": [
+        {
+            "name": "barryvdh/laravel-dompdf",
+            "version": "v0.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvdh/laravel-dompdf.git",
+                "reference": "b606788108833f7765801dca35455fb23ce9f869"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barryvdh/laravel-dompdf/zipball/b606788108833f7765801dca35455fb23ce9f869",
+                "reference": "b606788108833f7765801dca35455fb23ce9f869",
+                "shasum": ""
+            },
+            "require": {
+                "dompdf/dompdf": "0.6.*",
+                "illuminate/support": "5.0.x|5.1.x|5.2.x",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Barryvdh\\DomPDF\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "A DOMPDF Wrapper for Laravel",
+            "keywords": [
+                "dompdf",
+                "laravel",
+                "pdf"
+            ],
+            "time": "2015-12-21 19:51:22"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",
@@ -127,16 +175,16 @@
         },
         {
             "name": "cviebrock/eloquent-sluggable",
-            "version": "4.0.2",
+            "version": "4.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cviebrock/eloquent-sluggable.git",
-                "reference": "91cc258bb91b34e2d12eae2827c11f1529f881bd"
+                "reference": "506525bd2d4092f2bda933b65eb42c6ff4818e15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/91cc258bb91b34e2d12eae2827c11f1529f881bd",
-                "reference": "91cc258bb91b34e2d12eae2827c11f1529f881bd",
+                "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/506525bd2d4092f2bda933b65eb42c6ff4818e15",
+                "reference": "506525bd2d4092f2bda933b65eb42c6ff4818e15",
                 "shasum": ""
             },
             "require": {
@@ -174,7 +222,7 @@
                 "laravel",
                 "slug"
             ],
-            "time": "2016-06-17 22:05:30"
+            "time": "2016-07-15 16:05:39"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -275,6 +323,47 @@
                 "string"
             ],
             "time": "2015-11-06 14:35:42"
+        },
+        {
+            "name": "dompdf/dompdf",
+            "version": "v0.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dompdf/dompdf.git",
+                "reference": "cc06008f75262510ee135b8cbb14e333a309f651"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/cc06008f75262510ee135b8cbb14e333a309f651",
+                "reference": "cc06008f75262510ee135b8cbb14e333a309f651",
+                "shasum": ""
+            },
+            "require": {
+                "phenx/php-font-lib": "0.2.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "include/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Ménager",
+                    "email": "fabien.menager@gmail.com"
+                },
+                {
+                    "name": "Brian Sweeney",
+                    "email": "eclecticgeek@gmail.com"
+                }
+            ],
+            "description": "DOMPDF is a CSS 2.1 compliant HTML to PDF converter",
+            "homepage": "https://github.com/dompdf/dompdf",
+            "time": "2015-12-07 04:07:13"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -423,16 +512,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.2.39",
+            "version": "5.2.41",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "c2a77050269b4e03bd9a735a9f24e573a7598b8a"
+                "reference": "29ba2e310cfeb42ab6545bcd81ff4c2ec1f6b5c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/c2a77050269b4e03bd9a735a9f24e573a7598b8a",
-                "reference": "c2a77050269b4e03bd9a735a9f24e573a7598b8a",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/29ba2e310cfeb42ab6545bcd81ff4c2ec1f6b5c2",
+                "reference": "29ba2e310cfeb42ab6545bcd81ff4c2ec1f6b5c2",
                 "shasum": ""
             },
             "require": {
@@ -489,7 +578,8 @@
                 "illuminate/support": "self.version",
                 "illuminate/translation": "self.version",
                 "illuminate/validation": "self.version",
-                "illuminate/view": "self.version"
+                "illuminate/view": "self.version",
+                "tightenco/collect": "self.version"
             },
             "require-dev": {
                 "aws/aws-sdk-php": "~3.0",
@@ -548,7 +638,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-06-17 19:25:12"
+            "time": "2016-07-20 13:13:06"
         },
         {
             "name": "laravelcollective/html",
@@ -606,16 +696,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.24",
+            "version": "1.0.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "9aca859a303fdca30370f42b8c611d9cf0dedf4b"
+                "reference": "a76afa4035931be0c78ca8efc6abf3902362f437"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/9aca859a303fdca30370f42b8c611d9cf0dedf4b",
-                "reference": "9aca859a303fdca30370f42b8c611d9cf0dedf4b",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a76afa4035931be0c78ca8efc6abf3902362f437",
+                "reference": "a76afa4035931be0c78ca8efc6abf3902362f437",
                 "shasum": ""
             },
             "require": {
@@ -628,7 +718,7 @@
                 "ext-fileinfo": "*",
                 "mockery/mockery": "~0.9",
                 "phpspec/phpspec": "^2.2",
-                "phpunit/phpunit": "~4.8 || ~5.0"
+                "phpunit/phpunit": "~4.8"
             },
             "suggest": {
                 "ext-fileinfo": "Required for MimeType",
@@ -685,7 +775,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2016-06-03 19:11:39"
+            "time": "2016-07-18 12:22:57"
         },
         {
             "name": "monolog/monolog",
@@ -1002,6 +1092,40 @@
             "time": "2016-03-18 20:34:03"
         },
         {
+            "name": "phenx/php-font-lib",
+            "version": "0.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PhenX/php-font-lib.git",
+                "reference": "c30c7fc00a6b0d863e9bb4c5d5dd015298b2dc82"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PhenX/php-font-lib/zipball/c30c7fc00a6b0d863e9bb4c5d5dd015298b2dc82",
+                "reference": "c30c7fc00a6b0d863e9bb4c5d5dd015298b2dc82",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "classes/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Ménager",
+                    "email": "fabien.menager@gmail.com"
+                }
+            ],
+            "description": "A library to read, parse, export and make subsets of different types of font files.",
+            "homepage": "https://github.com/PhenX/php-font-lib",
+            "time": "2014-02-01 15:22:28"
+        },
+        {
             "name": "psr/log",
             "version": "1.0.0",
             "source": {
@@ -1113,16 +1237,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v3.15.0",
+            "version": "v3.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "6bc921a03af31387ef3f0a1fc233d432315ecb3a"
+                "reference": "982b90dcbc9cfd59057db8819a247c6db18df6cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/6bc921a03af31387ef3f0a1fc233d432315ecb3a",
-                "reference": "6bc921a03af31387ef3f0a1fc233d432315ecb3a",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/982b90dcbc9cfd59057db8819a247c6db18df6cd",
+                "reference": "982b90dcbc9cfd59057db8819a247c6db18df6cd",
                 "shasum": ""
             },
             "require": {
@@ -1164,7 +1288,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2016-06-29 21:32:55"
+            "time": "2016-07-14 17:36:41"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2761,16 +2885,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.26",
+            "version": "4.8.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "fc1d8cd5b5de11625979125c5639347896ac2c74"
+                "reference": "c062dddcb68e44b563f66ee319ddae2b5a322a90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/fc1d8cd5b5de11625979125c5639347896ac2c74",
-                "reference": "fc1d8cd5b5de11625979125c5639347896ac2c74",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c062dddcb68e44b563f66ee319ddae2b5a322a90",
+                "reference": "c062dddcb68e44b563f66ee319ddae2b5a322a90",
                 "shasum": ""
             },
             "require": {
@@ -2829,7 +2953,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-05-17 03:09:28"
+            "time": "2016-07-21 06:48:14"
         },
         {
             "name": "phpunit/phpunit-mock-objects",

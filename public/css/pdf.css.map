@@ -1,0 +1,1 @@
+{"version":3,"sources":["pdf.scss"],"names":[],"mappings":"AAAA;EACE;IACE,mBAAmB;IACnB,aAAa,EACd,EAAA","file":"pdf.css","sourcesContent":["@media print  {\n  #left {\n    background: yellow;\n    width: 150px;\n  }\n}\n"],"sourceRoot":"/source/"}
