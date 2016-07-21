@@ -163,7 +163,7 @@ return [
         'Overtrue\LaravelShoppingCart\ServiceProvider',
 
         Cviebrock\EloquentSluggable\ServiceProvider::class,
-//        Barryvdh\DomPDF\ServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
 
 
     ],
@@ -217,7 +217,7 @@ return [
         'Alert' => UxWeb\SweetAlert\SweetAlert::class,
         //cart
         'Cart'      => 'Overtrue\LaravelShoppingCart\Facade',
-//        'PDF' => Barryvdh\DomPDF\Facade::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 
