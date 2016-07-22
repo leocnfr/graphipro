@@ -1,6 +1,20 @@
 @extends('admin.template.admin_template')
 @section('content')
-    <table class="table table-hover">
+    <style>
+        .societe{
+            background: #0cad88;
+        }
+        .personal{
+            background: #ffcccc;
+        }
+    </style>
+    <div class="row">
+        <div class="personal" style="width: 10px;height: 10px;display: inline-block" ></div>个人客户
+    </div>
+    <div class="row">
+        <div class="societe" style="width: 10px;height: 10px;display: inline-block"></div>专业客户
+    </div>
+    <table class="table table-condensed">
         <thead>
         <tr>
             <th></th>
@@ -14,10 +28,13 @@
         </thead>
         <tbody>
         @foreach($orders as $order)
-            <tr>
+            <tr class="{{empty($order->belongsUser->societe)?'personal':'societe'}}">
                 <td></td>
                 <td>{{empty($order->belongsUser->societe)?$order->belongsUser->nom:$order->belongsUser->societe}}</td>
-                <td>{!! $order->content !!}</td>
+                <td>
+                    <strong>{{$order->product_name}}</strong><br>
+                    {!! $order->content !!}
+                </td>
                 <td>{{$order->ex}}</td>
                 <td>{{$order->price}}</td>
                 <td>

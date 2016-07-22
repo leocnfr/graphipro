@@ -66,10 +66,6 @@
                 </li>
                 <li class="treeview">
                     <a href="{{url('admin/orders')}}">订单</a>
-                    <ul class="treeview-menu">
-                        <li><a href="{{url('/admin/orders')}}"><i class="fa fa-circle-o"></i>专业客户订单</a></li>
-                        <li><a href="{{url('/admin/category')}}"><i class="fa fa-circle-o"></i>个人客户订单</a></li>
-                    </ul>
                 </li>
                 <li class="treeview">
                     <a href="{{url('/admin/livraison')}}">送货地址及价格</a>
