@@ -53,7 +53,8 @@
         swal({!! Session::get('sweet_alert.alert') !!});
     </script>
 @endif
-<script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.js"></script>
+    <script>
     $('.disable').click(function () {
     return false;
     });
@@ -69,7 +70,6 @@
             console.log('text1');
             $('#panier-form').submit();
         }
-    })
-
+    });
 </script>
 @endsection

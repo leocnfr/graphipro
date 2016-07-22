@@ -1,4 +1,5 @@
 @inject('product','App\Products')
+@inject('orders','Overtrue\LaravelShoppingCart\Cart')
 <style>
     #top-des {
         height: 20px;
@@ -50,7 +51,8 @@
             <center>
                 <span style="color:#29ABE2; font-size:20px;">Service Client</span><br>
 
-                <div style="padding:5px; background-color:#29ABE2; color:#FFF; font-size:20px; border-radius:10px;">01 46 70 00 63
+                <div style="padding:5px; background-color:#29ABE2; color:#FFF; font-size:20px; border-radius:10px;">01
+                    46 70 00 63
                 </div>
                 <div style="font-size:16px; color:#999; line-height:18px; ">Du lundi au vendredi<br>de 9h30 à 18h30
                 </div>
@@ -112,7 +114,8 @@
                     </div>
                     <br/>
 
-                    <img src="/images/fleche2.png"/> <span style="font-size:20px; color:#29ABE2">Grand format</span><br/>
+                    <img src="/images/fleche2.png"/> <span
+                            style="font-size:20px; color:#29ABE2">Grand format</span><br/>
 
                     <div style="margin-left:14px;">
                         @foreach($product->showByCat(24) as $item)
@@ -238,7 +241,8 @@
                     </div>
                     <br/>
 
-                    <img src="/images/fleche2.png"/> <span style="font-size:20px; color:#29ABE2">Grand format</span><br/>
+                    <img src="/images/fleche2.png"/> <span
+                            style="font-size:20px; color:#29ABE2">Grand format</span><br/>
 
                     <div style="margin-left:14px; padding-bottom:10px;"><a href="#" style="">
                             @foreach($product->showByCat(24) as $item)
@@ -375,12 +379,12 @@
                 <img src="/images/pannier.png" height="40" style="float:left;">
 
                 <div style="float:left; margin-left:5px;"><span style="font-size:18px;">MON PANIER</span><br>
-                   <span id="head-item">
-                       {{$count}}
+                    <span id="head-item">
+                        {{$orders->countRows()}}
                    </span>
                     article(s)
                     <span id="head-price">
-                        {{$total_price}}
+                        {{$orders->totalPrice()}}
                     </span> €
                 </div>
             </a>
