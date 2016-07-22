@@ -28,7 +28,7 @@ class OrderController extends Controller
         $price=$request->get('price');
         $ex=$request->get('ex');
         $design_price=$request->get('design_price');
-        $img=Products::find($product_id)->productimage;
+        $img=Products::find($product_id)->productimg;
         $validator=Validator::make($request->all(),[
             'price'=>'required|min:1'
         ]);

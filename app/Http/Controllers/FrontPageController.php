@@ -61,7 +61,6 @@ class FrontPageController extends Controller
     }
     public function showPanier()
     {
-//        dd(Cart::all());
         $carts=Cart::all();
         $count=Cart::countRows();
         $total_price=Cart::totalPrice();
