@@ -49,7 +49,7 @@ class FrontPageController extends Controller
                 $formats= array_merge(json_decode($table->formats),$formats);
             }
             $formats=array_unique($formats);
-            return view('graphipro.produit_template',compact('product','formats'));
+            return view('graphipro.product.produit_template',compact('product','formats'));
         }
 
     }

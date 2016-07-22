@@ -35,4 +35,5 @@ class Order extends Model
     {
         return $this->where('bon_command_id','=',$query)->get();
     }
+
 }

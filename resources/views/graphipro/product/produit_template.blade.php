@@ -21,7 +21,7 @@
                     <span style="font-size:35px;" id="showprice">@{{price}}€</span> TTC <br /><br />
                 <button style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; float:left; " id="panier">Ajouter au panier</button>
             </div>
-            @include('graphipro.product_type2')
+            @include('graphipro.product.product_type2')
             @elseif(in_array($product->id,array(17,19,18)))
             <div style="font-size:18px; color:#29ABE2; float:right; margin-top:20px; margin-right:45px; position:relative; padding:10px; border:thin ridge #29ABE2; border-radius:3px;">
                 Prix total:<br />
@@ -34,7 +34,7 @@
                     <button style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; float:left; " id="panier">Ajouter au panier</button>
                 {{--</form>--}}
             </div>
-            @include('graphipro.special')
+            @include('graphipro.product.special')
         @else
             <div style="font-size:18px; color:#29ABE2; float:right; margin-top:20px; margin-right:45px; position:relative; padding:10px; border:thin ridge #29ABE2; border-radius:3px;">
                 Prix total:<br />
@@ -42,7 +42,7 @@
                     <span style="font-size:35px;" id="showprice" >0€</span> TTC <br /><br />
                     <button style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; float:left; " id="panier">Ajouter au panier</button>
             </div>
-            @include('graphipro.produit_type1')
+            @include('graphipro.product.produit_type1')
         @endif
 
     </div>

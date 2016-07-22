@@ -105,12 +105,13 @@ class OrderController extends Controller
     public function destroy($rawid)
     {
         Cart::remove($rawid);
+        alert()->success('删除成功', 'Success!');
         return redirect()->back();
     }
 
     public function showAll()
     {
-        $orders=Order::orderBy('created_at','desc')->paginate(10);
+        $orders=Order::orderBy('created_at','desc')->paginate(20);
         return view('admin.order.show',compact('orders'));
     }
 
@@ -121,8 +122,5 @@ class OrderController extends Controller
         return response()->download($path);
     }
 
-    public function storePromotion()
-    {
-        
-    }
+
 }

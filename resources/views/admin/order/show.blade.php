@@ -23,7 +23,7 @@
                 <td>
                     @if(!empty($order->file_src))
                         <p style="display:inline-block">{{basename($order->file_src)}}</p>
-                        <form action="{{url('/admin/files/download')}}" method="post" style="display: inline-block">
+                        <form action="{{url('/admin/files/download')}}" method="post">
                             <input type="hidden" value="{{$order->file_src}}" name="file_path">
                             <button class="fa fa-download" >Download</button>
                         </form>
