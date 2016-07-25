@@ -5,15 +5,15 @@
 			<input type="hidden" value="{{$product->id}}" name="product_id">
 			<div class="form-group">
 				<label for=""></label>
-				<input type="text" class="form-control" name="postcode" id="" placeholder="邮编">
+				<input type="number" class="form-control" name="postcode" id="" placeholder="邮编" required>
 			</div>
 			<div class="form-group">
 				<label for=""></label>
-				<input type="text" class="form-control" name="numbers" id="" placeholder="数量或平米数">
+				<input type="text" class="form-control" name="numbers" id="" placeholder="数量或平米数" required>
 			</div>
 			<div class="form-group">
 				<label for=""></label>
-				<input type="text" class="form-control" name="price" id="" placeholder="价格">
+				<input type="number" step="0.01" class="form-control" name="price" id="" placeholder="价格" required>
 			</div>
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</form>
