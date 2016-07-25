@@ -1,67 +1,9 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel="stylesheet" href="/css/pdf.css" media="print">
-    <style>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/pdf.css"  type="text/css">
 
-        #left,#right{
-            height: 80px;
-        }
-        #left h2{
-            color: #29ABE2;
-            line-height: 1px;
-        }
-        #left {
-                width: 145px;
-                float: left;
-                border-right: 2px solid black;
-
-            }
-            #right{
-                position: relative;
-                float: left;
-                font-size: 14px;
-                margin-left: 8px;
-                line-height: 3px;
-            }
-        #client-info{
-            position: relative;
-            float: right;
-            width: 270px;
-            font-size: 16px;
-            margin-top: 30px;
-        }
-        #content{
-            clear: both;
-            padding-top: 20px;
-        }
-        #content h2{
-            display: inline;
-        }
-        table{
-            width: 100%;
-        }
-        #table-header > td{
-            border-top: 1px solid;
-            border-bottom: 1px solid;
-        }
-        .table-content > td {
-            vertical-align: text-top;
-            font-size: 14px;
-        }
-        #footer{
-            bottom: 10px;
-            position: absolute;
-        }
-        #graphipro-info{
-            font-size: 12px;
-        }
-        #footer table tr td{
-            border: 1px solid black;
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
 <header>
@@ -85,7 +27,7 @@
     </div>
 </div>
 <div id="content" >
-    <h2>Bon de Commande : </h2> &nbsp;&nbsp;&nbsp; du {{date('d/m/Y')}}
+    <h2>Facteur : </h2> &nbsp;&nbsp;&nbsp; du {{date('d/m/Y')}}
     <p>Date d'échéance : à la commande</p>
     <table cellspacing="0" cellpadding="10">
         <tr id="table-header">
@@ -103,14 +45,15 @@
                     {!! $order->content !!}
                 </td>
                 <td>{{$order->ex}}</td>
-                <td>{{$order->price}}</td>
+                <td>{{number_format($order->price,2)}}</td>
             </tr>
         @endforeach
     </table>
 
 </div>
-<div id="footer">
-    <table >
+<div id="footer" >
+
+    <table>
         <tr>
             <td>BASE HT</td>
             <td>TVA</td>
@@ -118,23 +61,20 @@
             <td>Net a payer</td>
         </tr>
         <tr>
-            <td>{{$total}}</td>
-            <td>{{$total}}</td>
-            <td>{{$total}}</td>
-            <td>{{$total}}</td>
+            <td>{{number_format($total,2)}}</td>
+            <td>{{number_format($total,2)}}</td>
+            <td>{{number_format($total,2)}}</td>
+            <td>{{number_format($total,2)}}</td>
 
         </tr>
     </table>
     <div id="graphipro-info">
-        <div>
+        <div id="left">
             Imprimer Graphipro <br>
             1 - 3 rue Baudin 94000 Ivry Sur Seine <br>
             Tel:01 46 70 00 63 - Fax:09 56 09 76 18 <br>
             Email:contact@graphipro.com Site:www.graphiprofr
         </div>
-       <div>
-
-       </div>
 
     </div>
 </div>

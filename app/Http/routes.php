@@ -91,6 +91,9 @@ Route::group(['middleware' => ['admin']], function () {
     
     //订单
     Route::get('/admin/orders','OrderController@showAll');
+    //订单状态
+    Route::get('/admin/status','StatusController@index');
+    Route::resource('/admin/status','StatusController');
     //下载文件
     Route::post('/admin/files/download','OrderController@download');
 });

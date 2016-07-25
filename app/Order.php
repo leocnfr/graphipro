@@ -9,7 +9,7 @@ class Order extends Model
 {
     //
     protected $table='orders';
-    protected $fillable=['user_id','content','file_src','product_name'];
+    protected $fillable=['user_id','content','file_src','product_name','status_id'];
     
     public function belongsUser()
     {
@@ -36,5 +36,8 @@ class Order extends Model
         return $this->where('bon_command_id','=',$query)->get();
     }
 
-
+    public function orderStatus()
+    {
+        return $this->belongsTo(Status::class,'status_id');
+    }
 }

@@ -9,17 +9,6 @@ use App\Http\Requests;
 
 class LivraisonConroller extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-        $villes=Livraison::paginate(15);
-        return view('admin.livraison.index',compact('villes'));
-    }
 
     /**
      * Show the form for creating a new resource.

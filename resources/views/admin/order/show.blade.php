@@ -24,6 +24,7 @@
             <th>价格</th>
             <th>文件下载</th>
             <th>创建时间</th>
+            <th>状态</th>
         </tr>
         </thead>
         <tbody>
@@ -35,8 +36,8 @@
                     <strong>{{$order->product_name}}</strong><br>
                     {!! $order->content !!}
                 </td>
-                <td>{{$order->ex}}</td>
-                <td>{{$order->price}}</td>
+                <td>{{$order->ex}}ex</td>
+                <td>{{$order->price}}€</td>
                 <td>
                     @if(!empty($order->file_src))
                         <p style="display:inline-block">{{basename($order->file_src)}}</p>
@@ -48,6 +49,9 @@
                 </td>
                 <td> {{$order->created_at}} <br>
                     <strong>{{$order->created_at->diffForHumans()}}</strong>
+                </td>
+                <td>
+                    @include('admin.order.status')
                 </td>
             </tr>
         @endforeach

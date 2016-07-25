@@ -17,5 +17,6 @@ class PdfController extends Controller
         $orders=$order->getByBonId($query);
         $pdf = PDF::loadView('pdf',compact('orders'));
         return $pdf->stream('invoice.pdf');
+	    //return view('pdf',compact('orders'));
     }
 }
