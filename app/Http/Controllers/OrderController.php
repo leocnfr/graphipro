@@ -37,13 +37,19 @@ class OrderController extends Controller
             return redirect('product/'.$request->get('product_id'));
 
         }
-       if ($request->file('file'))
+        if ($design_price==0)
         {
-            $filename=$request->file('file')->getClientOriginalName();
-            $tmppath='tmp/'.date('Y-m-d').'/'.$filename;
-            $despath='files/'.date('Y-m-d').'/'.$filename;
-            Storage::put($tmppath,file_get_contents($request->file('file')));
+	        if ($request->file('file'))
+	        {
+		        $filename=$request->file('file')->getClientOriginalName();
+		        $tmppath='tmp/'.date('Y-m-d').'/'.$filename;
+		        $despath='files/'.date('Y-m-d').'/'.$filename;
+		        Storage::put($tmppath,file_get_contents($request->file('file')));
+	        }else{
+	        	return redirect()->back()->with('error','请选择文件上传');
+	        }
         }
+
 
         if ($product_id==25)
         {

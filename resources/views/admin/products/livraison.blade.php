@@ -3,9 +3,15 @@
 	<div class="col-md-4">
 		<form action="/admin/livraison" method="post" role="form">
 			<input type="hidden" value="{{$product->id}}" name="product_id">
-			<div class="form-group">
-				<label for=""></label>
-				<input type="number" class="form-control" name="postcode" id="" placeholder="邮编" required>
+			<div class="radio">
+				<label>
+					<input type="radio" name="postcode" id="inputID" value="1" checked="checked">75
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="postcode" id="inputID" value="2" >75以外
+				</label>
 			</div>
 			<div class="form-group">
 				<label for=""></label>
@@ -30,7 +36,7 @@
 			<tbody>
 			@foreach($livrasions as $livrasion)
 				<tr>
-					<td>{{$livrasion->postcode}}</td>
+					<td>{{$livrasion->postcode==1?75:'75以外'}}</td>
 					<td>{{$livrasion->numbers}}</td>
 					<td>{{$livrasion->price}}</td>
 					<td>

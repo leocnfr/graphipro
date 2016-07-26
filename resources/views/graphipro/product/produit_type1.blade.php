@@ -58,7 +58,7 @@
                 @include('graphipro.desigen_price')
             </div>
 
-            @include('graphipro.livraison')
+            @include('graphipro.product.livraison')
 
 
         </td>
