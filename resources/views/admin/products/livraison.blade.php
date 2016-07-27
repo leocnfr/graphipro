@@ -35,7 +35,7 @@
 			</thead>
 			<tbody>
 				<tr v-for="result in results">
-					<td>@{{ result.postcode }}</td>
+					<td>@{{ result.postcode==1?'75省':'75省以外' }}</td>
 					<td>@{{ result.numbers }}</td>
 					<td>@{{ result.price }}</td>
 					<td><button class="btn btn-danger" @click='delete(result)'>删除</button></td>
