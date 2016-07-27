@@ -10,9 +10,9 @@ use App\Http\Requests;
 class LivraisonConroller extends Controller
 {
 
-	public function index()
+	public function index(Request $request)
 	{
-		return Livraison::all()->toJson();
+		return Livraison::where('product_id',$request->get('product_id'))->get()->toJson();
 	}
     /**
      * Show the form for creating a new resource.

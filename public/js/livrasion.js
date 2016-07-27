@@ -11552,7 +11552,7 @@ new Vue({
             });
         },
         fetch: function fetch() {
-            this.$http.get('/admin/livraison').then(function (res) {
+            this.$http.get('/admin/livraison?product_id=' + this.product_id).then(function (res) {
                 this.$set('results', res.json());
             });
         },
