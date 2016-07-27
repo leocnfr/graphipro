@@ -25,15 +25,7 @@
                         <div style="padding:10px; width:400px; border-radius:3px; background-color:#F2F2F2; line-height:35px; color:#000; font-size:18px;">
                             {!! $pro->des !!}
                         </div>
-                        <div style="font-size:20px; color:#29ABE2; margin-top:20px;">2. Option de livraison</div><br />
-                        <div style="padding:10px; width:400px; border-radius:3px; background-color:#F2F2F2;">
-                            Choix le moyen de livraison:
-                            <select name="jumpMenu" id="jumpMenu" style="width:220px;">
-                                <option>Récupérer au bureau Graphipro</option>
-                                <option>Livraison chez vous J+3</option>
-                                <option>Livraison chez vous par UPS J+2</option>
-                            </select>
-                        </div>
+                       @include('graphipro.product.livraison')
                     </td>
                 </tr>
             </table>

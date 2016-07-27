@@ -10,6 +10,10 @@ use App\Http\Requests;
 class LivraisonConroller extends Controller
 {
 
+	public function index()
+	{
+		return Livraison::all()->toJson();
+	}
     /**
      * Show the form for creating a new resource.
      *
@@ -30,9 +34,7 @@ class LivraisonConroller extends Controller
      */
     public function store(Request $request)
     {
-        Livraison::create($request->all());
-        return redirect()->back();
-
+		return Livraison::create($request->all())->id;
     }
 
     /**
@@ -81,7 +83,9 @@ class LivraisonConroller extends Controller
     public function destroy($id)
     {
         //
-        Livraison::destroy($id);
-        return redirect()->back();
+	    if (Livraison::destroy($id))
+	    {
+	    	return 200;
+	    }
     }
 }

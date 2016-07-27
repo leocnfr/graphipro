@@ -12,7 +12,7 @@
     <input type="radio" name="livraison_address" id="" value="1" checked="checked">{{Auth::user()->address}}
         <br>
     @endif
-
+    <input type="radio" name="livraison_address" checked="checked">Récupérer au bureau Graphipro <br>
     <input type="radio" name="livraison_address" id="new" value="2">New address
         <div id="new-address" style="display: none">
             <input type="number" minlength="5" placeholder="votre post code" name="postcode"> <br>
