@@ -150,7 +150,14 @@ $in.on("click", function() {
 		});
 $out.on("click", function() {
 		tb7.set("#legal", {visibility:"hidden"});
-		});	
-	
-  
- 
+		});
+
+
+$( window ).scroll(function() {
+	var scrollX=$(document).scrollTop();
+	if (scrollX>120){
+		$('div#jump').css({"position":"fixed","top":0,"z-index":3000});
+	}else{
+		$("div#jump").css({"position":"relative"});
+	}
+});
