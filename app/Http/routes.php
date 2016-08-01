@@ -126,7 +126,7 @@ Route::delete('/admin/papier/{id}','PapierController@destroy');
 Route::get('/admin/format','FormatController@show');
 Route::post('/admin/formate/create','FormatController@store');
 Route::delete('/admin/format/{id}','FormatController@destroy');
-Route::put('/admin/format/','FormatController@update');
+Route::put('/admin/format','FormatController@update');
 //Pelliculage
 Route::get('/admin/pelliculage','PelliculageController@show');
 Route::post('/admin/pelliculage/create','PelliculageController@store');

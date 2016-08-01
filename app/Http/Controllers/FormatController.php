@@ -26,10 +26,10 @@ class FormatController extends Controller
 		Format::destroy($id);
     }
 
-	public function update(Request $request)
+	public function update($id,Request $request)
 	{
-		dd($request->all());
-		Format::find($request->get('id'))->update([
+		dd($id);
+		Format::find($id)->update([
 			'format'=>$request->get('format'),
 			'img'=>$request->file('img')->getClientOriginalName()
 		]);
