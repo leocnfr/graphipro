@@ -99,6 +99,25 @@ Route::group(['middleware' => ['admin']], function () {
     Route::resource('/admin/status','StatusController');
     //下载文件
     Route::post('/admin/files/download','OrderController@download');
+
+	//产品属性
+	Route::get('/admin/attribute',function(){
+		return view('admin.products.attribute');
+	});
+//papier
+	Route::get('/admin/papier','PapierController@show');
+	Route::post('/admin/papier/create','PapierController@store');
+	Route::delete('/admin/papier/{id}','PapierController@destroy');
+
+//Format
+	Route::get('/admin/format','FormatController@show');
+	Route::post('/admin/formate/create','FormatController@store');
+	Route::delete('/admin/format/{id}','FormatController@destroy');
+	Route::put('/admin/format','FormatController@update');
+//Pelliculage
+	Route::get('/admin/pelliculage','PelliculageController@show');
+	Route::post('/admin/pelliculage/create','PelliculageController@store');
+	Route::delete('/admin/pelliculage/{id}','PelliculageController@destroy');
 });
 
 Route::group(['middleware' => ['web']], function () {
@@ -113,24 +132,7 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 
-//产品属性
-Route::get('/admin/attribute',function(){
-    return view('admin.products.attribute');
-});
-//papier
-Route::get('/admin/papier','PapierController@show');
-Route::post('/admin/papier/create','PapierController@store');
-Route::delete('/admin/papier/{id}','PapierController@destroy');
 
-//Format
-Route::get('/admin/format','FormatController@show');
-Route::post('/admin/formate/create','FormatController@store');
-Route::delete('/admin/format/{id}','FormatController@destroy');
-Route::put('/admin/format','FormatController@update');
-//Pelliculage
-Route::get('/admin/pelliculage','PelliculageController@show');
-Route::post('/admin/pelliculage/create','PelliculageController@store');
-Route::delete('/admin/pelliculage/{id}','PelliculageController@destroy');
 
 //前台页面
 Route::get('/','FrontPageController@index');
