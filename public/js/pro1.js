@@ -145,23 +145,7 @@ function getPrice(proid) {
                     return false;
                 }else
                 {
-                    $(".choosed").each(function(){
-                        $(".choosed").removeClass('choosed');
-                    });
-                    $(this).toggleClass("choosed");
-                    var price = (parseInt(event.target.innerText)*1.2).toFixed(2);
-                    $("#showprice").html(price);
-                    $("#price").val(price);
-                    var tdSeq = $(this).parent().find("td").index($(this)[0]);
-                    var trSeq = $(this).parent().parent().find("tr").index($(this).parent()[0]);
-                    ex=$(this).parent().find("td:first-child").text();
-                    day=$("#day"+tdSeq).text();
-                    $('#ex').val(parseInt(ex));
-                    $('#day').val(day);
-                    $('#s-format').val($('#formate').val());
-                    $('#s-papier').val($('#papier').val());
-                    $('#s-imprimer').val($('#imprimer').val());
-                    $('#s-pelliculage').val($('#pelliculage').val());
+                    showPrice(event);
                 }
             });
         }
@@ -182,3 +166,20 @@ $('#pelliculage').change(function () {
 });
 
 getPapier(proid);
+
+function showPrice(event) {
+    $(".choosed").each(function(){
+        $(".choosed").removeClass('choosed');
+    });
+    $(event.target).toggleClass("choosed");
+    var price = (parseInt(event.target.innerText)*1.2).toFixed(2);
+    $("#showprice").html(price);
+    $("#price").val(price);
+    var tdSeq = $(event.target).parent().find("td").index($(event.target)[0]);
+    var trSeq = $(event.target).parent().parent().find("tr").index($(event.target).parent()[0]);
+    ex=$(event.target).parent().find("td:first-child").text();
+    day=$("#day"+tdSeq).text();
+    $('#ex').val(parseInt(ex));
+    $('#day').val(day);
+}
+

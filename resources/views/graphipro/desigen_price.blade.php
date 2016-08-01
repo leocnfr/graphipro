@@ -8,7 +8,7 @@
 <br>
 <select id="design_price" name="design_price" id="jumpMenu" style="width:220px;">
 	<option value="0" selected>Fournir par client</option>
-	<option value="{{$product->design_price}}">+{{$product->design_price}}</option>
+	<option value="{{$product->design_price}}">Demander la création</option>
 </select>
 <br/>
 <div id="uploadfile">

@@ -21,8 +21,13 @@
                                 {{$cart->larger}}cm*{{$cart->hauter}}cm/{{$cart->materiels}}/{{$cart->ex}}ex
                             @elseif(in_array($cart->id,array(17,19,18)))
                                 {{$cart->size}}
+                            @elseif($cart->type=='promotion')
+                                {!! $cart->des !!}
                             @else
-                                {{$cart->format}}/{{$cart->papier}}/{{$cart->imprimer}}/{{$cart->pelliculage}}
+                                {{$cart->format}} <br>
+                                {{$cart->papier}} <br>
+                                {{$cart->imprimer}} <br>
+                                {{$cart->pelliculage}}
                             @endif
                         </div>
                         <div style="float:left;  margin-left:25px;">
@@ -30,14 +35,17 @@
                             <span>Délai {{$cart->day}}</span>
                             <br/>
                             Quantité: {{$cart->ex}}ex<br/>
-                            Prix: <span style="font-size:18px; color:#29ABE2;">{{$cart->price}}</span> TTC <br>
 
                             @if($cart->design_price==0)
                                 Ficher fournir par client <br>
                                 {{$cart->filename}}
                             @else
-                                Creation:{{$cart->design_price}}
+                                Creation:{{$cart->design_price}} <br>
                             @endif
+                            Address de livraison:{{$cart->lv_address}} <br>
+                            Frais de livraison: {{$cart->lv_price}} <br>
+                            Total: <span style="font-size:18px; color:#29ABE2;">{{$cart->price}}</span> TTC <br>
+
                         </div>
                     </div>
             @endforeach

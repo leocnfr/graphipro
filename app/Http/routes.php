@@ -85,6 +85,7 @@ Route::group(['middleware' => ['admin']], function () {
     Route::delete('/admin/special/{id}','SpecialPriceController@destroy');
     //存数量和价格
     Route::post('/admin/price','PriceController@store');
+
     //删除
     Route::delete('/admin/price/{id}','PriceController@destroy');
     Route::put('/admin/price','PriceController@edit');
@@ -139,6 +140,7 @@ Route::get('/papier','JsonController@getPapier');
 //获取pelliculage
 Route::get('/pelliculage','JsonController@getPelle');
 Route::get('/price','JsonController@getPrice');
+
 //获取imprimer
 Route::get('/imprimer','JsonController@getImprimer');
 //存储购物车

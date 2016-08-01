@@ -21,7 +21,27 @@
         <label for="">折扣价</label>
         <input type="number" class="form-control" name="pro_price" step="0.01">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+	<div class="form-group">
+		<label for="">送货省份</label> <br>
+		<div class="radio-inline">
+			<label>
+				<input type="radio" name="city" id="inputID" value="1" >
+				75省
+			</label>
+		</div>
+		<div class="radio-inline">
+			<label>
+				<input type="radio" name="city" id="inputID" value="2">
+				75省以外
+			</label>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="">送货价格</label>
+		<input type="number" class="form-control" name="lv_price" id="" step="0.01" >
+	</div>
+
+	<button type="submit" class="btn btn-primary">Submit</button>
 </form>
     <table class="table table-hover">
     	<thead>
