@@ -28,6 +28,7 @@ class FormatController extends Controller
 
 	public function update(Request $request)
 	{
+		dd($request->all());
 		Format::find($request->get('id'))->update([
 			'format'=>$request->get('format'),
 			'img'=>$request->file('img')->getClientOriginalName()
