@@ -1,6 +1,6 @@
 @extends('graphipro.template')
 @section('content')
-<div style="width:100%; height:350px; background:url(/images/bg.png)">
+<div style="width:100%; height:350px; background:url(/images/bg.png);overflow: hidden">
 
     <!--img-->
     <div class="content">
