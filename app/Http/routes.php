@@ -61,6 +61,8 @@ Route::group(['middleware' => ['admin']], function () {
     Route::post('/admin/promotion','PromotionController@store');
     Route::delete('/admin/promotion/{id}','PromotionController@destroy');
     Route::put('/admin/promotion/{id}','PromotionController@update');
+	//优惠产品的运费
+	Route::resource('/admin/prolivraison','ProLvPriceController');
     //产品的promotion
     Route::get('/admin/pro','ProController@index');
     Route::post('/admin/pro','ProController@store');
@@ -123,10 +125,12 @@ Route::delete('/admin/papier/{id}','PapierController@destroy');
 //Format
 Route::get('/admin/format','FormatController@show');
 Route::post('/admin/formate/create','FormatController@store');
-
+Route::delete('/admin/format/{id}','FormatController@destroy');
+Route::put('/admin/format/','FormatController@update');
 //Pelliculage
 Route::get('/admin/pelliculage','PelliculageController@show');
 Route::post('/admin/pelliculage/create','PelliculageController@store');
+Route::delete('/admin/pelliculage/{id}','PelliculageController@destroy');
 
 //前台页面
 Route::get('/','FrontPageController@index');

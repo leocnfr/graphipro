@@ -8,7 +8,7 @@ class Format extends Model
 {
     //
     protected $table='format_list';
-    protected $fillable=['format'];
+    protected $fillable=['format','img'];
 
     public function showAll()
     {

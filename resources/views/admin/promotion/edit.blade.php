@@ -1,6 +1,6 @@
 @extends('admin.template.admin_template')
 @section('content')
-	<form action="{{url('/admin/pro/'.$pro->id)}}" method="post" role="form">
+	<form action="{{url('/admin/pro/'.$pro->id)}}" method="post" role="form" id="form1">
 		<div class="form-group">
 			<label for="">选择产品</label>
 			<select name="product_id" id="" class="form-control">
@@ -40,27 +40,45 @@
 				</label>
 			</div>
 		</div>
-		<div class="form-group">
-			<label for="">送货省份</label> <br>
-			<div class="radio-inline">
-				<label>
-					<input type="radio" name="city" id="inputID" value="1" {{$pro->city==1?'checked':''}}>
-					75省
-				</label>
-			</div>
-			<div class="radio-inline">
-				<label>
-					<input type="radio" name="city" id="inputID" value="2" {{$pro->city==2?'checked':''}}>
-					75省以外
-				</label>
-			</div>
-		</div>
-		<div class="form-group">
-			<label for="">送货价格</label>
-			<input type="number" class="form-control" name="lv_price" id="" step="0.01" value="{{$pro->lv_price}}">
-		</div>
-
 		<button type="submit" class="btn btn-primary">Submit</button>
-		<a class="btn btn-default" href="{{url('/admin/pro')}}">返回</a>
+
 	</form>
+
+	<div class="row" id="app">
+		<div class="col-md-3">
+			<form method="post" role="form" id="form2">
+				<legend>送货价格</legend>
+
+				<div class="form-group">
+					<label for="">送货省份</label> <br>
+					<div class="radio-inline">
+						<label>
+							<input type="radio" name="city" id="inputID" value="1" {{$pro->city==1?'checked':''}}
+							v-model="checked">
+							75省
+						</label>
+					</div>
+					<div class="radio-inline">
+						<label>
+							<input type="radio" name="city" id="inputID" value="2" {{$pro->city==2?'checked':''}}
+							v-model="checked">
+							75省以外
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="">送货价格</label>
+					<input type="number" class="form-control" name="lv_price" id="" step="0.01"
+						   value="{{$pro->lv_price}}" v-model="price">
+				</div>
+				<button type="submit" class="btn btn-primary" formaction="{{url('/admin/prolivraison')}}">Submit</button>
+			</form>
+
+		</div>
+		<div class="col-md-9">
+
+		</div>
+	</div>
+	<a class="btn btn-default" href="{{url('/admin/pro')}}">返回</a>
+
 @endsection

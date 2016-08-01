@@ -20,4 +20,21 @@ class FormatController extends Controller
         Format::create($request->all());
         return redirect()->back();
     }
+
+	public function destroy($id)
+	{
+		Format::destroy($id);
+    }
+
+	public function update(Request $request)
+	{
+		Format::find($request->get('id'))->update([
+			'format'=>$request->get('format'),
+			'img'=>$request->file('img')->getClientOriginalName()
+		]);
+		if ($request->hasFile('img')) {
+			$request->file('img')->move(('storage/uploads'), $request->file('img')->getClientOriginalName());
+		}
+		return redirect()->back();
+    }
 }

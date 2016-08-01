@@ -21,4 +21,9 @@ class PelliculageController extends Controller
         Pelliculage::create($request->all());
         return redirect()->back();
     }
+
+	public function destroy($id)
+	{
+		Pelliculage::destroy($id);
+    }
 }
