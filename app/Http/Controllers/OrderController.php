@@ -13,6 +13,7 @@ use App\Http\Requests;
 use Cart;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
+use Validator;
 
 class OrderController extends Controller
 {
@@ -20,6 +21,21 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
+        $validator=Validator::make($request->all(),[
+            'price'=>'required|min:1'
+        ]);
+        if ($validator->fails()){
+            alert()->error('购买失败', 'fails!');
+            return redirect('product/'.$request->get('product_id'));
+
+        }
+       if ($request->hasFile('file'))
+        {
+            $filename=$request->file('file')->getClientOriginalName();
+            Storage::put('tmp/'.$request->file('file')->getClientOriginalName(),file_get_contents($request->file('file')));
+
+        }
+
         $product_id=$request->get('product_id');
         $product_name=Products::find($request->get('product_id'))->name;
         $img=Products::find($request->get('product_id'))->productimg;
@@ -38,16 +54,19 @@ class OrderController extends Controller
                     'materiels'=>$materiels,
                     'ex'=>$ex,
                     'design_price'=>$design_price,
-                    'img'=>$img
+                    'img'=>$img,
+                    'filename'=>$filename,
+                    'filesize'=>$filesize,
+                    'filesrc'=>$filesrc
                 ]);
         }elseif (in_array($product_id,array(17,19,18))){
                 $size=$request->get('size');
 
         }else
         {
-            $format=Format::find($request->get('format'))->format;
+            $format=Format::find($request->get('formate'))->format;
             $papier=Papier::find($request->get('papier'))->papier;
-            $request->get('imprimer')==1?$imprimer='Recto':'Recto et verso';
+            $request->get('imprimer')==1?$imprimer='Recto':$imprimer='Recto et verso';
             $pelliculage=Pelliculage::find($request->get('pelliculage'))->pelliculage;
             $day=$request->get('day');
             Cart::add($product_id, $product_name, 1, $price,
@@ -59,7 +78,9 @@ class OrderController extends Controller
                     'day'=>$day,
                     'ex'=>$ex,
                     'design_price'=>$design_price,
-                    'img'=>$img
+                    'img'=>$img,
+                    'filename'=>isset($filename)?$filename:'',
+                    'tmpname'=>isset($tmpname)?$tmpname:''
                 ]);
         }
 
@@ -69,10 +90,9 @@ class OrderController extends Controller
     }
 
    
-    public function destroy(Request $request)
+    public function destroy($rawid)
     {
-        Cart::remove($request->get('raw_id'));
-
+        Cart::remove($rawid);
         return redirect()->back();
     }
 
@@ -83,14 +103,12 @@ class OrderController extends Controller
         return view('admin.order.show',compact('files','directories'));
     }
 
-    public function download()
+    public function download($file)
     {
-        $file= public_path(). "/download/info.pdf";
-
-        $headers = array(
-            'Content-Type: application/pdf',
-        );
-
-        return Response()->download('storage/uploads/PARTIE 2.jpg.pdf', 'filename.pdf', $headers);
+        $path = storage_path('app/'.$file);
+        
+        return response()->download($path);
     }
+
+
 }

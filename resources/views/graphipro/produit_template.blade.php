@@ -1,5 +1,10 @@
 @extends('graphipro.template')
 @section('content')
+    <style>
+        .disable{
+            cursor: not-allowed;
+        }
+    </style>
 <div style="width: 100%">
     <div style="width:1000px;margin:0px auto; margin-top:20px; color:#333">
         <a href="{{url('/')}}" style="color:#666">Accueil</a> > <span id="pro_name">{{$product->name}}</span><br />
@@ -12,7 +17,7 @@
         @if($product->id==25)
             <div style="font-size:18px; color:#29ABE2; float:right; margin-top:20px; margin-right:45px; position:relative; padding:10px; border:thin ridge #29ABE2; border-radius:3px;">
                 Prix total:<br />
-                <form action="{{url('/panier')}}" method="post">
+                <form action="{{url('/panier')}}" method="post" id="pro-form">
                     {!! csrf_field() !!}
                     <input type="hidden" id="product_id" name="product_id" value="{{$product->id}}">
                     <input type="hidden" id="price" name="price" v-model="price">
@@ -22,40 +27,37 @@
                     <input type="hidden" id="ex" name="ex" v-model="quantity">
                     <input type="hidden" id="s_design_price" name="design_price">
                     <span style="font-size:35px;" id="showprice">@{{price}}€</span> TTC <br /><br />
-                    <button style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; float:left; " id="panier">Ajouter au panier</button>
+                    <button style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; float:left; " id="panier" :class="price>0?'able':'disable'">Ajouter au panier</button>
                 </form>
             </div>
             @include('graphipro.product_type2')
             @elseif(in_array($product->id,array(17,19,18)))
             <div style="font-size:18px; color:#29ABE2; float:right; margin-top:20px; margin-right:45px; position:relative; padding:10px; border:thin ridge #29ABE2; border-radius:3px;">
                 Prix total:<br />
-                <form action="{{url('/panier')}}" method="post">
-                    {!! csrf_field() !!}
-                    <input type="hidden" id="product_id" name="product_id" value="{{$product->id}}">
-                    <input type="hidden" id="price" name="price">
-                    <input type="hidden" id="s_design_price" name="design_price">
+                {{--<form action="{{url('/panier')}}" method="post">--}}
+                    {{--{!! csrf_field() !!}--}}
+                    {{--<input type="hidden" id="product_id" name="product_id" value="{{$product->id}}">--}}
+                    {{--<input type="hidden" id="price" name="price">--}}
+                    {{--<input type="hidden" id="s_design_price" name="design_price">--}}
                     <span style="font-size:35px;" id="showprice" >0€</span> TTC <br /><br />
                     <button style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; float:left; " id="panier">Ajouter au panier</button>
-                </form>
+                {{--</form>--}}
             </div>
             @include('graphipro.special')
         @else
             <div style="font-size:18px; color:#29ABE2; float:right; margin-top:20px; margin-right:45px; position:relative; padding:10px; border:thin ridge #29ABE2; border-radius:3px;">
                 Prix total:<br />
-                <form action="{{url('/panier')}}" method="post">
-                    {!! csrf_field() !!}
-                    <input type="hidden" id="product_id" name="product_id" value="{{$product->id}}">
-                    <input type="hidden" id="price" name="price">
-                    <input type="hidden" id="day" name="day">
-                    <input type="hidden" id="ex" name="ex">
-                    <input type="hidden" id="s-format" name="format">
-                    <input type="hidden" id="s-papier" name="papier">
-                    <input type="hidden" id="s-imprimer" name="imprimer">
-                    <input type="hidden" id="s-pelliculage" name="pelliculage">
-                    <input type="hidden" id="s_design_price" name="design_price">
+                {{--<form action="{{url('/panier')}}" method="post">--}}
+                    {{--{!! csrf_field() !!}--}}
+
+                    {{--<input type="hidden" id="s-format" name="format">--}}
+                    {{--<input type="hidden" id="s-papier" name="papier">--}}
+                    {{--<input type="hidden" id="s-imprimer" name="imprimer">--}}
+                    {{--<input type="hidden" id="s-pelliculage" name="pelliculage">--}}
+                    {{--<input type="hidden" id="s_design_price" name="design_price">--}}
                     <span style="font-size:35px;" id="showprice" >0€</span> TTC <br /><br />
                     <button style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; float:left; " id="panier">Ajouter au panier</button>
-                </form>
+                {{--</form>--}}
             </div>
             @include('graphipro.produit_type1')
         @endif
@@ -68,4 +70,21 @@
         swal({!! Session::get('sweet_alert.alert') !!});
     </script>
 @endif
+<script>
+    $('.disable').click(function () {
+    return false;
+    });
+    $('.able').click(function () {
+        $('#pro-form').submit();
+    });
+    $('#panier').click(function (e) {
+        if ($('#price').val()==0)
+        {
+            e.preventDefault();
+        }else {
+            $('#panier-form').submit();
+        }
+    })
+
+</script>
 @endsection

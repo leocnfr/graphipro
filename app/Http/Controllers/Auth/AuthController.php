@@ -40,7 +40,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'logout']);
+        $this->middleware('guest:web', ['except' => 'logout']);
     }
 
     /**
@@ -124,7 +124,7 @@ class AuthController extends Controller
             ]);
         }
         alert()->success('You have been  inscription.', 'Success!');
-        return view('graphipro.index');
+        return redirect('/');
     }
 
     public function login(Request $request)
@@ -141,5 +141,11 @@ class AuthController extends Controller
             alert()->error('您的账号或密码有误','登录失败');
             return redirect()->back()->withInput();
         }
+    }
+
+    public function logout()
+    {
+        Auth::guard('web')->logout();
+        return redirect('login');
     }
 }

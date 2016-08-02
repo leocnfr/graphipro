@@ -18,6 +18,11 @@
         @include('graphipro.loading')
     </div>
     <tr>
+        <form action="{{url('/panier')}}" method="post" id="panier-form" enctype="multipart/form-data">
+            <input type="hidden" id="product_id" name="product_id" value="{{$product->id}}">
+            <input type="hidden" id="price" name="price">
+            <input type="hidden" id="day" name="day">
+            <input type="hidden" id="ex" name="ex">
         <td valign="top" width="450">
             <div style="font-size:20px; color:#29ABE2; margin-top:20px;">1. Choisir les options d'impression</div>
             <br/>
@@ -47,24 +52,25 @@
                 <div id="pel" style="display: none">
                     <span>Pelliculage:</span>
                     <br/>
-                    <select id="pelliculage" style="width:220px;" name="pelliculage">
+                    <select id="pelliculage" style="width:220px;" name="pelliculage" required>
                     </select>
                 </div>
-                <span>Création:</span> <br>
-                <select name="jumpMenu" id="design_price" style="width:220px;">
-                    <option value="0">Demande le creation</option>
-                    <option value="{{$product->design_price}}">Recto seule +{{$product->design_price}}€</option>
+                <span>Création:</span>
+                <br>
+                <select id="design_price" name="design_price" id="jumpMenu" style="width:220px;" required>
+                    <option value="0">Fournir par client</option>
+                    <option value="{{$product->design_price}}">+{{$product->design_price}}</option>
                 </select>
                 <br/>
-
-
+                Ficher fournir par client
+                <input type="file" name="file">
             </div>
 
             <div style="font-size:20px; color:#29ABE2; margin-top:20px;">2. Option de livraison</div>
             <br/>
             <div style="padding:10px; width:400px; border-radius:3px; background-color:#F2F2F2;">
                 Choix le moyen de livraison:
-                <select name="jumpMenu" id="type-livraison" style="width:220px;">
+                <select name="type-livraison" id="type-livraison" style="width:220px;">
                     <option value="0">Récupérer au bureau Graphipro</option>
                     <option value="1">Livraison chez vous 2 a 5 jours</option>
                 </select> <br>
@@ -83,26 +89,20 @@
                     <tr>
 
                         <td align="right">
-                            <div
-                                    style="border:thin ridge #29ABE2; border-radius:3px; padding:10px; font-size:13px; width:125px; height:20px; position:relative; color:#666">
-                                <div
-                                        style="position:absolute; width:147px; height:20px; background-color:#29ABE2; top:-18px; left:-1px;"></div>
+                            <div style="border:thin ridge #29ABE2; border-radius:3px; padding:10px; font-size:13px; width:125px; height:20px; position:relative; color:#666">
+                                <div style="position:absolute; width:147px; height:20px; background-color:#29ABE2; top:-18px; left:-1px;"></div>
                                 <center><span id="day1"></span><br/>
                             </div>
                         </td>
                         <td align="right">
-                            <div
-                                    style="border:thin ridge #29ABE2; border-radius:3px; padding:10px; font-size:13px; width:125px; height:20px; position:relative;  color:#666">
-                                <div
-                                        style="position:absolute; width:147px; height:20px; background-color:#29ABE2; top:-18px; left:-1px;"></div>
+                            <div style="border:thin ridge #29ABE2; border-radius:3px; padding:10px; font-size:13px; width:125px; height:20px; position:relative;  color:#666">
+                                <div style="position:absolute; width:147px; height:20px; background-color:#29ABE2; top:-18px; left:-1px;"></div>
                                 <center><span id="day2"></span><br/>
                             </div>
                         </td>
                         <td align="right">
-                            <div
-                                    style="border:thin ridge #29ABE2; border-radius:3px; padding:10px; font-size:13px; width:125px; height:20px; position:relative;   color:#666">
-                                <div
-                                        style="position:absolute; width:147px; height:20px; background-color:#29ABE2; top:-18px; left:-1px;"></div>
+                            <div style="border:thin ridge #29ABE2; border-radius:3px; padding:10px; font-size:13px; width:125px; height:20px; position:relative;   color:#666">
+                                <div style="position:absolute; width:147px; height:20px; background-color:#29ABE2; top:-18px; left:-1px;"></div>
                                 <center><span id="day3"></span><br/>
                             </div>
                         </td>
@@ -116,6 +116,7 @@
             </div>
         </td>
     </tr>
+    </form>
 </table>
 <script type="text/javascript">
     var proid=<?php echo $product->id?>;

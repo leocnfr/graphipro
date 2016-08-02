@@ -27,4 +27,9 @@ class Products extends Model
     {
         return $this->hasMany(SpecialPrice::class,'product_id');
     }
+
+    public function showByCat($query)
+    {
+        return Products::where('type_id','=',$query)->get();
+    }
 }

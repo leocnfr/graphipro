@@ -6,15 +6,11 @@
         <span style="color:#666; font-size:14px;">Vérification de la commande sélectionné</span><br/><br/>
         <img src="/images/panier1.png"/>
         <form action="{{url('/payment')}}" method="post" enctype="multipart/form-data" id="payment">
+            {!! csrf_field() !!}
             @foreach($carts as $cart)
             <div style="width:690px; padding:10px; position:relative; border:thin ridge #29ABE2; border-radius:3px; font-size:14px; color:#666; height:100px; margin-top:20px;" >
                 <div style="position:absolute; right:10px; top:10px;cursor:pointer;">
-                    {{--<form action="{{url('/panier')}}" method="post">--}}
-                        {{--{!! csrf_field()!!}--}}
-                        {{--{!! method_field('DELETE') !!}--}}
-                        {{--<input type="hidden" name="raw_id" value="{{$cart->__raw_id}}">--}}
-                        {{--<input name="submit" type="image" value="ee" src="/images/ferme.png" />--}}
-                    {{--</form>--}}
+                    <a href="{{url('/panier/'.$cart->__raw_id)}}"><img src="/images/ferme.png" alt=""></a>
                 </div>
                 <img src="/storage/uploads/{{$cart->img}}" style="float:left; height:100px;"/>
 
@@ -37,7 +33,7 @@
 
                     @if($cart->design_price==0)
                         Ficher fournir par client <br>
-                        <input type="file" name="files[]">
+                       {{$cart->filename}}
                         @else
                         Creation:{{$cart->design_price}}
                     @endif
@@ -52,9 +48,14 @@
 
     <div style="font-size:18px; color:#29ABE2; float:right; margin-top:20px; margin-right:45px; position:relative; padding:10px; border:thin ridge #29ABE2; border-radius:3px;min-width: 145.36px">
         {{$count}}article(s):<br/>
+
         <span style="font-size:35px;">{{$total_price}}</span> TTC
         <br/>
-        <div id="valide" style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; float:left;cursor:pointer; ">Valider
+        @if($total_price>0)
+            <div id="valide" style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; float:left;cursor:pointer; ">Valider
+                @else
+                    <div id="" style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; float:left;cursor:not-allowed; ">Valider
+                        @endif
     </div>
     </div>
     <a href="{{url('/')}}">

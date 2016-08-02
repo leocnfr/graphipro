@@ -137,7 +137,7 @@ function getPrice(proid) {
                 }                html+=val.price3==0?'':val.price3;
                 html+='</td>';
                 html+='</tr>';
-            })
+            });
             $('#result').html(html);
 
             $(".price").on('click',function(event){
