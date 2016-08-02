@@ -17,7 +17,7 @@ Vue.component('pelliculage-template',{
     methods:{
         delPelliculage: function (pelliculage) {
             this.$http.delete('/admin/pelliculage/'+pelliculage.id, function (res) {
-                this.pelliculageS.$remove(pelliculage);
+                this.pelliculages.$remove(pelliculage);
             })
         },
         editPelliculage: function () {

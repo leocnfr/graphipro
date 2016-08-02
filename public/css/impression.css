@@ -1,0 +1,76 @@
+.x_size {
+  max-width: 1000px;
+  margin: auto;
+  min-width: 330px; }
+
+#container {
+  margin-top: 10px;
+  width: 1000px; }
+
+#contents, section {
+  width: 100%;
+  color: black; }
+
+.content {
+  width: 100%; }
+
+@media screen and (min-width: 419px) and (max-width: 800px) {
+  #container {
+    margin-top: 90px; }
+  #contents, section {
+    width: 100%;
+    float: none; } }
+
+@media screen and (max-width: 418px) {
+  #container {
+    margin-top: 90px; }
+  div .fb-like-box {
+    display: none; }
+  #contents, section {
+    width: 100%;
+    float: none; } }
+
+/*galaxy note2 720x1280/358x639*/
+.logs {
+  background-color: #154d6c;
+  margin: 0px;
+  padding: 10px; }
+
+.a {
+  border: 1px solid black;
+  width: 20%; }
+
+.white {
+  color: white;
+  font-weight: bolder; }
+
+.table {
+  border: 0px;
+  padding: 0px;
+  background-color: gray;
+  height: 50px; }
+
+.bolder {
+  font-weight: bolder; }
+
+.whitef {
+  font-color: white; }
+
+.red {
+  background-color: red;
+  color: white;
+  border: none;
+  font-weight: bold; }
+
+.yellow {
+  background-color: yellow;
+  color: black;
+  border: none; }
+
+fieldset {
+  border: 1px solid silver;
+  padding: 5px;
+  min-width: 450px;
+  width: 100%; }
+
+/*# sourceMappingURL=impression.css.map */

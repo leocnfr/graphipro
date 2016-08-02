@@ -1,0 +1,57 @@
+@extends('admin.template.admin_template')
+@section('page_title',$user->nom)
+@section('content')
+    <table class="table table-hover" align="left">
+    	<tr>
+            <td>Nom:</td>
+            <td>{{$user->nom}}</td>
+        </tr>
+        <tr>
+            <td>Prenom:</td>
+            <td>{{$user->prenom}}</td>
+        </tr>
+        <tr>
+            <td>Tel:</td>
+            <td>{{$user->tel}}</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{$user->email}}</td>
+        </tr>
+        <tr>
+            <td>Ville:</td>
+            <td>{{$user->ville}}</td>
+        </tr>
+        <tr>
+            <td>Post:</td>
+            <td>{{$user->post}}</td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td>{{$user->address}}</td>
+        </tr>
+    </table>
+    <h3>订单</h3>
+   <table class="table table-hover">
+   	<thead>
+   		<tr>
+            <th>No.</th>
+   			<th>订单详情</th>
+            <th>数量</th>
+            <th>价格</th>
+            <th>创建时间</th>
+   		</tr>
+   	</thead>
+   	<tbody>
+   		@foreach($user->hasOrders as $key=>$order)
+            <tr>
+                <td>{{$key+1}}</td>
+                <td>{!! $order->content !!}</td>
+                <td>{{$order->ex}}</td>
+                <td>{{$order->price}}
+                <td>{{$order->created_at}}</td>
+            </tr>
+        @endforeach
+   	</tbody>
+   </table>
+@stop

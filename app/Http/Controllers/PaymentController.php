@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\File;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -28,6 +29,7 @@ class PaymentController extends Controller
 //        }elseif(preg_match("^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$",$card)){
 //            echo 'mastercard';
 //        }
+
         return view('graphipro.payment');
     }
 
@@ -41,6 +43,10 @@ class PaymentController extends Controller
         return view('graphipro.checkout');
     }
 
+    /**
+     * @param Request $request
+     * @return $this|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function postpayment(Request $request)
     {
         $carts=Cart::all();
@@ -51,7 +57,7 @@ class PaymentController extends Controller
 
         $token = $request->input('stripeToken');
 
-        Stripe::setApiKey('sk_test_QD9r7RPD0PtSMbyt3WuHOFbJ');
+        Stripe::setApiKey('sk_live_UHcMRmHHRUscDn9jSdh8pAAX');
 //        if (!isset($emailCheck)) {
         // Create a new Stripe customer
         try {
@@ -73,7 +79,7 @@ class PaymentController extends Controller
 
         try {
             $charge = Charge::create([
-                'amount' => $amount*100,
+                'amount' => $amount,
                 'currency' => 'eur',
                 'customer' => $customerID,
                 'metadata' => [
@@ -87,6 +93,42 @@ class PaymentController extends Controller
                 ->withErrors($e->getMessage())
                 ->withInput();
         }
+        $orders=array();
+        foreach ($carts as $cart) {
+            $content="";
+            if ($cart->id==25)
+            {
+                $content.=$cart->name."<br/>";
+                $content.=$cart->larger*$cart->hauter."<br>";
+                $content.=$cart->materiels;
+                $content.=$cart->ex;
+            }else if(in_array($cart->id,array(17,19,18)))
+            {
+
+            }else{
+                $content.=$cart->name."<br/>";
+                $content.=$cart->format."<br/>";
+                $content.=$cart->papier."<br/>";
+                $content.=$cart->imprimer."<br/>";
+                $content.=$cart->pelliculage."<br/>";
+            }
+            array_push($orders,[
+                'user_id'=>Auth::user()->id,
+                'content'=>$content,
+                'ex'=>$cart->ex,
+                'price'=>$cart->price,
+                'design_price'=>$cart->design_price,
+                'file_src'=>$cart->despath,
+                'created_at'=>Carbon::now()
+            ]);
+        }
+        foreach ($carts as $cart) {
+            if ($cart->design_price==0)
+            {
+                Storage::move($cart->tmppath,$cart->despath);
+            }
+        }
+        DB::table('orders')->insert($orders);
         alert()->success('付款成功','成功');
         return redirect('/');
     }

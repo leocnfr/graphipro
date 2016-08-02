@@ -1,0 +1,37 @@
+#particulier, #societe {
+  margin-top: 20px; }
+  #particulier input, #societe input {
+    font-size: 16px;
+    padding: 5px; }
+
+.submit-form {
+  padding: 8px;
+  border-radius: 3px;
+  background-color: #29ABE2;
+  color: #FFF;
+  display: inline;
+  font-size: 18px;
+  outline-style: none; }
+
+.pagination {
+  list-style: none;
+  font-size: 1rem; }
+  .pagination li {
+    float: left; }
+    .pagination li a, .pagination li span {
+      background: #CDDC39;
+      color: #666;
+      position: relative;
+      float: left;
+      padding: 6px 12px;
+      margin-left: -1px;
+      text-decoration: none; }
+  .pagination .active span {
+    z-index: 3;
+    color: white;
+    background: #6B90B1;
+    border-color: #337ab7; }
+  .pagination .disabled span {
+    cursor: not-allowed; }
+
+/*# sourceMappingURL=app.css.map */

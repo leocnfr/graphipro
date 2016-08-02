@@ -32,4 +32,15 @@ class Products extends Model
     {
         return Products::where('type_id','=',$query)->get();
     }
+
+    public function minCount($proid)
+    {
+        return Promotion::where('product_id','=',$proid)->min('count');
+    }
+
+    public function minPrice($proid)
+    {
+        return Promotion::where('product_id','=',$proid)->min('price');
+
+    }
 }

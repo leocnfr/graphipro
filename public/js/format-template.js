@@ -16,7 +16,7 @@ Vue.component('format-template',{
     },
     methods:{
         delFormat: function (format) {
-            this.$http.delete('/admin/format/'+formate.id, function (res) {
+            this.$http.delete('/admin/format/'+format.id, function (res) {
                 this.formats.$remove(format);
             })
         },

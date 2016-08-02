@@ -14,8 +14,8 @@
 use App\Products;
 
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/home', function () {
+    return view('home');
 });
 Route::get('/admin','ProductController@index');
 
@@ -32,23 +32,37 @@ Route::get('/admin','ProductController@index');
 
 Route::group(['middleware' => ['admin']], function () {
 //    Route::auth();
+    /*
+     * client
+     */
+    Route::get('/admin/users/person','BackpageController@personClient');
+    Route::get('/admin/users/person/{user}','UserController@show');
+    Route::get('/admin/users/societe','BackpageController@societeClient');
+
+    //livraison地址及价格
+    Route::resource('/admin/livraison','LivraisonConroller');
 
     /**
      * Type
      */
+
     Route::get('/admin/category','TypeController@index');
     Route::post('/admin/category','TypeController@store');
     Route::delete('/admin/category','TypeController@destroy');
+
     //产品
     Route::get('/admin/products{query?}','ProductController@index');
     Route::get('/admin/products/new','ProductController@store');
     Route::post('admin/products/new','ProductController@save');
     Route::get('/admin/products/{id}','ProductController@edit');
     Route::post('/admin/products/{id}','ProductController@update');
+
     //产品团购价格
     Route::post('/admin/promotion','PromotionController@store');
     Route::delete('/admin/promotion/{id}','PromotionController@destroy');
     Route::put('/admin/promotion/{id}','PromotionController@update');
+	//优惠产品的运费
+	Route::resource('/admin/prolivraison','ProLvPriceController');
     //产品的promotion
     Route::get('/admin/pro','ProController@index');
     Route::post('/admin/pro','ProController@store');
@@ -73,14 +87,37 @@ Route::group(['middleware' => ['admin']], function () {
     Route::delete('/admin/special/{id}','SpecialPriceController@destroy');
     //存数量和价格
     Route::post('/admin/price','PriceController@store');
+
     //删除
     Route::delete('/admin/price/{id}','PriceController@destroy');
     Route::put('/admin/price','PriceController@edit');
     
     //订单
     Route::get('/admin/orders','OrderController@showAll');
+    //订单状态
+    Route::get('/admin/status','StatusController@index');
+    Route::resource('/admin/status','StatusController');
     //下载文件
-    Route::get('/admin/files/{file}','OrderController@download');
+    Route::post('/admin/files/download','OrderController@download');
+
+	//产品属性
+	Route::get('/admin/attribute',function(){
+		return view('admin.products.attribute');
+	});
+//papier
+	Route::get('/admin/papier','PapierController@show');
+	Route::post('/admin/papier/create','PapierController@store');
+	Route::delete('/admin/papier/{id}','PapierController@destroy');
+
+//Format
+	Route::put('/admin/format','FormatController@update');
+	Route::get('/admin/format','FormatController@show');
+	Route::post('/admin/formate/create','FormatController@store');
+	Route::delete('/admin/format/{id}','FormatController@destroy');
+//Pelliculage
+	Route::get('/admin/pelliculage','PelliculageController@show');
+	Route::post('/admin/pelliculage/create','PelliculageController@store');
+	Route::delete('/admin/pelliculage/{id}','PelliculageController@destroy');
 });
 
 Route::group(['middleware' => ['web']], function () {
@@ -95,42 +132,12 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 
-//产品属性
-Route::get('/admin/attribute',function(){
-    return view('admin.products.attribute');
-});
-//papier
-Route::get('/admin/papier','PapierController@show');
-Route::post('/admin/papier/create','PapierController@store');
-Route::delete('/admin/papier/{id}','PapierController@destroy');
-
-//Format
-Route::get('/admin/format','FormatController@show');
-Route::post('/admin/formate/create','FormatController@store');
-
-//Pelliculage
-Route::get('/admin/pelliculage','PelliculageController@show');
-Route::post('/admin/pelliculage/create','PelliculageController@store');
-
-
-/**
- * user
- */
-Route::get('/admin/users/create','UserController@create');
-
-/*
- * 后台页面
- */
-Route::get('/admin/users/person','BackpageController@PersonClient');
-Route::get('/admin/users/societe','BackpageController@SocieteClient');
-
-
 
 
 //前台页面
 Route::get('/','FrontPageController@index');
 
-Route::get('/product/{id}','FrontPageController@product');
+Route::get('/product/{name}','FrontPageController@product');
 
 
 Route::get('/home', 'HomeController@index');
@@ -139,6 +146,7 @@ Route::get('/papier','JsonController@getPapier');
 //获取pelliculage
 Route::get('/pelliculage','JsonController@getPelle');
 Route::get('/price','JsonController@getPrice');
+
 //获取imprimer
 Route::get('/imprimer','JsonController@getImprimer');
 //存储购物车
@@ -166,4 +174,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/register/{type}','Auth\AuthController@register');
     //logout
     Route::get('/logout','Auth\AuthController@logout');
+
+    Route::get('/pdf/{query}','PdfController@make');
 });
+
+Route::get('/phpinfo','HomeController@index');

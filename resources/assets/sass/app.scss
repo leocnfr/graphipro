@@ -1,2 +1,44 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+#particulier,#societe
+{
+  margin-top: 20px;
+  input{
+    font-size:16px; padding:5px
+  }
+}
 
+.submit-form{
+  padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; display:inline; font-size:18px;outline-style: none
+}
+
+//分页
+.pagination{
+  list-style:none;
+  font-size: 1rem;
+  li{
+    float: left;
+    a,span{
+      background: #CDDC39;
+      color: #666;
+      position: relative;
+      float: left;
+      padding: 6px 12px;
+      margin-left: -1px;
+      text-decoration: none;
+    }
+  }
+  .active
+  {
+    span{
+      z-index: 3;
+      color: white;
+      background: #6B90B1;
+      border-color:  #337ab7;
+    }
+  }
+  .disabled{
+    span{
+      cursor: not-allowed;
+    }
+  }
+}

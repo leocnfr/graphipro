@@ -12,28 +12,24 @@
 			<span style="font-size:35px;" id="showprice">
 				{{$pro->pro_price*1.2}}
 			</span>€ TTC <br /><br />
-
+                <form action="{{url('/panier')}}" method="post" id="panier-form" enctype="multipart/form-data">
+                    <input type="hidden" value="promotion" name="promotion">
+                    <input type="hidden" value="{{$pro->id}}" name="id">
+                <button style=" padding:8px; border-radius:3px; background-color:#29ABE2; color:#FFF; float:left; " id="panier">Ajouter au panier</button>
+                </form>
             </div>
             <table width="500" border="0" style="padding-left: 40px;padding-top: 30px">
                 <tr>
                     <td valign="top" width="450">
                         <!--					<div style="font-size:20px; color:#29ABE2; margin-top:20px;">1. Choisir les options d'impression</div><br />-->
                         <div style="padding:10px; width:400px; border-radius:3px; background-color:#F2F2F2; line-height:35px; color:#000; font-size:18px;">
-                            {!! $pro->des !!}
+                            <span style="font-size:12px; color:#666"> {!! $pro->des !!}</span>
                         </div>
-                        <div style="font-size:20px; color:#29ABE2; margin-top:20px;">2. Option de livraison</div><br />
-                        <div style="padding:10px; width:400px; border-radius:3px; background-color:#F2F2F2;">
-                            Choix le moyen de livraison:
-                            <select name="jumpMenu" id="jumpMenu" style="width:220px;">
-                                <option>Récupérer au bureau Graphipro</option>
-                                <option>Livraison chez vous J+3</option>
-                                <option>Livraison chez vous par UPS J+2</option>
-                            </select>
-                        </div>
+                       @include('graphipro.product.livraison')
                     </td>
                 </tr>
             </table>
-            <div style="font-size:25px; color:#FFF; padding:5px; background-color:#29ABE2; width:990px; margin-top:20px; float:left; position:relative;  "><img src="images/cat.png" height="20" /> INFOS PLUS
+            <div style="font-size:25px; color:#FFF; padding:5px; background-color:#29ABE2; width:990px; margin-top:20px; float:left; position:relative;  "><img src="/images/cat.png" height="20" /> INFOS PLUS
             </div>
             <div style="width:1000px; margin-top:20px;">
                 <div style="padding:10px; margin-top:20px; width:225px; border-radius:3px; background-color:#F2F2F2; float:left; height:225px;">

@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nom','prenom','email', 'password','ville','post','societe','type','address'
+        'nom','prenom','email', 'password','ville','post','societe','type','address','tel'
     ];
 
     /**
@@ -24,6 +24,18 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public static function showPersonal()
+    {
+        return User::where('type','=',1)->paginate(15);
+    }
 
+    public static function showSociete()
+    {
+        return User::where('type','=',2)->paginate(15);
+    }
 
+    public function hasOrders()
+    {
+        return $this->hasMany(Order::class);
+    }
 }

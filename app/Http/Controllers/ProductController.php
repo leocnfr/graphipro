@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Livraison;
 use App\Products;
 use App\Promotion;
 use App\Type;
@@ -47,7 +48,9 @@ class ProductController extends Controller
         $product=Products::findOrFail($id);
         $types=Type::all();
         $pros=Promotion::where('product_id',$id)->get();
-        return view('admin.products.edit',compact('product','types','pros'));
+	    $livrasions=Livraison::where('product_id',$id)->orderBy('postcode')->get();
+
+        return view('admin.products.edit',compact('product','types','pros','livrasions'));
 
     }
 

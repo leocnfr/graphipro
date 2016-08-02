@@ -8,8 +8,7 @@
     }
     .product-item
     {
-        width: 140px;
-        margin:10px 0px 0px 23px;
+        width: 166px;
         text-align: center;
         float: left;
         cursor: pointer;
@@ -17,6 +16,8 @@
     .product-item>img
     {
         display: block;
+        margin: 0px auto;
+
     }
     .product-item >span.name{
         font-size:14px;
@@ -45,8 +46,9 @@
         display: none;
         background: rgba(0,0,0,0.6);
         cursor: pointer;
-        top: 10px;
+        top: 0px;
         text-align: center;
+        margin: 0px 12px;
     }
     .product-table
     {
@@ -63,13 +65,14 @@
         @foreach($items as $key=>$item)
             <div class="product-table">
                 <div class="product-item">
+
                     <img src="/storage/uploads/{{$item->productimg}}" alt="" width="140" height="140" class="product-item-img">
                     <div class="command-div">
-                        <a href="{{url('/product/'.$item->id)}}" style="font-size: 12px;color: white;top: 50%;position: relative;padding: 3px;border: 1px solid white">Commande</a>
+                        <a href="{{url('/product/'.str_slug($item->name))}}" style="font-size: 12px;color: white;top: 50%;position: relative;padding: 3px;border: 1px solid white">Commande</a>
                     </div>
                     <span class="name">{{$item->name}}</span> <br>
-                    <span class="ex">100ex à partir de </span>
-                    <span class="price">10€</span>
+                    <span class="ex">{{$item->minCount($item->id)}} ex à partir de</span>
+                    <span class="price">{{$item->minPrice($item->id)}}€</span>
                     <span class="ht">HT</span>
                 </div>
 
